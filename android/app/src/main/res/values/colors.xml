@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ic_launcher_background">#FAF3E3</color>
+    <!-- Ground of the launch screen: the cream of design/mobile/serene/21. -->
+    <color name="splash_background">#FDF7EA</color>
+</resources>

@@ -1,0 +1,15 @@
+# Configures Flutter SDK gen-l10n. Flutter runs this during build/run; it is not
+# build_runner. See CLAUDE.md architecture rule 4 and approved deviations.
+#
+# Flutter 3.44 removed the synthetic `flutter_gen` package. Generated files land
+# in `lib/l10n/app_localizations*.dart` and are gitignored. Import them
+# relatively: `import 'l10n/app_localizations.dart';` Do not import through
+# `package:flutter_gen/...`; that path is broken on this SDK.
+arb-dir: lib/l10n
+template-arb-file: app_th.arb
+output-localization-file: app_localizations.dart
+output-class: AppLocalizations
+
+# Makes AppLocalizations.of(context) non-nullable. The app declares the required
+# delegates, so callers should not need `!` at every use site.
+nullable-getter: false

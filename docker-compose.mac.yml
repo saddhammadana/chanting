@@ -1,0 +1,38 @@
+# Apple Silicon / arm64 override. Use together with docker-compose.yml.
+#
+# Usage:
+#   docker compose -f docker-compose.yml -f docker-compose.mac.yml run --rm apk
+#   docker compose -f docker-compose.yml -f docker-compose.mac.yml run --rm apk-arm64
+#   docker compose -f docker-compose.yml -f docker-compose.mac.yml run --rm aab
+#
+# Optional shell alias:
+#   alias dcmac='docker compose -f docker-compose.yml -f docker-compose.mac.yml'
+#   → dcmac run --rm apk
+#
+# Clear all caches: dcmac down --volumes. Volumes are shared with the base file.
+#
+# Why this file exists:
+# On Apple Silicon, Docker pulls an arm64 image unless platform is pinned. That
+# causes two problems: some Android build tools historically shipped only x86_64
+# binaries, and results may differ from GitHub Actions, which runs on amd64. Pinning
+# linux/amd64 matches CI and lets Rosetta 2 emulate it. It is a little slower than
+# native arm64 but avoids architecture-specific surprises.
+#
+# Enable Rosetta in Docker Desktop first:
+#   Docker Desktop → Settings → General →
+#     ☑ Use Rosetta for x86_64/amd64 emulation on Apple Silicon
+# Without it, Docker falls back to QEMU, which is much slower.
+#
+# Named volumes are shared with the base file, but amd64 and arm64 build caches
+# are not safely interchangeable. If the base file was previously run unpinned on
+# this machine, run down --volumes once before using this override.
+
+services:
+  apk:
+    platform: linux/amd64
+
+  apk-arm64:
+    platform: linux/amd64
+
+  aab:
+    platform: linux/amd64

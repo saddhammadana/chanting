@@ -1,0 +1,146 @@
+[
+  {
+    "id": "tham-wat-chao",
+    "title": "ทำวัตรเช้า",
+    "icon": "sunrise",
+    "prayerIds": [
+      "ratanattaya-vandana",
+      "pubba-bhaga-namakara",
+      "phutthaphithuti",
+      "thammaphithuti",
+      "sanghaphithuti",
+      "ratanattayapanama-sangwek",
+      "samvega-parikittana-patha",
+      "sappapattidana-katha"
+    ]
+  },
+  {
+    "id": "tham-wat-yen",
+    "title": "ทำวัตรเย็น",
+    "icon": "night",
+    "prayerIds": [
+      "ratanattaya-puja-yo-so",
+      "ratanattaya-vandana",
+      "pubba-bhaga-namakara",
+      "buddhanussati",
+      "buddhabhigiti",
+      "dhammanussati",
+      "dhammabhigiti",
+      "sanghanussati",
+      "sanghabhigiti",
+      "thawattingsakan-patha",
+      "aphinha-patchawekkhana",
+      "mettapharana",
+      "phrommawihan-pharana"
+    ]
+  },
+  {
+    "id": "bot-thuapai",
+    "title": "บททั่วไป",
+    "icon": "book",
+    "prayerIds": [
+      "bucha-phra-rattanatrai",
+      "phicharana-sangkhan",
+      "khemakhem-sarana-katha",
+      "tilakkhanathi-katha",
+      "owatpatimokkha-katha",
+      "pathama-phuttha-phasit",
+      "patchima-phutthowat",
+      "ariyathana-katha",
+      "thammakharawathi-katha",
+      "phatthekaratta-katha",
+      "tisaranagamana-patha",
+      "pharasutta-katha",
+      "uddisanadhitthanagatha",
+      "mangala-cakkavala-noi"
+    ]
+  },
+  {
+    "id": "bot-suat-phiset",
+    "title": "บทสวดพิเศษ",
+    "icon": "sparkle",
+    "prayerIds": [
+      "ratanattaya-guna",
+      "buddha-jaya-mangala-gatha",
+      "jaya-paritta",
+      "chinabanchon"
+    ]
+  },
+  {
+    "id": "bot-anumothana",
+    "title": "บทอนุโมทนา",
+    "icon": "hands",
+    "prayerIds": [
+      "tirokuddakanda-pacchimabhaga",
+      "aggappasada-sutta-gatha",
+      "bhojanadananumodana-gatha",
+      "kaladanasutta-gatha",
+      "bhavatu-sabba-mangala",
+      "sangahavatthu-gatha"
+    ]
+  },
+  {
+    "id": "charoen-phra-phuttha-mon",
+    "title": "เจริญพระพุทธมนต์",
+    "icon": "shield",
+    "prayerIds": [
+      "namakara-siddhi-gatha",
+      "sambuddhe",
+      "namokaratthaka",
+      "mangala-sutta",
+      "karaniya-metta-sutta",
+      "khandha-paritta",
+      "mora-paritta",
+      "atanatiya-paritta",
+      "angulimala-paritta",
+      "bojjhanga-paritta",
+      "abhaya-paritta",
+      "devata-uyyojana-gatha",
+      "vattaka-parit"
+    ]
+  },
+  {
+    "id": "bot-phicharana-phikkhu-samanen",
+    "title": "บทพิจารณาสำหรับพระภิกษุ-สามเณร",
+    "icon": "meditate",
+    "prayerIds": [
+      "tangkhanika-patchawekkhana",
+      "atita-patchawekkhana",
+      "pappachit-aphinha-patchawekkhana",
+      "samana-sanya",
+      "dhammapahangsana-patha"
+    ]
+  },
+  {
+    "id": "bot-tham-lang-patimokkha",
+    "title": "บทธรรมสำหรับภิกษุหลังฟังพระปาฏิโมกข์",
+    "icon": "group",
+    "prayerIds": [
+      "satchakiriya-katha",
+      "siluthet-patha",
+      "tayana-katha",
+      "owatpatimokkhathi-patha"
+    ]
+  },
+  {
+    "id": "bot-tham-khamson",
+    "title": "บทธรรมคำสอน",
+    "icon": "school",
+    "prayerIds": [
+      "dhammacakkappavattana-sutta",
+      "ariyasacca-katha",
+      "karava-katha",
+      "dhammuddesa-si",
+      "parabhava-sut"
+    ]
+  },
+  {
+    "id": "samannanu-modana-gatha",
+    "title": "สามัญญานุโมทนาคาถา",
+    "icon": "water",
+    "prayerIds": [
+      "anumodanarambha-gatha",
+      "samannanumodana-gatha"
+    ]
+  }
+]

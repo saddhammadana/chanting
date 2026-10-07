@@ -1,0 +1,11 @@
+# คัดลอกไฟล์นี้เป็น key.properties แล้วกรอกค่าจริง (key.properties ถูก gitignore ไว้ ห้าม commit)
+#
+# สร้าง keystore ครั้งแรก (ต้องมี JDK/Android Studio):
+#   keytool -genkey -v -keystore %USERPROFILE%\chanting-release.jks ^
+#     -keyalg RSA -keysize 2048 -validity 10000 -alias chanting
+#
+# สำคัญ: สำรองไฟล์ .jks และรหัสผ่านไว้ให้ดี ถ้าหายจะอัปเดตแอปบน Play Store ไม่ได้อีกเลย
+storePassword=<รหัสผ่าน keystore>
+keyPassword=<รหัสผ่าน key>
+keyAlias=chanting
+storeFile=C:\\Users\\<you>\\chanting-release.jks

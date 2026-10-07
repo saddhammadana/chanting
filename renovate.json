@@ -1,0 +1,21 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended"],
+  "enabledManagers": ["pub", "github-actions", "docker-compose"],
+  "schedule": ["before 6am on monday"],
+  "prConcurrentLimit": 3,
+  "packageRules": [
+    {
+      "matchManagers": ["pub"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "groupName": "pub minor and patch updates"
+    },
+    {
+      "description": "The Flutter image in .github/workflows has to stay on the SDK version README.md and docs name, so it is raised on its own and the docs are edited in the same pull request.",
+      "matchManagers": ["github-actions", "docker-compose"],
+      "matchPackageNames": ["ghcr.io/cirruslabs/flutter"],
+      "groupName": "Flutter CI image",
+      "addLabels": ["needs-doc-update"]
+    }
+  ]
+}

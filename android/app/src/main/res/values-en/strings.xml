@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ชื่อแอปบนเครื่องที่ตั้งภาษาอังกฤษ — ต้องตรงกับ key `appName` ใน
+  lib/l10n/app_en.arb (ชื่อเดียวกันต้องไม่ต่างกันระหว่างหน้าจอโฮมกับในแอป)
+  test/app_name_test.dart บังคับให้ตรงกัน
+-->
+<resources>
+    <string name="app_name">Chanting</string>
+</resources>

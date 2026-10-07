@@ -1,0 +1,18 @@
+gradle-wrapper.jar
+/.gradle
+/captures/
+/gradlew
+/gradlew.bat
+/local.properties
+# Gradle เขียน report ลง android/build/ ตอน build (ไม่ได้อยู่ใน named volume ของ
+# docker-compose เหมือน /app/build) — root .gitignore มีแค่ /build/ ซึ่ง anchor
+# ที่รากรีโปเท่านั้น ไฟล์พวกนี้เลยโผล่เป็น untracked รอโดน git add -A เก็บไป
+/build/
+GeneratedPluginRegistrant.java
+.cxx/
+
+# Remember to never publicly share your keystore.
+# See https://flutter.dev/to/reference-keystore
+key.properties
+**/*.keystore
+**/*.jks

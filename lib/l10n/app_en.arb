@@ -1,0 +1,1457 @@
+{
+  "@@locale": "en",
+  "settingsTitle": "Settings",
+  "@settingsTitle": {
+    "description": "Settings screen title, shown in the AppBar"
+  },
+  "settingsSectionGeneral": "General",
+  "@settingsSectionGeneral": {
+    "description": "Heading for the settings hub group holding language and theme"
+  },
+  "settingsReadingEntry": "Reading settings",
+  "@settingsReadingEntry": {
+    "description": "Settings hub row that opens the reading and text settings page"
+  },
+  "settingsReadingEntrySubtitle": "Tune how prayers are displayed",
+  "readingPreviewTitle": "Preview",
+  "@readingPreviewTitle": {
+    "description": "Heading above the live sample of the chant text on the reading settings page"
+  },
+  "readingPreviewNote": "Changes show here straight away",
+  "readingAppliesToAll": "Applies to every prayer",
+  "@readingAppliesToAll": {
+    "description": "Footer of the reading settings page — these are app-wide preferences, not per-prayer"
+  },
+  "settingsReset": "Reset",
+  "@settingsReset": {
+    "description": "AppBar button that puts every reading setting back to its shipped default"
+  },
+  "settingsResetConfirmTitle": "Reset reading settings",
+  "settingsResetConfirmBody": "Everything on this page goes back to its default, including text size, text colour, page colour and auto-scroll. Your app language and theme are left alone.",
+  "settingsResetDone": "Reading settings reset",
+  "fontSizeSmall": "Small",
+  "@fontSizeSmall": {
+    "description": "Tick label at the small end of the text-size slider"
+  },
+  "fontSizeNormal": "Normal",
+  "fontSizeLarge": "Large",
+  "settingsSectionContent": "What the page shows",
+  "@settingsSectionContent": {
+    "description": "Heading for the group of switches choosing which text layers the reader opens with"
+  },
+  "settingsShowRomanDefault": "Romanized Pali",
+  "settingsShowRomanDefaultHint": "Open prayers with the Roman Pali showing",
+  "settingsShowMeaningDefault": "Translation",
+  "settingsShowMeaningDefaultHint": "Open every prayer with the translation showing",
+  "settingsInlineTranslation": "Under each line",
+  "settingsInlineTranslationHint": "Put them under each verse, not at the end",
+  "settingsSectionLayout": "Spacing and alignment",
+  "settingsSectionBackground": "Page colour",
+  "readingBackgroundIvory": "Ivory",
+  "@readingBackgroundIvory": {
+    "description": "Reading page colour: the app's own warm cream, the default"
+  },
+  "readingBackgroundWhite": "White",
+  "readingBackgroundSepia": "Sepia",
+  "readingBackgroundNight": "Night",
+  "readingBackgroundDarkNote": "The dark theme always reads on the night page — switch to the light theme to choose another",
+  "@readingBackgroundDarkNote": {
+    "description": "Shown under the page-colour swatches when the app theme is dark and forces the night page"
+  },
+  "settingsSectionScroll": "Scrolling",
+  "settingsAutoScrollDelay": "Wait before starting",
+  "settingsAutoScrollDelayNone": "No wait",
+  "settingsAutoScrollDelayValue": "{count, plural, one{{count} second} other{{count} seconds}}",
+  "@settingsAutoScrollDelayValue": {
+    "description": "Chosen delay before auto-scroll starts moving",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsSectionScreen": "Screen",
+  "settingsKeepScreenOn": "Keep the screen on",
+  "settingsKeepScreenOnHint": "Stop the screen dimming while a prayer is open",
+  "settingsStartImmersive": "Hide the bars while reading",
+  "settingsStartImmersiveHint": "Open every prayer full-screen; tap the page to bring the bars back",
+  "settingsSectionMore": "More",
+  "@settingsSectionMore": {
+    "description": "Heading for reading settings the reference artwork does not show but the app has"
+  },
+  "settingsNotificationsSubtitle": "Receive prayer-time reminders",
+  "@settingsNotificationsSubtitle": {
+    "description": "Subtitle of the master notification switch on the settings hub"
+  },
+  "goalTitle": "Set a goal",
+  "goalSkip": "Skip",
+  "@goalSkip": {
+    "description": "Onboarding-only action on the goal page: leave without setting a goal. Absent when the page is opened from settings, where there is nothing to skip."
+  },
+  "@goalTitle": {
+    "description": "Title of the goal-and-reminder page, reached from the settings hub"
+  },
+  "goalHeadline": "Make room for a quiet moment",
+  "goalSubtitle": "A small goal is what turns chanting into a daily habit",
+  "settingsGoalEntry": "Goal & reminders",
+  "@settingsGoalEntry": {
+    "description": "Settings hub row that opens the goal page"
+  },
+  "settingsGoalEntrySubtitle": "Times of day, days, and your daily goal",
+  "goalSectionSlots": "When you want to chant",
+  "goalEditingSlot": "Editing: {slot}",
+  "@goalEditingSlot": {
+    "description": "Header of the per-slot panel, naming the time of day the controls below belong to",
+    "placeholders": {
+      "slot": {
+        "type": "String"
+      }
+    }
+  },
+  "goalDailyAllSlots": "One goal across every time of day",
+  "@goalDailyAllSlots": {
+    "description": "Note under the daily-goal heading: the goal is one number for the whole day, not per slot"
+  },
+  "goalSectionDaily": "Daily goal",
+  "goalSectionDays": "Days",
+  "goalSlotEnabled": "Remind me at this time",
+  "goalSlotDisabledHint": "Turn this on to be reminded at this time of day",
+  "goalReminderTime": "Reminder time",
+  "goalCustomMinutes": "Custom",
+  "@goalCustomMinutes": {
+    "description": "Chip that opens the stepper for a daily goal outside the four presets"
+  },
+  "goalCustomTitle": "Daily goal",
+  "goalSummarySlot": "{slot} at {time} · {days}",
+  "@goalSummarySlot": {
+    "description": "One line of the summary card: slot name, time, and which days",
+    "placeholders": {
+      "slot": {
+        "type": "String"
+      },
+      "time": {
+        "type": "String"
+      },
+      "days": {
+        "type": "String"
+      }
+    }
+  },
+  "goalEveryDay": "Every day",
+  "reminderSlotMorning": "Morning",
+  "@reminderSlotMorning": {
+    "description": "Short name on the time-of-day tiles; the full names are reminderMorning etc."
+  },
+  "reminderSlotMidday": "Midday",
+  "reminderSlotEvening": "Evening",
+  "reminderSlotBedtime": "Bedtime",
+  "reminderMidday": "Midday chanting reminder",
+  "reminderBedtime": "Bedtime chanting reminder",
+  "reminderPickerMidday": "Midday reminder time",
+  "reminderPickerBedtime": "Bedtime reminder time",
+  "reminderNotificationMidday": "Time for midday chanting",
+  "reminderNotificationBedtime": "Time for bedtime chanting",
+  "settingsRemindersOffHint": "Turn notifications on to set reminder times",
+  "@settingsRemindersOffHint": {
+    "description": "Shown on the reminders page when the master notification switch is off"
+  },
+  "settingsLanguageSubtitle": "Choose the language used in the app",
+  "settingsThemeSubtitle": "Adjust the app's colours and theme",
+  "aboutAppSubtitle": "Version, app details and developer",
+  "settingsLegal": "Legal & privacy",
+  "@settingsLegal": {
+    "description": "Settings hub row that opens the privacy policy and terms page"
+  },
+  "settingsLegalSubtitle": "Privacy policy and terms of use",
+  "settingsSearch": "Search settings",
+  "@settingsSearch": {
+    "description": "Tooltip and field hint for the settings search button in the AppBar"
+  },
+  "settingsSearchEmpty": "No settings match your search",
+  "legalUpdated": "Effective 23 August 2026",
+  "@legalUpdated": {
+    "description": "Effective date of the policy — keep in sync with web/privacy.html"
+  },
+  "legalPrivacyTitle": "Privacy policy",
+  "legalPrivacyBody": "This app runs entirely offline. There are no accounts, no server, no ads and no analytics, so no personal data is collected, used or sent anywhere from your device.",
+  "@legalPrivacyBody": {
+    "description": "Summary of web/privacy.html — update both together"
+  },
+  "legalDataTitle": "Stored on your device only",
+  "legalDataBody": "Your display settings, saved prayers, your own prayer sets, the prayer and position you read last, and the reminder times you set are kept in your device's own storage. Uninstalling the app deletes all of it permanently.",
+  "legalPermissionsTitle": "Permissions the app uses",
+  "legalPermissionsBody": "The notification, run-after-restart and exact-alarm permissions are used only to deliver the prayer reminders you set. The camera is used only to scan a prayer-set QR code while that screen is open; no image is stored or sent anywhere.",
+  "legalTermsTitle": "Terms and conditions",
+  "legalTermsBody": "The app is free to use for chanting and Dhamma study. The prayer texts are transcribed from widely used chanting books and may contain errors, so always check them against the prayer book you rely on.",
+  "legalContentTitle": "Content licensing",
+  "legalContentBody": "The app's source code is released under the MIT License. The fonts and the bell recording keep the licence of their own source; reuse outside this app must be checked against the source cited for each.",
+  "@legalContentBody": {
+    "description": "The app's own licence note; mirrors web/privacy.html"
+  },
+  "settingsSectionReading": "Reading",
+  "@settingsSectionReading": {
+    "description": "Heading for the settings group covering reading mode and auto-scroll"
+  },
+  "settingsSectionText": "Text",
+  "@settingsSectionText": {
+    "description": "Heading for the settings group covering size, colour, line spacing and alignment of the chant text"
+  },
+  "settingsLanguage": "Language",
+  "@settingsLanguage": {
+    "description": "Label for the app language option"
+  },
+  "settingsLanguageSystem": "System default",
+  "@settingsLanguageSystem": {
+    "description": "Language option: follow the device language setting. Other language names are not translated; always use each language's own endonym. See AppLocale.endonym."
+  },
+  "settingsLanguageContentNote": "Languages without their own prayer edition show the Thai prayers",
+  "@settingsLanguageContentNote": {
+    "description": "Note under the language picker — prayer content ships per edition (kContentLanguages currently has Thai/English); UI languages without their own edition fall back to the Thai one, see docs/internationalization.md Phase 2"
+  },
+  "settingsTheme": "Theme",
+  "@settingsTheme": {
+    "description": "Label for the light/dark theme option"
+  },
+  "themeLight": "Light",
+  "themeDark": "Dark",
+  "themeSystem": "System",
+  "@themeSystem": {
+    "description": "Theme that follows the device setting — different from settingsLanguageSystem even though the Thai wording is identical; other languages may differ"
+  },
+  "settingsReadingMode": "Reading mode",
+  "readingModeSwipe": "One prayer at a time",
+  "readingModeContinuous": "Continuous scroll",
+  "readingModeSwipeHint": "Shows one prayer per page — swipe or use the buttons to move on",
+  "readingModeContinuousHint": "Shows every prayer in the category or set as one long page you can scroll through in a single pass",
+  "settingsAutoScroll": "Auto-scroll",
+  "autoScrollSlow": "Slow",
+  "autoScrollFast": "Fast",
+  "autoScrollLevel": "Level {level}",
+  "@autoScrollLevel": {
+    "description": "Label for the auto-scroll speed level (1–10)",
+    "placeholders": {
+      "level": {
+        "type": "int"
+      }
+    }
+  },
+  "autoScrollAutoStart": "Start scrolling when a prayer opens",
+  "autoScrollHint": "Use ▶ on the reading screen to start and stop. Scrolling by hand stops it automatically.",
+  "autoScrollOffHint": "Off — the ▶ button is hidden on the reading screen",
+  "settingsFontSize": "Text size",
+  "readingMoreSettings": "All reading settings",
+  "@readingMoreSettings": {
+    "description": "Link at the foot of the reader's text-size sheet, opening the full reading settings page"
+  },
+  "fontScalePercent": "{percent}%",
+  "@fontScalePercent": {
+    "description": "Font size as a percentage of the normal size",
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "fontSizeSample": "A",
+  "@fontSizeSample": {
+    "description": "Sample glyph shown on both ends of the font-size slider. Use a representative letter for the locale, such as A for English."
+  },
+  "settingsTextColor": "Text colour",
+  "textColorAuto": "Match theme",
+  "@textColorAuto": {
+    "description": "Text colour that follows the theme — different from themeSystem"
+  },
+  "textColorBrown": "Brown",
+  "textColorGold": "Gold",
+  "textColorBlue": "Blue",
+  "textColorGreen": "Green",
+  "textColorCustom": "Custom",
+  "@textColorCustom": {
+    "description": "Marks a lane as using a colour the user picked rather than one from the palette"
+  },
+  "textLaneChant": "Chant text",
+  "@textLaneChant": {
+    "description": "Name of the chant-text lane (Pali in Thai script) in the colour settings — the other two lanes reuse paliSectionTitle and labelMeaning"
+  },
+  "textColorPalette": "Palette",
+  "@textColorPalette": {
+    "description": "Heading above the row of preset swatches in the colour dialog"
+  },
+  "textColorPickCustom": "Pick your own",
+  "@textColorPickCustom": {
+    "description": "Heading above the two-dimensional colour field and hue strip in the colour dialog"
+  },
+  "textColorHexLabel": "Colour code",
+  "@textColorHexLabel": {
+    "description": "Label for the six-digit hex input, e.g. 6D4C2F"
+  },
+  "textColorHexInvalid": "Not a valid colour code",
+  "@textColorHexInvalid": {
+    "description": "Shown under the hex field when the value is not six hexadecimal digits"
+  },
+  "textColorEditingLight": "Setting the light theme's colour",
+  "@textColorEditingLight": {
+    "description": "Says the colour being picked applies to the light theme only; the dark theme keeps its own"
+  },
+  "textColorEditingDark": "Setting the dark theme's colour",
+  "@textColorEditingDark": {
+    "description": "Says the colour being picked applies to the dark theme only; the light theme keeps its own"
+  },
+  "textColorLowContrast": "Low contrast with the background; this may be hard to read",
+  "@textColorLowContrast": {
+    "description": "Warning when the chosen colour falls below the WCAG AA contrast ratio — a warning only, it does not block the choice"
+  },
+  "settingsShowPartTitles": "Show block headings",
+  "@settingsShowPartTitles": {
+    "description": "Switch for the per-block headings on the reading screen — every block in the file has a title, so short prayers get a heading on nearly every line"
+  },
+  "settingsShowPartTitlesHint": "Turn off if short prayers look cluttered — long ones use headings to find your place",
+  "@settingsShowPartTitlesHint": {
+    "description": "Hint under the block-headings switch"
+  },
+  "settingsLineSpacing": "Line spacing",
+  "lineSpacingCompact": "Tight",
+  "lineSpacingNormal": "Normal",
+  "lineSpacingLoose": "Loose",
+  "settingsTextAlign": "Text alignment",
+  "textAlignStart": "Left",
+  "textAlignJustify": "Justified",
+  "settingsSectionSignal": "Sound & vibration",
+  "@settingsSectionSignal": {
+    "description": "Heading for the completion-signal group — covers both the meditation timer and the mala counter, so it is not called “Meditation”"
+  },
+  "settingsCompletionSignal": "When a timer or mala completes",
+  "@settingsCompletionSignal": {
+    "description": "Label — applies both when a sitting ends and when the mala reaches its target"
+  },
+  "completionSignalSound": "Singing bowl",
+  "@completionSignalSound": {
+    "description": "Option: Tibetan singing bowl together with the vibration"
+  },
+  "completionSignalHaptic": "Vibrate",
+  "@completionSignalHaptic": {
+    "description": "Option: vibration only — the default, and the behaviour before sound existed"
+  },
+  "completionSignalSilent": "Silent",
+  "@completionSignalSilent": {
+    "description": "Option: neither sound nor vibration, for sitting with other people"
+  },
+  "completionSignalHint": "The singing bowl vibrates as well — a phone face-down on a cushion is felt before it is heard",
+  "@completionSignalHint": {
+    "description": "Hint under the completion-signal options"
+  },
+  "completionSignalWebNote": "Browsers block audio the user did not start, so the bowl only works in the installed app",
+  "@completionSignalWebNote": {
+    "description": "Note shown in place of the sound option on the web"
+  },
+  "completionVolume": "Bell volume",
+  "@completionVolume": {
+    "description": "Label of the slider that sets how loud the completion bell rings, and the settings-search entry for it"
+  },
+  "completionSoundTest": "Preview",
+  "@completionSoundTest": {
+    "description": "Button that plays the bell once from the settings screen"
+  },
+  "aboutSoundTitle": "Bell (Tibetan singing bowl)",
+  "@aboutSoundTitle": {
+    "description": "Heading of the sound credit entry on the About screen"
+  },
+  "aboutSoundSubtitle": "Recorded by Joseph SARDIN · BigSoundBank · public domain (CC0)",
+  "@aboutSoundSubtitle": {
+    "description": "Sound credit — CC0 requires no attribution, but this app credits every source anyway"
+  },
+  "aboutAmbientTitle": "Nature sounds",
+  "@aboutAmbientTitle": {
+    "description": "Heading of the nature-sound credit entry on the About screen"
+  },
+  "aboutAmbientSubtitle": "Recorded by Joseph SARDIN and Pierre SIBANARCO · BigSoundBank · public domain (CC0)",
+  "@aboutAmbientSubtitle": {
+    "description": "Nature-sound credit — CC0 requires no attribution, but this app credits every source anyway"
+  },
+  "completionHapticTest": "Test vibration",
+  "@completionHapticTest": {
+    "description": "Button that vibrates once from the settings screen — the app cannot read whether the device has vibration enabled, so this is the only way a user can check"
+  },
+  "completionSignalHapticHint": "Press “Test vibration” to check the device really vibrates. If nothing happens, turn vibration on in the device settings — the app can request a vibration but cannot read that setting.",
+  "@completionSignalHapticHint": {
+    "description": "Hint when vibrate is selected — says plainly that the app cannot detect the system haptic state (Flutter exposes no API, and iOS does not allow reading it)"
+  },
+  "completionSignalSilentHint": "Nothing will sound or vibrate when the time is up; the screen is the only signal.",
+  "@completionSignalSilentHint": {
+    "description": "Hint when silent is selected"
+  },
+  "settingsSectionReminders": "Reminders",
+  "remindersUnsupported": "Reminders only work in the mobile app",
+  "reminderMorning": "Morning chanting reminder",
+  "reminderEvening": "Evening chanting reminder",
+  "reminderPickerMorning": "Morning chanting reminder time",
+  "reminderPickerEvening": "Evening chanting reminder time",
+  "reminderExactAlarmTitle": "Reminders may arrive late",
+  "reminderExactAlarmBody": "To save battery, Android may delay reminders by several minutes. Allow “Alarms & reminders” so they arrive right on time.",
+  "reminderExactAlarmAction": "Open settings",
+  "contactDeveloper": "Contact the developer",
+  "contactDialogBody": "Found a mistake in a prayer, or have a suggestion? Email us at",
+  "copyEmail": "Copy email address",
+  "copiedEmail": "Email address copied",
+  "donateTitle": "Support the developer (Donate)",
+  "donateSubtitle": "Contribute whatever you feel moved to give",
+  "donateDialogTitle": "Support the developer",
+  "donateDialogBody": "This app is free with no ads. If these prayers have been of use to you, you are welcome to contribute whatever you feel moved to give.",
+  "promptPayTitle": "PromptPay",
+  "copyPromptPay": "Copy PromptPay number",
+  "copiedPromptPay": "PromptPay number copied",
+  "donateContactEmail": "Ask about ways to contribute by emailing {email}",
+  "@donateContactEmail": {
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "appName": "Chanting",
+  "@appName": {
+    "description": "App name shown to users — translatable, unlike the applicationId `th.chanting.app` which must never change (see docs/roadmap/todo.md and docs/internationalization.md Phase 3)"
+  },
+  "aboutApp": "About this app",
+  "appVersion": "Chanting version {version} (build {build})",
+  "@appVersion": {
+    "description": "Version line at the bottom of the settings screen — the app name is translatable, the version number is read from the real pubspec",
+    "placeholders": {
+      "version": {
+        "type": "String"
+      },
+      "build": {
+        "type": "String"
+      }
+    }
+  },
+  "aboutVersion": "Version {version}",
+  "@aboutVersion": {
+    "description": "Version number under the icon on the About screen — read from the real pubspec",
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "aboutSectionAbout": "About",
+  "aboutDescription": "A Thai–Pali prayer book that works entirely offline. The prayers follow the standard prayer books in common use. If you find a mistake, please check it against the prayer book you rely on.",
+  "aboutSectionScript": "Script & transliteration",
+  "@aboutSectionScript": {
+    "description": "Heading for the script section on the About screen — the chant text is Pali in Thai script, the companion field is Pali in Roman script"
+  },
+  "aboutScriptThaiTitle": "Chant text — Pali in Thai script",
+  "aboutScriptThaiBody": "The chant field is a reading guide for chanting, not Pali spelling. It breaks consonant clusters so they can be said aloud (dvi is written ทะวิ) and lengthens vowels the way they are actually chanted (añjali is written อัญชะลี). Transliterating the Thai reading back into Roman letters therefore produces misspelled Pali.",
+  "@aboutScriptThaiBody": {
+    "description": "Explains that the Thai-script reading is a pronunciation guide, not orthography — both examples are real errors that were found and fixed, recorded in docs/roadmap/todo.md"
+  },
+  "aboutScriptRomanTitle": "Roman — transliterated Pali",
+  "aboutScriptRomanBody": "The Roman field is transliterated from the Pali word forms, using diacritics for sounds plain Roman letters cannot show.",
+  "@aboutScriptRomanBody": {
+    "description": "Lead-in above the diacritics table"
+  },
+  "aboutScriptLongVowel": "Long vowel",
+  "@aboutScriptLongVowel": {
+    "description": "Meaning of the macron in the diacritics table"
+  },
+  "aboutScriptRetroflex": "Retroflex (dot below)",
+  "@aboutScriptRetroflex": {
+    "description": "Meaning of the dot below in the diacritics table. It corresponds to retroflex consonants in Thai script."
+  },
+  "aboutScriptVelarNasal": "Nasal, matching ง",
+  "@aboutScriptVelarNasal": {
+    "description": "Meaning of ṅ in the diacritics table"
+  },
+  "aboutScriptPalatalNasal": "Nasal, matching ญ",
+  "@aboutScriptPalatalNasal": {
+    "description": "Meaning of ñ in the diacritics table"
+  },
+  "aboutScriptNiggahita": "Niggahita",
+  "@aboutScriptNiggahita": {
+    "description": "Meaning of ṃ in the diacritics table"
+  },
+  "aboutScriptNiggahitaNote": "Two conventions for niggahita are both in use — dot below ṃ (IAST) and dot above ṁ (PTS). This app uses dot below everywhere. The sources it was transliterated from are entirely in Thai script, which always writes niggahita above the letter, so no printed edition settles which Roman form is right. This is a transliteration convention, not a change to the text.",
+  "@aboutScriptNiggahitaNote": {
+    "description": "Note under the diacritics table — do not loosely call one form 'the IAST/PTS way'; the two schools disagree. See docs/content/prayer-schema.md section 3"
+  },
+  "aboutFontsTitle": "Sarabun and Pridi fonts",
+  "@aboutFontsTitle": {
+    "description": "The font names (Sarabun/Pridi) and creator (Cadson Demak) are proper names, do not translate — only the word fonts may be translated"
+  },
+  "aboutFontsSubtitle": "By Cadson Demak, under the SIL Open Font License",
+  "@aboutFontsSubtitle": {
+    "description": "The licence name SIL Open Font License is a legal name, do not translate"
+  },
+  "aboutTranslationTitle": "English translation",
+  "@aboutTranslationTitle": {
+    "description": "Heading for the English-translation note on the About screen — shown only when the UI is English (the en edition that actually uses the English meanings)"
+  },
+  "aboutTranslationNote": "Unofficial, provided for understanding only — please check it against a translation you trust.",
+  "@aboutTranslationNote": {
+    "description": "Note that the English meanings are unofficial and not taken from a published edition — must stay honest; do not credit a source (e.g. A Chanting Guide) that was not actually used"
+  },
+  "aboutLicenses": "Open-source licences",
+  "welcomeTitle": "Welcome to Chanting",
+  "@welcomeTitle": {
+    "description": "Welcome sheet title for new users — the app name is part of the sentence; write a full natural sentence for each language, no placeholder needed"
+  },
+  "welcomeSubtitle": "A few things worth trying",
+  "welcomeButton": "Get started",
+  "tourNext": "Next",
+  "@tourNext": {
+    "description": "Home tour button: go to the next stop"
+  },
+  "tourSkip": "Skip",
+  "@tourSkip": {
+    "description": "Home tour button: leave the tour early"
+  },
+  "tourWelcomeBody": "A short tour of the home screen before you start.",
+  "@tourWelcomeBody": {
+    "description": "Home tour, opening card under the welcome title; the language picker sits below it"
+  },
+  "tourGoalBody": "Morning chanting in the morning, evening chanting from late afternoon. Tap Start to begin. The ring counts the minutes chanted and meditated today; tap it to set your goal.",
+  "@tourGoalBody": {
+    "description": "Home tour, stop on the today's-goal card: the service changes with the time of day, the ring counts minutes and opens the goal page"
+  },
+  "tourShortcutsBody": "Shortcuts to the categories you use most, the meditation timer and loving-kindness. Tap “View all” for every category and to pin more.",
+  "@tourShortcutsBody": {
+    "description": "Home tour, stop on the shortcut tiles; “View all” must match homeViewAll"
+  },
+  "tourRecommendedBody": "One recommended prayer a day, a new one every day.",
+  "@tourRecommendedBody": {
+    "description": "Home tour, stop on the recommended-prayer card"
+  },
+  "tourStartBody": "The centre button opens the service for this time of day. The bar takes you to all prayers, your library and settings.",
+  "@tourStartBody": {
+    "description": "Home tour, last stop on the bottom bar's start button"
+  },
+  "welcomeAmbientDetail": "Forest stream, rain, forest birds or sea waves, playing under your sitting.",
+  "@welcomeAmbientDetail": {
+    "description": "What's-new row for the meditation timer's nature sound"
+  },
+  "welcomeDailyGoalDetail": "The home card offers morning or evening chanting by the time of day, and the ring now counts meditation too.",
+  "@welcomeDailyGoalDetail": {
+    "description": "What's-new row for the home card: the service follows the clock and meditation time counts toward the daily goal"
+  },
+  "aboutReplayTour": "Show the home tour again",
+  "@aboutReplayTour": {
+    "description": "About screen row that goes to the home screen and runs the first-launch tour again"
+  },
+  "welcomeWhatsNewTitle": "What's new",
+  "@welcomeWhatsNewTitle": {
+    "description": "Welcome sheet title for existing users who just updated"
+  },
+  "welcomeWhatsNewSubtitle": "The latest update to Chanting",
+  "welcomeWhatsNewButton": "Try it",
+  "welcomeReadingModesTitle": "Two ways to read",
+  "welcomeReadingModesDetail": "Swipe through one prayer at a time, or scroll a whole category continuously (your choice, in Settings)",
+  "welcomeDragCategoryTitle": "Drag between categories",
+  "welcomeDragCategoryDetail": "While scrolling continuously, drag up past the end for the next category, or down past the top for the previous one. A ring shows how far you have to go, and dragging back before you let go cancels it.",
+  "welcomeAutoScrollDetail": "Press ▶ and chant along. It moves to the next prayer on its own — no need to touch the screen.",
+  "@welcomeAutoScrollDetail": {
+    "description": "This feature title reuses settingsAutoScroll shared with the settings screen — it is the same feature name"
+  },
+  "welcomePaliTitle": "Pali and translations",
+  "welcomePaliDetail": "Show or hide them on any prayer, either under each line or together at the end",
+  "welcomePlaylistsDetail": "Build your own sets, order them how you like, then chant straight through",
+  "@welcomePlaylistsDetail": {
+    "description": "This feature title reuses playlistsTitle shared with the prayer-sets screen"
+  },
+  "welcomeRemindersTitle": "Morning and evening reminders",
+  "welcomeRemindersDetail": "Set a daily reminder in Settings",
+  "welcomeHomeGridTitle": "A new home screen",
+  "@welcomeHomeGridTitle": {
+    "description": "Title announcing the grid-style home screen in the welcome sheet"
+  },
+  "welcomeHomeGridDetail": "Pick a prayer category right from the home screen, with shortcuts to your prayer sets and saved prayers",
+  "welcomeSearchHistoryDetail": "Your searches are remembered — tap the search box any time to reuse a recent one",
+  "@welcomeSearchHistoryDetail": {
+    "description": "Description of the search-history feature in the welcome sheet — the title reuses searchRecentHeader shared with the history panel"
+  },
+  "welcomeShareDetail": "Build a prayer set and send it to another device with a QR or a code — no internet needed",
+  "@welcomeShareDetail": {
+    "description": "Description of the set-sharing feature in the welcome sheet — the title reuses playlistShareTitle"
+  },
+  "playlistsTitle": "My prayer sets",
+  "@playlistsTitle": {
+    "description": "Title of the prayer-sets screen — also used as the feature heading in the welcome sheet"
+  },
+  "playlistCreateNew": "Create a new set",
+  "@playlistCreateNew": {
+    "description": "Title of the create card at the top of My prayer sets"
+  },
+  "playlistCreateHint": "Put your favourite prayers in order",
+  "@playlistCreateHint": {
+    "description": "Line under the create card's title on My prayer sets"
+  },
+  "playlistCreate": "Create a set",
+  "@playlistCreate": {
+    "description": "Used both for the + button on the prayer-sets screen and the dialog title when creating"
+  },
+  "playlistNameHint": "e.g. Before bed",
+  "@playlistNameHint": {
+    "description": "Example prayer-set name in the input field — translate to an example natural to the language, not a literal translation"
+  },
+  "playlistsEmptyMessage": "No prayer sets yet",
+  "playlistsEmptyDetail": "Create a set to arrange prayers in your own order,\nthen chant the whole set in one go",
+  "@playlistsEmptyDetail": {
+    "description": "\n is a line break; keep it where appropriate for the language"
+  },
+  "playlistPrayerCount": "{count, plural, =0{No prayers} one{1 prayer} other{{count} prayers}}",
+  "@playlistPrayerCount": {
+    "description": "Number of prayers — used both on the prayer-sets screen and on the home-screen category boxes — Thai has no plural form so only other is used; other languages may add the forms they need (one/few/many), gen-l10n handles it per ICU",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "playlistShareTitle": "Share prayer set",
+  "@playlistShareTitle": {
+    "description": "Name of the set-sharing feature — the title of the share page (opened from a set's share button) and the heading of its row in the welcome sheet"
+  },
+  "playlistShareScanHint": "On the other device, open \"Receive a set\" on the prayer sets screen and scan this code — or copy the code and send it in a chat",
+  "@playlistShareScanHint": {
+    "description": "Usage hint under the QR — the quoted menu name must match that language's playlistImportTitle"
+  },
+  "playlistShareTooLong": "This set is too long to scan as a QR code — use Copy code instead",
+  "@playlistShareTooLong": {
+    "description": "Shown instead of the QR when the code exceeds kShareQrMaxChars (the QR gets too dense to scan off a screen)"
+  },
+  "playlistShareQrSubtitle": "Let others scan to receive your prayer set",
+  "@playlistShareQrSubtitle": {
+    "description": "One line under the share page title saying what the page is for"
+  },
+  "playlistShareQrSemantics": "QR code for the prayer set {name}",
+  "@playlistShareQrSemantics": {
+    "description": "Screen-reader label for the QR on the share page",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "playlistShareQrCaption": "Scan to receive this set\nin the Chanting app",
+  "@playlistShareQrCaption": {
+    "description": "Caption under the QR on the share card \u2014 the line break is deliberate, the card is narrow"
+  },
+  "playlistShareQrMotto": "“Chant with heart, at peace every day”",
+  "@playlistShareQrMotto": {
+    "description": "Short devotional motto at the foot of the share card, in quotation marks"
+  },
+  "playlistShareHowTo": "How to use",
+  "@playlistShareHowTo": {
+    "description": "Heading of the help card under the share card; its body reuses playlistShareScanHint"
+  },
+  "playlistShareQrSave": "Save QR code",
+  "@playlistShareQrSave": {
+    "description": "Button at the foot of the share page that saves the QR card as an image to the photo gallery"
+  },
+  "playlistShareQrSaved": "QR code saved to Photos",
+  "@playlistShareQrSaved": {
+    "description": "SnackBar after the QR card image was saved to the photo gallery"
+  },
+  "playlistShareQrDownloaded": "QR code downloaded as an image",
+  "@playlistShareQrDownloaded": {
+    "description": "SnackBar on the web after the QR card image was downloaded as a PNG file"
+  },
+  "playlistShareQrSaveDenied": "No permission to save to Photos — allow it in the device settings",
+  "@playlistShareQrSaveDenied": {
+    "description": "SnackBar when the user refused the app access to the photo gallery"
+  },
+  "playlistShareQrSaveFailed": "Couldn't save the QR code — try again",
+  "@playlistShareQrSaveFailed": {
+    "description": "SnackBar when saving the QR card image failed for any other reason"
+  },
+  "playlistShareCopy": "Copy code",
+  "playlistShareCopied": "Code copied",
+  "playlistImportTitle": "Receive a set",
+  "@playlistImportTitle": {
+    "description": "Used as both the tooltip of the button on the playlists screen and the title of the receive page — playlistShareScanHint refers to this name"
+  },
+  "playlistReceiveSubtitle": "Learn it, chant along, and bring it into daily life",
+  "@playlistReceiveSubtitle": {
+    "description": "One line under the receive page title, beside the lotus rule"
+  },
+  "playlistReceiveHeading": "Receive a new set",
+  "@playlistReceiveHeading": {
+    "description": "Heading over the two ways to receive a set"
+  },
+  "playlistReceiveScanTitle": "Scan QR code",
+  "@playlistReceiveScanTitle": {
+    "description": "Title of the scan option on the receive page"
+  },
+  "playlistReceiveScanDetail": "Point the camera at a screen or picture",
+  "@playlistReceiveScanDetail": {
+    "description": "One line under the scan option \u2014 the scanner uses the camera, it does not open saved images"
+  },
+  "playlistReceiveScanMobileOnly": "Available on phones and the web",
+  "@playlistReceiveScanMobileOnly": {
+    "description": "Replaces the scan option's detail line in the desktop apps, where the camera scanner is not available and the card is disabled"
+  },
+  "playlistReceivePasteTitle": "Paste code",
+  "@playlistReceivePasteTitle": {
+    "description": "Title of the paste option on the receive page"
+  },
+  "playlistReceivePasteDetail": "Use a code you copied",
+  "@playlistReceivePasteDetail": {
+    "description": "One line under the paste option"
+  },
+  "playlistReceiveQuote": "“The gift of Dhamma excels all gifts”",
+  "@playlistReceiveQuote": {
+    "description": "Closing line on the receive page (Dhammapada 354), in quotation marks"
+  },
+  "playlistPasteTitle": "Paste a set code",
+  "@playlistPasteTitle": {
+    "description": "Title of the paste-a-code page"
+  },
+  "playlistPasteSubtitle": "Paste the code you were sent below",
+  "@playlistPasteSubtitle": {
+    "description": "One line under the paste page title"
+  },
+  "playlistPasteLabel": "Set code",
+  "@playlistPasteLabel": {
+    "description": "Label over the code field on the paste page"
+  },
+  "playlistPasteFromClipboard": "Paste from clipboard",
+  "@playlistPasteFromClipboard": {
+    "description": "Button that fills the code field from the clipboard"
+  },
+  "playlistPasteNote": "Copy the code from the set's share page, then paste it here",
+  "@playlistPasteNote": {
+    "description": "Help line under the paste button"
+  },
+  "playlistPasteClipboardEmpty": "The clipboard has no text",
+  "@playlistPasteClipboardEmpty": {
+    "description": "SnackBar when paste-from-clipboard finds nothing to paste"
+  },
+  "playlistImportHint": "Paste the copied code",
+  "@playlistImportHint": {
+    "description": "Hint text in the paste-code field"
+  },
+  "playlistImportInvalid": "That code isn't valid — check that you copied all of it",
+  "@playlistImportInvalid": {
+    "description": "Shown when the pasted code cannot be decoded; deliberately unspecific (a broken code can only be fixed by copying it again)"
+  },
+  "playlistImportSkipped": "{count, plural, one{Skipped 1 prayer this device doesn't have yet — try updating the app} other{Skipped {count} prayers this device doesn't have yet — try updating the app}}",
+  "@playlistImportSkipped": {
+    "description": "Warning in the import preview when the shared set contains ids this device doesn't know (usually the sender runs a newer app version) — Thai has no plural form so only other is used",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "playlistImportEmpty": "None of the prayers in this set are on this device — the other app may be newer; try updating first",
+  "@playlistImportEmpty": {
+    "description": "Shown instead of the preview when filtering leaves no prayers this device has — the add button is disabled"
+  },
+  "playlistImportAdd": "Receive this set",
+  "@playlistImportAdd": {
+    "description": "Confirm button at the foot of a received set's preview page; saves the set on this device"
+  },
+  "playlistPreviewSubtitle": "Check the prayers before you receive the set",
+  "@playlistPreviewSubtitle": {
+    "description": "Subtitle under the title of a received set's preview page, before it is saved"
+  },
+  "playlistScanSubtitle": "Scan to receive a prayer set",
+  "@playlistScanSubtitle": {
+    "description": "One line under the scan page title, beside the lotus rule"
+  },
+  "playlistScanFrameHint": "Fit the QR code inside the frame\nIt scans automatically",
+  "@playlistScanFrameHint": {
+    "description": "Hint over the live camera, under the gold frame \u2014 two lines on purpose"
+  },
+  "playlistScanFlash": "Flash",
+  "@playlistScanFlash": {
+    "description": "Label under the flash toggle on the camera"
+  },
+  "playlistScanGallery": "From photos",
+  "@playlistScanGallery": {
+    "description": "Label under the camera's button that picks a photo from the library and reads its QR"
+  },
+  "playlistScanHowTo": "How to scan",
+  "@playlistScanHowTo": {
+    "description": "Heading of the steps card on the scan page"
+  },
+  "playlistScanStep1": "Point the camera so the QR code sits in the frame",
+  "@playlistScanStep1": {
+    "description": "Scan step 1"
+  },
+  "playlistScanStep2": "It scans and shows the prayer set",
+  "@playlistScanStep2": {
+    "description": "Scan step 2"
+  },
+  "playlistScanStep3": "Tap “Receive this set” to keep it in your library",
+  "@playlistScanStep3": {
+    "description": "Scan step 3 \u2014 the quoted button must match playlistImportAdd"
+  },
+  "playlistScanOr": "or",
+  "@playlistScanOr": {
+    "description": "Word between the steps card and the pick-a-file card"
+  },
+  "playlistScanFileTitle": "Choose a file",
+  "@playlistScanFileTitle": {
+    "description": "Title of the card that picks an image file and reads its QR"
+  },
+  "playlistScanFileDetail": "Image files (jpg, png)",
+  "@playlistScanFileDetail": {
+    "description": "One line under playlistScanFileTitle"
+  },
+  "playlistScanWhereNote": "A QR code may be printed, or shared by a friend",
+  "@playlistScanWhereNote": {
+    "description": "Closing note at the foot of the scan page"
+  },
+  "playlistScanImageNotFound": "No prayer-set QR code in that image",
+  "@playlistScanImageNotFound": {
+    "description": "SnackBar when a picked image has no prayer-set QR"
+  },
+  "playlistScanImageFailed": "Couldn't read that image — try another",
+  "@playlistScanImageFailed": {
+    "description": "SnackBar when a picked image could not be opened or decoded"
+  },
+  "playlistScanCameraError": "Can't open the camera — check the app's camera permission in system settings",
+  "@playlistScanCameraError": {
+    "description": "Shown full-screen on the scan page when the camera is unavailable (usually a denied permission)"
+  },
+  "menuOptions": "Options",
+  "menuDeletePlaylist": "Delete set",
+  "menuMore": "More options",
+  "menuCopyPrayer": "Copy prayer",
+  "prayerCopied": "Prayer copied",
+  "menuReportError": "Report an error",
+  "@menuReportError": {
+    "description": "⋮ menu on the prayer reading screen — opens a sheet to report a content error for that prayer"
+  },
+  "reportSheetTitle": "Report an error",
+  "reportSheetIntro": "Point out what is wrong in “{title}” so the maintainer can review it",
+  "@reportSheetIntro": {
+    "description": "Caption at the top of the report sheet — {title} is the prayer being read",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "reportSelectedLabel": "Selected text",
+  "@reportSelectedLabel": {
+    "description": "Label of the box holding the text the user long-pressed on the reading screen before reporting — only shown when the report was opened from the selection toolbar"
+  },
+  "reportSelectHint": "Tip: long-press the prayer text to select the wrong part, then pick “Report an error” from the toolbar — the selection is attached to the report for you",
+  "@reportSelectHint": {
+    "description": "Hint in the report sheet when opened from the ⋮ menu (nothing selected) — points at the shortcut that pinpoints the error"
+  },
+  "reportFieldSection": "Which part",
+  "reportFieldText": "Chant text",
+  "reportFieldMeaning": "Translation",
+  "reportFieldPali": "Pali reading",
+  "reportFieldTitle": "Title",
+  "reportFieldOther": "Other",
+  "reportDetailLabel": "Details",
+  "reportDetailHint": "Describe what is wrong and how it should read",
+  "reportDetailRequired": "Please add details before sending",
+  "reportSubmit": "Send report",
+  "reportEmailSubject": "Prayer error report: {prayerId}",
+  "@reportEmailSubject": {
+    "description": "Report email subject — {prayerId} is the prayer id (not user-facing text)",
+    "placeholders": {
+      "prayerId": {
+        "type": "String"
+      }
+    }
+  },
+  "reportCopiedFallback": "Report copied — please paste and send it to {email}",
+  "@reportCopiedFallback": {
+    "description": "Shown when no mail app could be opened, so the report was copied to the clipboard instead — {email} is the maintainer's email",
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "fontDecrease": "Smaller text",
+  "fontIncrease": "Larger text",
+  "autoScrollStop": "Stop auto-scroll",
+  "@autoScrollStop": {
+    "description": "Tooltip for the ▶ button while scrolling — when stopped it uses settingsAutoScroll"
+  },
+  "favoriteAdd": "Save this prayer",
+  "favoriteRemove": "Remove from saved",
+  "prayerLoadError": "Could not load the prayer",
+  "prayerNotFound": "Prayer not found",
+  "prayerPosition": "{position} of {total}",
+  "@prayerPosition": {
+    "description": "Position of a prayer within a category/set, e.g. prayer 3/19",
+    "placeholders": {
+      "position": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "immersiveHint": "Tap the screen to leave full-screen mode",
+  "labelPali": "Pali",
+  "@labelPali": {
+    "description": "Chip that toggles Pali on/off — kept short because it sits inside a chip"
+  },
+  "labelMeaning": "Translation",
+  "@labelMeaning": {
+    "description": "Used both for the on/off chip and the heading of the meaning card at the end of a prayer"
+  },
+  "paliSectionTitle": "Pali (Romanized)",
+  "@paliSectionTitle": {
+    "description": "Heading of the Pali card at the end of a prayer — this label assumes Pali is an add-on to the Thai edition; it will need reworking in Phase 2 (other-language editions use Pali as the main content), see docs/internationalization.md the inversion"
+  },
+  "chipInline": "Under each line",
+  "chipEndOfPrayer": "At the end",
+  "inlineUnavailable": "This prayer's translation summarises the whole text, so it can only be shown at the end",
+  "edgeLastInPlaylist": "That's every prayer in the set",
+  "edgeLastInCategory": "This is the last prayer in the category",
+  "edgeFirstInPlaylist": "This is the first prayer in the set",
+  "edgeFirstInCategory": "This is the first prayer in the category",
+  "playlistEnd": "End of \"{name}\"",
+  "@playlistEnd": {
+    "description": "End-of-set label in continuous mode — name is the user own set name, not translated",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "categoryEnd": "End of {category}",
+  "@categoryEnd": {
+    "description": "End-of-category label in continuous mode — category comes from prayers-th.json so it stays Thai in every language until per-language prayer files exist (docs/internationalization.md Phase 2)",
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
+  "prevCategory": "Previous category",
+  "prevCategoryHint": "Or keep dragging down at the top to go back a category",
+  "nextCategory": "Next category",
+  "nextCategoryHint": "Or keep dragging up at the end for the next category (drag back down before letting go to cancel)",
+  "pullReleaseNext": "Release for \"{category}\"",
+  "@pullReleaseNext": {
+    "description": "Text under the ring while dragging to change category — the drag has reached the threshold, you can release",
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
+  "pullReleasePrev": "Release to go back to \"{category}\"",
+  "@pullReleasePrev": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
+  "pullMoreNextPrayer": "Keep dragging up for \"{name}\"",
+  "@pullMoreNextPrayer": {
+    "description": "Like pullMoreNext, but swipe mode advances one **prayer** at a time, not one category",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "pullReleaseNextPrayer": "Release for \"{name}\"",
+  "@pullReleaseNextPrayer": {
+    "description": "Threshold reached in swipe mode — releasing goes to the next prayer",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "pullMorePrevPrayer": "Keep dragging down for \"{name}\"",
+  "@pullMorePrevPrayer": {
+    "description": "Dragging down at the top in swipe mode, threshold not reached yet",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "pullReleasePrevPrayer": "Release to go back to \"{name}\"",
+  "@pullReleasePrevPrayer": {
+    "description": "Threshold reached — releasing goes back to the previous prayer",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "pullMoreNext": "Keep dragging up for \"{category}\"",
+  "@pullMoreNext": {
+    "description": "The drag has not reached the threshold yet — keep dragging",
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
+  "pullMorePrev": "Keep dragging down for \"{category}\"",
+  "@pullMorePrev": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
+  "pullCancelDown": "Drag back down to cancel",
+  "pullCancelUp": "Drag back up to cancel",
+  "loading": "Preparing prayers…",
+  "notFound": "Page not found",
+  "categoryCreatePlaylist": "Create a prayer set from this",
+  "@categoryCreatePlaylist": {
+    "description": "Button on the category screen — copies the category's prayers into an editable prayer set of the user's own (the category itself is unchanged)"
+  },
+  "categoryPlaylistCreated": "Created the prayer set \"{name}\"",
+  "@categoryPlaylistCreated": {
+    "description": "Snackbar shown after creating a prayer set from a category",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "openAction": "Open",
+  "@openAction": {
+    "description": "Snackbar action that jumps to the thing just created"
+  },
+  "sectionAddPrayer": "Add a prayer to this",
+  "@sectionAddPrayer": {
+    "description": "Button on the category screen — append your own prayers to the category while the category itself keeps receiving content updates"
+  },
+  "sectionExtraBadge": "Added by you",
+  "@sectionExtraBadge": {
+    "description": "Badge on prayers the user appended to a category, distinguishing them from the shipped ones"
+  },
+  "sectionExtraRemove": "Remove from this category",
+  "@sectionExtraRemove": {
+    "description": "Removes a prayer the user appended (only their own additions can be removed)"
+  },
+  "sectionExtraAdded": "Added to the category",
+  "@sectionExtraAdded": {
+    "description": "Snackbar shown after appending a prayer to a category"
+  },
+  "sectionExtraRemoved": "Removed from the category",
+  "@sectionExtraRemoved": {
+    "description": "Snackbar shown after removing an appended prayer — paired with an undo button"
+  },
+  "undoAction": "Undo",
+  "@undoAction": {
+    "description": "Undo button in a snackbar — for actions that silently drop something when mis-tapped"
+  },
+  "categoryEmptyMessage": "No prayers in this category yet",
+  "@categoryEmptyMessage": {
+    "description": "A category page with no prayers — happens when every prayer was moved out but the category stayed in the file"
+  },
+  "categoryEmptyDetail": "Tap ⋮ at the top right and choose \"Add a prayer to this category\"",
+  "@categoryEmptyDetail": {
+    "description": "Detail line under the empty-category message — points at the menu that can append prayers"
+  },
+  "sectionIconChange": "Change the category icon",
+  "@sectionIconChange": {
+    "description": "Tap the leading icon on the All-categories screen to change it (this device only)"
+  },
+  "sectionIconTitle": "Icon for \"{name}\"",
+  "@sectionIconTitle": {
+    "description": "Title of the category icon picker dialog",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "sectionIconReset": "Use the category's own icon",
+  "@sectionIconReset": {
+    "description": "Button in the icon picker — drops the user's own choice and goes back to the shipped one (so a later release's icon applies again)"
+  },
+  "sectionCount": "{count, plural, =0{No categories} one{1 category} other{{count} categories}}",
+  "@sectionCount": {
+    "description": "A number of categories — used under the \"All categories\" home tile (a different unit from playlistPrayerCount, which counts prayers)",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "homeAllCategories": "All categories",
+  "@homeAllCategories": {
+    "description": "Home-screen box opening the list of every category — categories that are not pinned live in here; also used as that screen's title"
+  },
+  "pinToHome": "Pin to home",
+  "@pinToHome": {
+    "description": "Pin action (reader menu / category screen button / playlist row button)"
+  },
+  "unpinFromHome": "Unpin from home",
+  "@unpinFromHome": {
+    "description": "Unpin action — the opposite wording of pinToHome, shown in the same place when already pinned"
+  },
+  "pinnedAdded": "Pinned to home",
+  "@pinnedAdded": {
+    "description": "Snackbar shown after pinning succeeds"
+  },
+  "pinnedRemoved": "Unpinned",
+  "@pinnedRemoved": {
+    "description": "Snackbar shown after unpinning"
+  },
+  "homeAllPrayers": "All prayers",
+  "@homeAllPrayers": {
+    "description": "Home-screen box that opens the full prayer list across every category — also used as that list screen's title"
+  },
+  "homeGreetingMorning": "Good morning",
+  "@homeGreetingMorning": {
+    "description": "Home header greeting from 05:00\u201310:59 local time"
+  },
+  "homeGreetingMorningSubtitle": "Begin with a peaceful mind",
+  "@homeGreetingMorningSubtitle": {
+    "description": "Line under the morning greeting on the home header"
+  },
+  "homeGreetingMidday": "Good afternoon",
+  "@homeGreetingMidday": {
+    "description": "Home header greeting from 11:00\u201315:59 local time"
+  },
+  "homeGreetingMiddaySubtitle": "A quiet moment in the middle of the day",
+  "@homeGreetingMiddaySubtitle": {
+    "description": "Line under the midday greeting on the home header"
+  },
+  "homeGreetingEvening": "Good evening",
+  "@homeGreetingEvening": {
+    "description": "Home header greeting from 16:00\u201318:59 local time"
+  },
+  "homeGreetingEveningSubtitle": "Close the day in peace",
+  "@homeGreetingEveningSubtitle": {
+    "description": "Line under the evening greeting on the home header"
+  },
+  "homeGreetingNight": "Good night",
+  "@homeGreetingNight": {
+    "description": "Home header greeting from 19:00\u201304:59 local time"
+  },
+  "homeGreetingNightSubtitle": "Settle the mind before you rest",
+  "@homeGreetingNightSubtitle": {
+    "description": "Line under the night greeting on the home header"
+  },
+  "homeNotifications": "Chanting reminders",
+  "homeTodayGoal": "Today's goal",
+  "homePracticeTitle": "Morning chanting",
+  "homeStartChanting": "Start chanting",
+  "homeQuickAccess": "Quick access",
+  "homeViewAll": "View all",
+  "homeMetta": "Loving-kindness",
+  "homeRecommendedTitle": "Today's recommended prayer",
+  "homeContinueTitle": "Continue chanting",
+  "homeRecommendedDescription": "For calm and auspiciousness",
+  "homeOpenPrayer": "Open prayer",
+  "navHome": "Home",
+  "navPrayers": "Prayers",
+  "navStart": "Start",
+  "navLibrary": "Library",
+  "navSettings": "Settings",
+  "homeGoalUnit": "min",
+  "@homeGoalUnit": {
+    "description": "Unit under the number inside the home card's daily goal ring — minutes"
+  },
+  "homeGoalRing": "Chanted {done} of {goal} minutes today",
+  "@homeGoalRing": {
+    "description": "Screen-reader label for the home card's daily goal ring",
+    "placeholders": {
+      "done": {
+        "type": "int"
+      },
+      "goal": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsPracticeGoal": "Daily chanting goal",
+  "@settingsPracticeGoal": {
+    "description": "Settings row that sets the daily chanting goal shown by the home card's ring"
+  },
+  "settingsPracticeGoalHint": "Counts time with a prayer open and time spent meditating; the home ring fills as you reach the goal.",
+  "@settingsPracticeGoalHint": {
+    "description": "Explains what the daily goal counts: time with a prayer open in the foreground, plus meditation sittings"
+  },
+  "searchHint": "Search prayers…",
+  "searchClear": "Clear search",
+  "@searchClear": {
+    "description": "Tooltip of the X at the end of the Prayers search field — wipes the query in one tap (only shown while there is a query)"
+  },
+  "searchRecentHeader": "Recent searches",
+  "@searchRecentHeader": {
+    "description": "Small header on the search-history panel under the search bar — languages with letter case are rendered uppercase in code"
+  },
+  "prayerListEmpty": "No prayers yet",
+  "searchNoResults": "No prayers match your search",
+  "resumeReading": "Continue",
+  "favoritesTitle": "Saved prayers",
+  "favoritesLoadError": "Could not load the list",
+  "favoritesEmptyMessage": "No saved prayers yet",
+  "favoritesEmptyDetail": "Tap the heart while reading a prayer to save it",
+  "playlistNotFound": "Set not found",
+  "playlistEmptyMessage": "This set has no prayers yet",
+  "playlistEmptyDetail": "Tap “Edit” to choose prayers for this set",
+  "@playlistEmptyDetail": {
+    "description": "Refers to the playlistEditShort button — translate to match the wording on that button in the language"
+  },
+  "playlistStartChanting": "Start chanting",
+  "playlistRemovePrayer": "Remove from set",
+  "playlistsSearchHint": "Search sets…",
+  "@playlistsSearchHint": {
+    "description": "Hint in the search field on My prayer sets"
+  },
+  "playlistsSearchEmpty": "No set matches your search",
+  "@playlistsSearchEmpty": {
+    "description": "Shown on My prayer sets when no set matches the search"
+  },
+  "playlistsSort": "Sort",
+  "@playlistsSort": {
+    "description": "Button beside the search on My prayer sets that opens the sort orders"
+  },
+  "playlistsSortCreated": "Order created",
+  "@playlistsSortCreated": {
+    "description": "Sort order: the order the sets were made in"
+  },
+  "playlistsSortName": "Name A–Z",
+  "@playlistsSortName": {
+    "description": "Sort order: by name, alphabetically"
+  },
+  "playlistsSortCount": "Most prayers",
+  "@playlistsSortCount": {
+    "description": "Sort order: the sets with the most prayers first"
+  },
+  "playlistsReceiveInstead": "Or receive a set from another device",
+  "@playlistsReceiveInstead": {
+    "description": "Link under the create card on My prayer sets while there is no set yet; opens the receive page"
+  },
+  "playlistsSubtitle": "Your own sets of prayers, chanted straight through",
+  "playlistDeleted": "Deleted “{name}”",
+  "playlistUndo": "Undo",
+  "playlistEditTitle": "Edit set",
+  "playlistEditShort": "Edit",
+  "playlistEditSubtitle": "Gather the prayers you want into a set of your own",
+  "playlistNameLabel": "Set name",
+  "playlistNameRequired": "Name the set before saving",
+  "playlistDescriptionLabel": "Description",
+  "playlistDescriptionHint": "e.g. Start the day with a calm mind",
+  "playlistTabChoose": "Choose prayers",
+  "playlistTabSelected": "Selected ({count})",
+  "playlistFilterAll": "All",
+  "playlistSearchHint": "Search prayers…",
+  "playlistPrayerAdded": "Prayer added",
+  "playlistPrayerRemoved": "Prayer removed",
+  "@playlistPrayerRemoved": {
+    "description": "Brief confirmation after taking a prayer out of the set in the set editor"
+  },
+  "playlistAddToSet": "Add to set",
+  "playlistReorder": "Reorder",
+  "@playlistReorder": {
+    "description": "Button beside the set page's prayer list that opens the edit page on the chosen prayers, to change their order"
+  },
+  "playlistReorderHint": "Press and hold, then drag to reorder",
+  "playlistSelectedEmpty": "No prayers chosen yet",
+  "playlistSelectedEmptyDetail": "Pick prayers on the “Choose prayers” tab",
+  "playlistSave": "Save set",
+  "playlistSavedTitle": "Set created",
+  "playlistSavedMessage": "“{name}” is saved",
+  "playlistViewSet": "View set",
+  "playlistBackHome": "Back to home",
+  "playlistDiscardTitle": "Discard changes?",
+  "playlistDiscardBody": "Anything not saved will be lost.",
+  "playlistDiscard": "Discard",
+  "playlistKeepEditing": "Keep editing",
+  "playlistDetailTitle": "Prayer set",
+  "playlistDetailSubtitle": "Chant from the heart, at peace every day",
+  "playlistPlayAll": "Chant the whole set",
+  "playlistPlayAllDetail": "{count, plural, =1{1 prayer, straight through} other{{count} prayers, straight through}}",
+  "playlistPrayersHeading": "Prayers ({count})",
+  "playlistPin": "Pin",
+  "playlistUnpin": "Unpin",
+  "playlistPrayerMinutes": "{count, plural, =1{1 min} other{{count} min}}",
+  "notificationChannelName": "Prayer time reminders",
+  "@notificationChannelName": {
+    "description": "Notification channel name shown in Android settings — not inside our app"
+  },
+  "notificationChannelDescription": "Daily morning and evening chanting reminders",
+  "reminderNotificationMorning": "Time for morning chanting",
+  "@reminderNotificationMorning": {
+    "description": "Notification title — the OS stores the text from when it was scheduled, so it must be rescheduled when the language changes (RemindersController handles this)"
+  },
+  "reminderNotificationEvening": "Time for evening chanting",
+  "reminderNotificationBody": "Time to chant — may your mind be calm and bright",
+  "meditationTitle": "Meditation",
+  "@meditationTitle": {
+    "description": "Meditation timer feature name — used as both the home-screen box label and the timer screen's title"
+  },
+  "meditationMinutes": "{count, plural, one{{count} minute} other{{count} minutes}}",
+  "@meditationMinutes": {
+    "description": "Duration chip label for the meditation timer (5/10/15/20/30 minutes) — Thai has no plural form so only other is used there",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "durationHours": "{hours} h",
+  "@durationHours": {
+    "description": "A duration of whole hours, on the meditation timer's custom chip and sitting screen",
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      }
+    }
+  },
+  "durationHoursMinutes": "{hours} h {minutes} min",
+  "@durationHoursMinutes": {
+    "description": "A duration of an hour or more with minutes left over, on the meditation timer's custom chip and sitting screen",
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      },
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "meditationInProgress": "Meditating",
+  "meditationRemaining": "Time remaining",
+  "meditationEndPractice": "End practice",
+  "meditationSessionGuidance": "Relax your body and return to the breath",
+  "meditationPause": "Pause",
+  "meditationResume": "Resume",
+  "meditationReset": "Reset",
+  "meditationDone": "Time's up",
+  "meditationScreenOnNote": "The screen stays on while the timer runs",
+  "meditationStartLong": "Start sitting",
+  "@meditationStartLong": {
+    "description": "Main button on the meditation timer that begins a sitting"
+  },
+  "meditationOptions": "Sitting options",
+  "@meditationOptions": {
+    "description": "Heading of the card holding the meditation timer's per-session options"
+  },
+  "meditationStartSignal": "Start signal",
+  "@meditationStartSignal": {
+    "description": "Option row: how the timer announces that a sitting has begun"
+  },
+  "meditationEndSignal": "End signal",
+  "@meditationEndSignal": {
+    "description": "Option row: how the timer announces that a sitting has finished; the same setting as Settings' completion signal"
+  },
+  "meditationAmbient": "Nature sound",
+  "@meditationAmbient": {
+    "description": "Option row and session card: the nature sound that loops under a sitting"
+  },
+  "meditationBackground": "Background sound",
+  "@meditationBackground": {
+    "description": "Option row on the meditation setup card that opens the nature-sound picker"
+  },
+  "meditationAmbientVolume": "Nature sound volume",
+  "@meditationAmbientVolume": {
+    "description": "Screen-reader label of the nature-sound volume slider on the session screen"
+  },
+  "ambientNone": "No sound",
+  "@ambientNone": {
+    "description": "Nature-sound choice: nothing plays. The default"
+  },
+  "ambientForestStream": "Forest stream",
+  "@ambientForestStream": {
+    "description": "Nature-sound choice: a stream running through a forest"
+  },
+  "ambientRain": "Rain",
+  "@ambientRain": {
+    "description": "Nature-sound choice: steady rain, no thunder"
+  },
+  "ambientForestBirds": "Forest birds",
+  "@ambientForestBirds": {
+    "description": "Nature-sound choice: birdsong in a forest"
+  },
+  "ambientSeaWaves": "Sea waves",
+  "@ambientSeaWaves": {
+    "description": "Nature-sound choice: small waves on a beach"
+  },
+  "meditationCustom": "Custom",
+  "@meditationCustom": {
+    "description": "Chip that opens the custom-duration input for the meditation timer when the set value doesn't match a preset chip — when selected it shows the custom minute count instead of this word"
+  },
+  "meditationCustomTitle": "Custom duration",
+  "@meditationCustomTitle": {
+    "description": "Title of the dialog for entering a custom number of meditation minutes"
+  },
+  "meditationCustomHint": "Minutes (1–{max})",
+  "@meditationCustomHint": {
+    "description": "Label for the minutes input, stating the allowed range (1 to the maximum)",
+    "placeholders": {
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "durationHoursLabel": "Hours",
+  "@durationHoursLabel": {
+    "description": "Heading over the hours wheel in the custom meditation duration dialog"
+  },
+  "durationMinutesLabel": "Minutes",
+  "@durationMinutesLabel": {
+    "description": "Heading over the minutes wheel in the custom meditation duration dialog"
+  },
+  "welcomeMeditationTitle": "Meditation",
+  "welcomeMeditationDetail": "Set a meditation timer — keeps the screen on and vibrates when time's up",
+  "welcomeMalaDetail": "A floating counter on the reading screen — set a target, feel it buzz when you reach it",
+  "malaTitle": "Chant counter",
+  "@malaTitle": {
+    "description": "Name of the mala (prayer-bead) chant counter feature — a reading-screen menu toggles the floating counter"
+  },
+  "malaProgress": "{count} / {target}",
+  "@malaProgress": {
+    "description": "Current count over target on the floating counter (e.g. 27 / 108)",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
+  "malaRounds": "{count, plural, one{{count} round} other{{count} rounds}}",
+  "@malaRounds": {
+    "description": "Round-count targets in the set-target menu (9/27/108) — Thai has no plural form so only other is used there",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "malaSetTarget": "Set target",
+  "@malaSetTarget": {
+    "description": "Tooltip for the set-target menu button on the floating counter"
+  },
+  "malaCustomTarget": "Custom target",
+  "@malaCustomTarget": {
+    "description": "Menu item / dialog title for entering a custom round target"
+  },
+  "malaTargetHint": "Rounds (1–{max})",
+  "@malaTargetHint": {
+    "description": "Label for the target input, stating the allowed range",
+    "placeholders": {
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "malaReset": "Reset count",
+  "@malaReset": {
+    "description": "Menu item that resets the counter to zero"
+  },
+  "malaHide": "Hide counter",
+  "@malaHide": {
+    "description": "Tooltip for the button that hides the floating counter (the value is kept)"
+  }
+}

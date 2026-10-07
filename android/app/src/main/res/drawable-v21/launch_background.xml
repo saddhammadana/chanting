@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The window behind Flutter until its first frame: the lotus loader of
+     design/mobile/serene/21, as far as a static drawable can draw it.
+     On Android 12+ the system splash (values-v31) shows first with the same
+     lotus at the same size, so the hand-over between the two does not move. -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@color/splash_background" />
+    <item>
+        <bitmap
+            android:gravity="center"
+            android:src="@drawable/splash_lotus" />
+    </item>
+</layer-list>

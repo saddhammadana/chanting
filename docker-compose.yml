@@ -1,0 +1,135 @@
+# Build Android artifacts in a container. Some dev machines do not have the
+# Android SDK installed, so this uses the same Cirrus Flutter image as GitHub Actions.
+#
+# Usage:
+#   docker compose run --rm apk        # release APK for all ABIs
+#   docker compose run --rm apk-arm64  # arm64-only APK, much faster for testing
+#   docker compose run --rm aab        # App Bundle (.aab) for Play Store
+#
+# Outputs are copied back to the host under dist/:
+#   apk       → dist/app-release.apk
+#   apk-arm64 → dist/app-release-arm64.apk
+#   aab       → dist/app-release.aab
+#
+# Why this is fast:
+# build/, .dart_tool/, and android/.gradle live in named volumes instead of bind
+# mounts. On Windows, writing thousands of files through a bind mount is the main
+# bottleneck, so keeping build I/O on the Linux side is much faster and preserves
+# incremental builds across runs. It also keeps host and container build outputs
+# separate, avoiding flutter clean when switching environments.
+#
+# Clear all caches if builds go stale:
+#   docker compose down --volumes
+#
+# Signing:
+#   - Without android/key.properties, the build uses the debug key. This can be
+#     installed for testing but cannot be uploaded to Play Store. CI does the same.
+#   - For real signing, place the .jks file somewhere such as the repo root,
+#     uncomment the keystore mount in x-flutter-build, and create
+#     android/key.properties (already gitignored) with storeFile pointing at the
+#     container path:
+#         storeFile=/keystore/release.jks
+#     See android/key.properties.example.
+
+# Hide the Kotlin Gradle Plugin warning block.
+# Every build prints an 8-line block: "Your app uses the following plugins that apply
+# Kotlin Gradle Plugin (KGP): flutter_timezone, mobile_scanner, wakelock_plus"
+# This cannot be fixed at the source; see android/gradle.properties. Flutter
+# checks plugin build.gradle files with a regex, so an unreachable
+# apply plugin: 'kotlin-android' line inside an if still counts. We also cannot
+# enable android.builtInKotlin=true because of flutter_local_notifications.
+#
+# The output filter is deliberately tied to these exact three plugin names. If a
+# new plugin appears in the warning, the pattern stops matching and the warning
+# becomes visible again, which is the intended behavior.
+#
+# set -o pipefail is required. Without it, a failed build piped through sed exits
+# with sed's status and can be reported as successful.
+
+# Shared service template. docker compose ignores x-* extension keys.
+x-flutter-build: &flutter-build
+  # Pinned to the same image .github/workflows uses, so a store artifact built
+  # here is built with the Flutter that tested it. 3.44.0 is the newest tag the
+  # image publishes; README.md's 3.44.6 has none. `stable` used to be here,
+  # which quietly moved under the build.
+  image: ghcr.io/cirruslabs/flutter:3.44.0
+  working_dir: /app
+  environment:
+    # Force caches into named volumes, independent of the image home directory.
+    PUB_CACHE: /cache/pub
+    GRADLE_USER_HOME: /cache/gradle
+    # Disable Gradle file watching only inside the container. /app is a bind
+    # mount through VirtioFS, which does not relay inotify events reliably; Gradle
+    # falls back to scanning anyway, but the watcher adds noisy NativeException
+    # logs. Keep this here instead of android/gradle.properties so host builds can
+    # still benefit from file watching.
+    GRADLE_OPTS: -Dorg.gradle.vfs.watch=false
+  volumes:
+    - .:/app                     # Source tree. Writes only copy artifacts into dist/.
+    - pub-cache:/cache/pub       # Pub package cache shared across builds.
+    - gradle-cache:/cache/gradle
+    # Heavy build I/O stays in volumes; see the performance notes above.
+    - build-cache:/app/build
+    - dart-tool-cache:/app/.dart_tool
+    - android-gradle-cache:/app/android/.gradle
+    # Real signing: uncomment and place release.jks at the project root.
+    # - ./release.jks:/keystore/release.jks:ro
+
+services:
+  apk:
+    <<: *flutter-build
+    # safe.directory avoids Git dubious-ownership errors for root inside the container.
+    # Folded scalar: equally indented lines are joined with spaces.
+    command: >
+      bash -lc "set -o pipefail &&
+      git config --global --add safe.directory /app &&
+      flutter pub get &&
+      flutter build apk --release 2>&1 | sed '/^WARNING: Your app uses the following plugins that apply Kotlin Gradle Plugin (KGP): flutter_timezone, mobile_scanner, wakelock_plus$/,/for-plugin-authors$/d' &&
+      mkdir -p dist &&
+      cp build/app/outputs/flutter-apk/app-release.apk dist/"
+
+  # arm64 only. Skips AOT compilation for arm32/x64, roughly halving build time
+  # while still covering nearly every real test device.
+  apk-arm64:
+    <<: *flutter-build
+    command: >
+      bash -lc "set -o pipefail &&
+      git config --global --add safe.directory /app &&
+      flutter pub get &&
+      flutter build apk --release --target-platform android-arm64 2>&1 | sed '/^WARNING: Your app uses the following plugins that apply Kotlin Gradle Plugin (KGP): flutter_timezone, mobile_scanner, wakelock_plus$/,/for-plugin-authors$/d' &&
+      mkdir -p dist &&
+      cp build/app/outputs/flutter-apk/app-release.apk dist/app-release-arm64.apk"
+
+  aab:
+    <<: *flutter-build
+    command: >
+      bash -lc "set -o pipefail &&
+      git config --global --add safe.directory /app &&
+      flutter pub get &&
+      flutter build appbundle --release 2>&1 | sed '/^WARNING: Your app uses the following plugins that apply Kotlin Gradle Plugin (KGP): flutter_timezone, mobile_scanner, wakelock_plus$/,/for-plugin-authors$/d' &&
+      mkdir -p dist &&
+      cp build/app/outputs/bundle/release/app-release.aab dist/"
+
+  # Maintenance helper for the caches above, driven by Taskfile.yml (task cache:*).
+  # It mounts the same volumes under a small image so inspecting or repairing a
+  # cache does not pull the much larger Flutter image, and so the volumes are
+  # created by compose with the usual project labels.
+  #
+  # Entrypoint is a shell: docker compose run --rm cache-tools '<script>'.
+  cache-tools:
+    image: alpine:3
+    entrypoint: ["sh", "-c"]
+    command: ["du -sh /cache/caches/* 2>/dev/null"]
+    volumes:
+      - gradle-cache:/cache
+      - android-gradle-cache:/gradle-project
+      - build-cache:/build
+      - dart-tool-cache:/dart-tool
+      - pub-cache:/pub
+
+volumes:
+  pub-cache:
+  gradle-cache:
+  build-cache:
+  dart-tool-cache:
+  android-gradle-cache:

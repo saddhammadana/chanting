@@ -1,0 +1,40 @@
+name: apk
+
+# Build an APK on CI for download from the run's artifacts. CI has no
+# key.properties, so this is debug-signed: installable for testing, not
+# suitable for store upload.
+#
+# Manual on demand, automatic on a version tag: a tagged release should leave a
+# downloadable build behind without anyone remembering to press the button.
+# The store artifact is built locally with the signing key (see
+# docs/store/release.md).
+on:
+  workflow_dispatch:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: read
+
+jobs:
+  build_apk:
+    runs-on: ubuntu-latest
+    container: ghcr.io/cirruslabs/flutter:3.44.0
+    env:
+      PUB_CACHE: ${{ github.workspace }}/.pub-cache
+    steps:
+      - uses: actions/checkout@v4
+      - run: git config --global --add safe.directory '*'
+      # Read-only: the test job is what fills this cache.
+      - uses: actions/cache/restore@v4
+        with:
+          path: |
+            .pub-cache
+            .dart_tool
+          key: pub-${{ hashFiles('pubspec.lock') }}
+      - run: flutter build apk --release
+      - uses: actions/upload-artifact@v4
+        with:
+          name: chanting-apk
+          path: build/app/outputs/flutter-apk/app-release.apk
+          retention-days: 30

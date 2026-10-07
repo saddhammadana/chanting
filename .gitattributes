@@ -1,0 +1,17 @@
+# Text is stored and checked out with LF on every platform. The exported prayer
+# data must match the admin's output byte for byte, so a CRLF checkout would
+# show every line as changed.
+* text=auto eol=lf
+
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
+*.png binary
+*.webp binary
+*.jpg binary
+*.ico binary
+*.ttf binary
+*.mp3 binary
+*.jks binary
+*.keystore binary

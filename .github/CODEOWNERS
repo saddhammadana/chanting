@@ -1,0 +1,25 @@
+# Who has to approve a change, by area. GitHub reads this file for pull
+# requests and, on a protected branch with "require code owner approval",
+# enforces it. Entries are GitHub usernames, so no email address is published
+# with the repository.
+#
+# One maintainer today, so this file is less about splitting ownership than
+# about the areas where a pull request must not slip through unread: the
+# signing and privacy surface, and the licence.
+
+* @saddhammadana
+
+# Release and signing
+# Build identity, store material and the signing path.
+android/ @saddhammadana
+ios/ @saddhammadana
+macos/ @saddhammadana
+windows/ @saddhammadana
+.github/ @saddhammadana
+docker-compose*.yml @saddhammadana
+Taskfile.yml @saddhammadana
+
+# Licence and policy
+LICENSE @saddhammadana
+SECURITY.md @saddhammadana
+CODE_OF_CONDUCT.md @saddhammadana

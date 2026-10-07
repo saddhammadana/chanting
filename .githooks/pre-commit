@@ -1,0 +1,9 @@
+#!/bin/sh
+# Runs tool/check.sh before a commit is written.
+#
+# Opt in with:
+#   git config core.hooksPath .githooks
+# and skip it for one commit with `git commit --no-verify`. Off by default,
+# because a full `flutter test` takes about half a minute and that is a choice
+# each machine should make rather than one the repository makes for it.
+exec sh "$(git rev-parse --show-toplevel)/tool/check.sh"

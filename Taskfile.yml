@@ -1,0 +1,208 @@
+# Entry point for the containerized Android builds (https://taskfile.dev).
+#
+# Why this file exists:
+# The Gradle caches live in named volumes so builds stay incremental, and those
+# volumes are easy to corrupt. A corrupt cache does not fail with a sensible
+# message; it fails deep inside unrelated tasks with lines such as
+#
+#   Corrupted DataBlock 607233 found in cache '/cache/gradle/caches/journal-1/file-access.bin'
+#   Could not read workspace metadata from /cache/gradle/caches/9.1.0/transforms/<hash>/metadata.bin
+#
+# Two ways we have managed to produce that:
+#   1. Sharing one cache volume between amd64 and arm64 runs, which is exactly
+#      what happens when docker-compose.mac.yml is used for some runs but not
+#      others (see the warning at the top of that file).
+#   2. The build dying while Gradle writes its journal: Ctrl-C, Docker Desktop
+#      quitting, or the Gradle daemon being killed when the container exits.
+#
+# These tasks close both: the architecture is decided here and stamped into the
+# cache volume, a second build cannot start on top of a running one, and Gradle
+# runs without a background daemon so the journal is flushed before the
+# container stops.
+#
+# Usage:
+#   task                  # list tasks
+#   task check            # docs links, format, analyze, test (what CI runs)
+#   task check:coverage   # the same with coverage, held to its minimum
+#   task apk              # release APK, all ABIs      -> dist/app-release.apk
+#   task apk:arm64        # arm64 only, about half the time
+#   task aab              # App Bundle for Play Store  -> dist/app-release.aab
+#   task cache:info       # what the cache volumes hold
+#   task cache:repair     # after a corrupt-cache failure; keeps downloads
+#   task cache:verify     # checksum the downloaded artifacts
+#   task cache:reset      # delete every cache volume and start over
+#
+# Raw `docker compose run --rm apk` still works, but it skips these guards.
+
+version: '3'
+
+vars:
+  # macOS always goes through the amd64 override, matching GitHub Actions. Elsewhere
+  # the base file alone is native. Deciding it here, rather than per command, is
+  # what keeps one architecture per cache volume.
+  COMPOSE_FILES:
+    sh: |
+      if [ "$(uname -s)" = Darwin ]; then
+        echo "-f docker-compose.yml -f docker-compose.mac.yml"
+      else
+        echo "-f docker-compose.yml"
+      fi
+  BUILD_ARCH:
+    sh: |
+      case "$(uname -s)/$(uname -m)" in
+        Darwin/*)           echo amd64 ;;  # pinned by docker-compose.mac.yml
+        */aarch64|*/arm64)  echo arm64 ;;
+        *)                  echo amd64 ;;
+      esac
+  PROJECT:
+    sh: echo "${COMPOSE_PROJECT_NAME:-$(basename "$PWD" | tr '[:upper:]' '[:lower:]')}"
+  COMPOSE: docker compose {{.COMPOSE_FILES}}
+  # Containers compose creates for the build services, used to detect a run that
+  # is already in progress.
+  BUILD_CONTAINERS: '-(apk|apk-arm64|aab)-run-'
+  # Keeps the base file's vfs.watch setting and adds a single-use daemon: it
+  # exits with the build instead of being killed when the container stops, so
+  # Gradle finishes writing journal-1 and the transform metadata.
+  BUILD_GRADLE_OPTS: -Dorg.gradle.vfs.watch=false -Dorg.gradle.daemon=false
+
+tasks:
+  default:
+    desc: List available tasks
+    silent: true
+    cmd: task --list
+
+  check:
+    desc: Docs links, formatting, analyzer and tests - what CI runs
+    cmd: sh tool/check.sh
+
+  check:coverage:
+    desc: As `check`, with coverage held to the project minimum
+    cmd: sh tool/check.sh --coverage
+
+  apk:
+    desc: Release APK for all ABIs -> dist/app-release.apk
+    cmds:
+      - task: build
+        vars: {SERVICE: apk}
+
+  apk:arm64:
+    desc: arm64-only release APK -> dist/app-release-arm64.apk
+    cmds:
+      - task: build
+        vars: {SERVICE: apk-arm64}
+
+  aab:
+    desc: Release App Bundle -> dist/app-release.aab
+    cmds:
+      - task: build
+        vars: {SERVICE: aab}
+
+  build:
+    internal: true
+    cmds:
+      - task: guard:idle
+      - task: guard:arch
+      - '{{.COMPOSE}} run --rm -e GRADLE_OPTS="{{.BUILD_GRADLE_OPTS}}" {{.SERVICE}}'
+
+  guard:idle:
+    desc: Fail if an Android build is already running
+    silent: true
+    cmds:
+      - |
+        busy=$(docker ps --quiet \
+          --filter label=com.docker.compose.project={{.PROJECT}} \
+          --filter name='{{.BUILD_CONTAINERS}}')
+        if [ -n "$busy" ]; then
+          echo "An Android build is already running:" >&2
+          docker ps --filter label=com.docker.compose.project={{.PROJECT}} \
+                    --filter name='{{.BUILD_CONTAINERS}}' >&2
+          echo >&2
+          echo "Two builds writing the same Gradle cache volume is how it gets" >&2
+          echo "corrupted. Wait for it, or stop it with: docker stop <name>" >&2
+          exit 1
+        fi
+
+  guard:arch:
+    desc: Fail if the Gradle cache was filled by a different architecture
+    silent: true
+    cmds:
+      - |
+        {{.COMPOSE}} run --rm -T -e WANT={{.BUILD_ARCH}} cache-tools '
+          stamp=/cache/.build-arch
+          [ -s "$stamp" ] || printf %s "$WANT" > "$stamp"
+          have=$(cat "$stamp")
+          if [ "$have" != "$WANT" ]; then
+            echo "Gradle cache was built as $have, this run is $WANT." >&2
+            echo "amd64 and arm64 artifacts are not interchangeable and mixing" >&2
+            echo "them corrupts the cache. Run: task cache:reset" >&2
+            exit 1
+          fi
+        '
+
+  cache:info:
+    desc: Show what the build cache volumes currently hold
+    silent: true
+    cmds:
+      - |
+        {{.COMPOSE}} run --rm -T cache-tools '
+          echo "architecture: $(cat /cache/.build-arch 2>/dev/null || echo unstamped)"
+          echo
+          echo "gradle home (/cache/gradle)"
+          du -sh /cache/caches/* /cache/wrapper 2>/dev/null | sed "s|^|  |"
+          echo
+          echo "other volumes"
+          du -sh /gradle-project /build /dart-tool /pub 2>/dev/null | sed "s|^|  |"
+        '
+
+  cache:repair:
+    desc: Rebuild the derived Gradle caches, keep the downloaded artifacts
+    silent: true
+    cmds:
+      - task: guard:idle
+      - |
+        {{.COMPOSE}} run --rm -T cache-tools '
+          set -e
+          # Everything Gradle keeps in its own binary stores is derived data:
+          # journal-1 (the B-tree that reports "Corrupted DataBlock"), the
+          # transforms whose metadata.bin then fails to load, and the module
+          # descriptors under modules-2/metadata-*. Only files-2.1, the actual
+          # downloaded jars and poms, and the Gradle distribution are worth
+          # keeping, so drop the rest instead of guessing which file is damaged.
+          find /cache/caches -mindepth 1 -maxdepth 1 ! -name modules-2 -exec rm -rf {} +
+          find /cache/caches/modules-2 -mindepth 1 -maxdepth 1 ! -name files-2.1 -exec rm -rf {} +
+          rm -rf /cache/daemon /cache/native /cache/kotlin-profile
+          # Project-local Gradle state still points at the directories above.
+          find /gradle-project -mindepth 1 -delete
+          echo "Dropped the derived caches. Kept files-2.1 and wrapper, so"
+          echo "nothing needs re-downloading; the next build is slower than"
+          echo "usual while transforms and descriptors are rebuilt."
+        '
+
+  cache:verify:
+    desc: Check the downloaded artifacts against the checksums Gradle filed them under
+    silent: true
+    cmds:
+      - task: guard:idle
+      - |
+        {{.COMPOSE}} run --rm -T cache-tools '
+          # Gradle stores each artifact in a directory named after its sha1, so
+          # the cache carries its own integrity check. Run this to tell a damaged
+          # download (needs cache:reset) from damaged derived data (cache:repair).
+          cd /cache/caches/modules-2/files-2.1 || { echo "no downloads cached"; exit 0; }
+          find . -type f | while read -r f; do
+            sha=$(basename "$(dirname "$f")")
+            [ ${#sha} -eq 40 ] || continue
+            [ "$(sha1sum "$f" | cut -d" " -f1)" = "$sha" ] || echo "CORRUPT ${f#./}"
+          done > /tmp/bad
+          total=$(find . -type f | wc -l)
+          bad=$(wc -l < /tmp/bad)
+          cat /tmp/bad
+          echo "checked $total files, $bad corrupt"
+          [ "$bad" -eq 0 ] || { echo "Run: task cache:reset" >&2; exit 1; }
+        '
+
+  cache:reset:
+    desc: Delete every build cache volume (next build re-downloads everything)
+    prompt: This removes the pub, Gradle, build and dart-tool volumes. Continue?
+    cmds:
+      - '{{.COMPOSE}} down --volumes'

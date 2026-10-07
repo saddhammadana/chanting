@@ -1,0 +1,48 @@
+name: pages
+
+# Manual: the web build should not deploy automatically on every main push.
+# Run it from Actions → pages → Run workflow. The privacy policy the stores
+# link to (web/privacy.html) is published by this job and by nothing else.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: ghcr.io/cirruslabs/flutter:3.44.0
+    env:
+      PUB_CACHE: ${{ github.workspace }}/.pub-cache
+    steps:
+      - uses: actions/checkout@v4
+      - run: git config --global --add safe.directory '*'
+      # Read-only: the test job is what fills this cache.
+      - uses: actions/cache/restore@v4
+        with:
+          path: |
+            .pub-cache
+            .dart_tool
+          key: pub-${{ hashFiles('pubspec.lock') }}
+      # --base-href has to match the repository name GitHub Pages serves under.
+      - run: flutter build web --release --base-href "/chanting/"
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: build/web
+
+  pages:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

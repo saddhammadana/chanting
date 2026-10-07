@@ -1,0 +1,1595 @@
+{
+  "@@locale": "th",
+  "settingsTitle": "ตั้งค่า",
+  "@settingsTitle": {
+    "description": "Settings screen title, shown in the AppBar"
+  },
+  "settingsSectionGeneral": "ทั่วไป",
+  "@settingsSectionGeneral": {
+    "description": "Heading for the settings hub group holding language and theme"
+  },
+  "settingsReadingEntry": "ตั้งค่าการอ่าน",
+  "@settingsReadingEntry": {
+    "description": "Settings hub row that opens the reading and text settings page"
+  },
+  "settingsReadingEntrySubtitle": "ปรับรูปแบบการอ่านให้เหมาะกับคุณ",
+  "readingPreviewTitle": "ตัวอย่าง",
+  "@readingPreviewTitle": {
+    "description": "Heading above the live sample of the chant text on the reading settings page"
+  },
+  "readingPreviewNote": "การเปลี่ยนแปลงจะแสดงทันที",
+  "readingAppliesToAll": "ใช้กับบทสวดทั้งหมด",
+  "@readingAppliesToAll": {
+    "description": "Footer of the reading settings page — these are app-wide preferences, not per-prayer"
+  },
+  "settingsReset": "คืนค่า",
+  "@settingsReset": {
+    "description": "AppBar button that puts every reading setting back to its shipped default"
+  },
+  "settingsResetConfirmTitle": "คืนค่าการตั้งค่าการอ่าน",
+  "settingsResetConfirmBody": "ทุกค่าในหน้านี้จะกลับไปเป็นค่าเริ่มต้น รวมถึงขนาดตัวอักษร สีตัวอักษร สีพื้นหลัง และการเลื่อนอัตโนมัติ ภาษาและธีมของแอปไม่ถูกแตะ",
+  "settingsResetDone": "คืนค่าเริ่มต้นแล้ว",
+  "fontSizeSmall": "เล็ก",
+  "@fontSizeSmall": {
+    "description": "Tick label at the small end of the text-size slider"
+  },
+  "fontSizeNormal": "ปกติ",
+  "fontSizeLarge": "ใหญ่",
+  "settingsSectionContent": "รูปแบบเนื้อหา",
+  "@settingsSectionContent": {
+    "description": "Heading for the group of switches choosing which text layers the reader opens with"
+  },
+  "settingsShowRomanDefault": "อักษรโรมัน",
+  "settingsShowRomanDefaultHint": "เปิดหน้าอ่านมาพร้อมอักษรโรมัน",
+  "settingsShowMeaningDefault": "คำแปลภาษาไทย",
+  "settingsShowMeaningDefaultHint": "เปิดหน้าอ่านมาพร้อมคำแปล",
+  "settingsInlineTranslation": "แทรกใต้บรรทัด",
+  "settingsInlineTranslationHint": "วางคำอ่านและคำแปลใต้แต่ละวรรค",
+  "settingsSectionLayout": "ระยะห่างและการจัดวาง",
+  "settingsSectionBackground": "สีพื้นหลัง",
+  "readingBackgroundIvory": "งาช้าง",
+  "@readingBackgroundIvory": {
+    "description": "Reading page colour: the app's own warm cream, the default"
+  },
+  "readingBackgroundWhite": "ขาว",
+  "readingBackgroundSepia": "ซีเปีย",
+  "readingBackgroundNight": "กลางคืน",
+  "readingBackgroundDarkNote": "ธีมมืดใช้พื้นหลังกลางคืนเสมอ — สลับเป็นธีมสว่างเพื่อเลือกสีอื่น",
+  "@readingBackgroundDarkNote": {
+    "description": "Shown under the page-colour swatches when the app theme is dark and forces the night page"
+  },
+  "settingsSectionScroll": "การเลื่อน",
+  "settingsAutoScrollDelay": "หน่วงก่อนเริ่ม",
+  "settingsAutoScrollDelayNone": "ไม่หน่วง",
+  "settingsAutoScrollDelayValue": "{count, plural, other{{count} วินาที}}",
+  "@settingsAutoScrollDelayValue": {
+    "description": "Chosen delay before auto-scroll starts moving",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsSectionScreen": "หน้าจอ",
+  "settingsKeepScreenOn": "ป้องกันหน้าจอดับ",
+  "settingsKeepScreenOnHint": "ค้างหน้าจอไว้ขณะเปิดบทสวด",
+  "settingsStartImmersive": "ซ่อนแถบเครื่องมือขณะอ่าน",
+  "settingsStartImmersiveHint": "เปิดบทสวดมาแบบเต็มจอ แตะหน้าจอเพื่อเรียกแถบกลับมา",
+  "settingsSectionMore": "เพิ่มเติม",
+  "@settingsSectionMore": {
+    "description": "Heading for reading settings the reference artwork does not show but the app has"
+  },
+  "settingsNotificationsSubtitle": "รับการแจ้งเตือนเวลาสวดมนต์",
+  "@settingsNotificationsSubtitle": {
+    "description": "Subtitle of the master notification switch on the settings hub"
+  },
+  "goalTitle": "ตั้งเป้าหมาย",
+  "goalSkip": "ข้าม",
+  "@goalSkip": {
+    "description": "Onboarding-only action on the goal page: leave without setting a goal. Absent when the page is opened from settings, where there is nothing to skip."
+  },
+  "@goalTitle": {
+    "description": "Title of the goal-and-reminder page, reached from the settings hub"
+  },
+  "goalHeadline": "สร้างช่วงเวลาแห่งความสงบ",
+  "goalSubtitle": "ตั้งเป้าหมายเล็ก ๆ เพื่อสร้างกิจวัตรที่ดีในทุกวัน",
+  "settingsGoalEntry": "เป้าหมายและการแจ้งเตือน",
+  "@settingsGoalEntry": {
+    "description": "Settings hub row that opens the goal page"
+  },
+  "settingsGoalEntrySubtitle": "ช่วงเวลา วัน และเป้าหมายต่อวัน",
+  "goalSectionSlots": "ช่วงเวลาที่ต้องการสวด",
+  "goalEditingSlot": "กำลังตั้ง: {slot}",
+  "@goalEditingSlot": {
+    "description": "Header of the per-slot panel, naming the time of day the controls below belong to",
+    "placeholders": {
+      "slot": {
+        "type": "String"
+      }
+    }
+  },
+  "goalDailyAllSlots": "ใช้กับทุกช่วงเวลารวมกัน",
+  "@goalDailyAllSlots": {
+    "description": "Note under the daily-goal heading: the goal is one number for the whole day, not per slot"
+  },
+  "goalSectionDaily": "เป้าหมายต่อวัน",
+  "goalSectionDays": "วันที่ต้องการ",
+  "goalSlotEnabled": "แจ้งเตือนช่วงนี้",
+  "goalSlotDisabledHint": "เปิดสวิตช์นี้เพื่อรับการแจ้งเตือนของช่วงนี้",
+  "goalReminderTime": "เวลาแจ้งเตือน",
+  "goalCustomMinutes": "กำหนดเอง",
+  "@goalCustomMinutes": {
+    "description": "Chip that opens the stepper for a daily goal outside the four presets"
+  },
+  "goalCustomTitle": "เป้าหมายต่อวัน",
+  "goalSummarySlot": "{slot} {time} · {days}",
+  "@goalSummarySlot": {
+    "description": "One line of the summary card: slot name, time, and which days",
+    "placeholders": {
+      "slot": {
+        "type": "String"
+      },
+      "time": {
+        "type": "String"
+      },
+      "days": {
+        "type": "String"
+      }
+    }
+  },
+  "goalEveryDay": "ทุกวัน",
+  "reminderSlotMorning": "เช้า",
+  "@reminderSlotMorning": {
+    "description": "Short name on the time-of-day tiles; the full names are reminderMorning etc."
+  },
+  "reminderSlotMidday": "กลางวัน",
+  "reminderSlotEvening": "เย็น",
+  "reminderSlotBedtime": "ก่อนนอน",
+  "reminderMidday": "เตือนสวดมนต์กลางวัน",
+  "reminderBedtime": "เตือนสวดมนต์ก่อนนอน",
+  "reminderPickerMidday": "เวลาเตือนสวดมนต์กลางวัน",
+  "reminderPickerBedtime": "เวลาเตือนสวดมนต์ก่อนนอน",
+  "reminderNotificationMidday": "ได้เวลาสวดมนต์กลางวัน",
+  "reminderNotificationBedtime": "ได้เวลาสวดมนต์ก่อนนอน",
+  "settingsRemindersOffHint": "เปิดการแจ้งเตือนก่อน จึงจะตั้งเวลาเตือนได้",
+  "@settingsRemindersOffHint": {
+    "description": "Shown on the reminders page when the master notification switch is off"
+  },
+  "settingsLanguageSubtitle": "เลือกภาษาที่ใช้ในแอป",
+  "settingsThemeSubtitle": "ปรับสีและธีมของแอป",
+  "aboutAppSubtitle": "เวอร์ชัน ข้อมูลแอป และผู้พัฒนา",
+  "settingsLegal": "กฎหมายและความเป็นส่วนตัว",
+  "@settingsLegal": {
+    "description": "Settings hub row that opens the privacy policy and terms page"
+  },
+  "settingsLegalSubtitle": "นโยบายความเป็นส่วนตัว และข้อกำหนด",
+  "settingsSearch": "ค้นหาการตั้งค่า",
+  "@settingsSearch": {
+    "description": "Tooltip and field hint for the settings search button in the AppBar"
+  },
+  "settingsSearchEmpty": "ไม่พบการตั้งค่าที่ตรงกับคำค้น",
+  "legalUpdated": "มีผลตั้งแต่วันที่ 23 สิงหาคม 2026",
+  "@legalUpdated": {
+    "description": "Effective date of the policy — keep in sync with web/privacy.html"
+  },
+  "legalPrivacyTitle": "นโยบายความเป็นส่วนตัว",
+  "legalPrivacyBody": "แอปนี้ทำงานแบบออฟไลน์ทั้งหมด ไม่มีการสมัครสมาชิก ไม่มีเซิร์ฟเวอร์ ไม่มีโฆษณา และไม่มีการเก็บสถิติการใช้งาน จึงไม่มีการเก็บรวบรวม ใช้ หรือส่งต่อข้อมูลส่วนบุคคลใด ๆ ออกจากเครื่องของท่าน",
+  "@legalPrivacyBody": {
+    "description": "Summary of web/privacy.html — update both together"
+  },
+  "legalDataTitle": "ข้อมูลที่บันทึกไว้ในเครื่องเท่านั้น",
+  "legalDataBody": "การตั้งค่าการแสดงผล บทสวดที่บันทึกไว้ ชุดสวดที่จัดเอง บทและตำแหน่งที่อ่านล่าสุด และเวลาแจ้งเตือนที่ตั้งไว้ ถูกบันทึกอยู่ในหน่วยความจำของอุปกรณ์ท่านเอง การถอนการติดตั้งแอปจะลบข้อมูลทั้งหมดนี้ออกอย่างถาวร",
+  "legalPermissionsTitle": "สิทธิ์ที่แอปใช้",
+  "legalPermissionsBody": "สิทธิ์การแจ้งเตือน การทำงานหลังรีสตาร์ทเครื่อง และการเตือนแบบตรงเวลา ใช้เพื่อเตือนเวลาทำวัตรตามที่ท่านตั้งไว้เท่านั้น ส่วนกล้องใช้สแกน QR ของชุดสวดเฉพาะขณะเปิดหน้าสแกน ไม่มีการบันทึกหรือส่งภาพออกจากเครื่อง",
+  "legalTermsTitle": "ข้อกำหนดและเงื่อนไข",
+  "legalTermsBody": "แอปนี้ให้ใช้งานฟรีเพื่อการสวดมนต์และศึกษาธรรม เนื้อหาบทสวดถอดมาจากหนังสือสวดมนต์ที่ใช้กันแพร่หลายและอาจมีข้อคลาดเคลื่อน โปรดเทียบกับหนังสือสวดมนต์ฉบับที่ท่านใช้เป็นหลักเสมอ",
+  "legalContentTitle": "ลิขสิทธิ์เนื้อหา",
+  "legalContentBody": "โค้ดของแอปเผยแพร่ภายใต้สัญญาอนุญาต MIT ส่วนฟอนต์และเสียงระฆัง อยู่ภายใต้สัญญาอนุญาตของแหล่งที่มาแต่ละราย การนำไปใช้ต่อภายนอกแอปต้องตรวจสอบกับแหล่งที่มาที่อ้างไว้",
+  "@legalContentBody": {
+    "description": "The app's own licence note; mirrors web/privacy.html"
+  },
+  "settingsSectionReading": "การอ่าน",
+  "@settingsSectionReading": {
+    "description": "Heading for the settings group covering reading mode and auto-scroll"
+  },
+  "settingsSectionText": "ตัวอักษร",
+  "@settingsSectionText": {
+    "description": "Heading for the settings group covering size, colour, line spacing and alignment of the chant text"
+  },
+  "settingsLanguage": "ภาษา",
+  "@settingsLanguage": {
+    "description": "Label for the app language option"
+  },
+  "settingsLanguageSystem": "ตามระบบ",
+  "@settingsLanguageSystem": {
+    "description": "Language option: follow the device language setting. Other language names are not translated; always use each language's own endonym. See AppLocale.endonym."
+  },
+  "settingsLanguageContentNote": "ภาษาที่ยังไม่มีฉบับบทสวดของตัวเองจะแสดงบทสวดฉบับไทย",
+  "@settingsLanguageContentNote": {
+    "description": "Note under the language picker — prayer content ships per edition (kContentLanguages currently has Thai/English); UI languages without their own edition fall back to the Thai one, see docs/internationalization.md Phase 2"
+  },
+  "settingsTheme": "ธีม",
+  "@settingsTheme": {
+    "description": "Label for the light/dark theme option"
+  },
+  "themeLight": "สว่าง",
+  "themeDark": "มืด",
+  "themeSystem": "ตามระบบ",
+  "@themeSystem": {
+    "description": "Theme that follows the device setting — different from settingsLanguageSystem even though the Thai wording is identical; other languages may differ"
+  },
+  "settingsReadingMode": "รูปแบบการอ่าน",
+  "readingModeSwipe": "ปัดทีละบท",
+  "readingModeContinuous": "แนวยาวต่อเนื่อง",
+  "readingModeSwipeHint": "แสดงทีละบท ปัดซ้าย-ขวาหรือใช้ปุ่มเพื่อไปบทถัดไป",
+  "readingModeContinuousHint": "แสดงทุกบทในหมวด/ชุดสวดต่อกันเป็นหน้ายาว เลื่อนอ่านได้รวดเดียว",
+  "settingsAutoScroll": "เลื่อนหน้าอัตโนมัติ",
+  "autoScrollSlow": "ช้า",
+  "autoScrollFast": "เร็ว",
+  "autoScrollLevel": "ระดับ {level}",
+  "@autoScrollLevel": {
+    "description": "Label for the auto-scroll speed level (1–10)",
+    "placeholders": {
+      "level": {
+        "type": "int"
+      }
+    }
+  },
+  "autoScrollAutoStart": "เริ่มเลื่อนเองเมื่อเปิดบทสวด",
+  "autoScrollHint": "ใช้ปุ่ม ▶ ในหน้าอ่านเพื่อเริ่ม/หยุดเลื่อน ถ้าเลื่อนหน้าจอเองจะหยุดให้อัตโนมัติ",
+  "autoScrollOffHint": "ปิดอยู่ — ปุ่ม ▶ ในหน้าอ่านจะไม่แสดง",
+  "settingsFontSize": "ขนาดตัวอักษร",
+  "readingMoreSettings": "ตั้งค่าการอ่านทั้งหมด",
+  "@readingMoreSettings": {
+    "description": "Link at the foot of the reader's text-size sheet, opening the full reading settings page"
+  },
+  "fontScalePercent": "{percent}%",
+  "@fontScalePercent": {
+    "description": "Font size as a percentage of the normal size",
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "fontSizeSample": "ก",
+  "@fontSizeSample": {
+    "description": "Sample glyph shown on both ends of the font-size slider. Use a representative letter for the locale, such as A for English."
+  },
+  "settingsTextColor": "สีตัวอักษร",
+  "textColorAuto": "ตามธีม",
+  "@textColorAuto": {
+    "description": "Text colour that follows the theme — different from themeSystem"
+  },
+  "textColorBrown": "น้ำตาล",
+  "textColorGold": "ทอง",
+  "textColorBlue": "น้ำเงิน",
+  "textColorGreen": "เขียว",
+  "textColorCustom": "กำหนดเอง",
+  "@textColorCustom": {
+    "description": "Marks a lane as using a colour the user picked rather than one from the palette"
+  },
+  "textLaneChant": "เนื้อบท",
+  "@textLaneChant": {
+    "description": "Name of the chant-text lane (Pali in Thai script) in the colour settings — the other two lanes reuse paliSectionTitle and labelMeaning"
+  },
+  "textColorPalette": "จานสี",
+  "@textColorPalette": {
+    "description": "Heading above the row of preset swatches in the colour dialog"
+  },
+  "textColorPickCustom": "เลือกสีเอง",
+  "@textColorPickCustom": {
+    "description": "Heading above the two-dimensional colour field and hue strip in the colour dialog"
+  },
+  "textColorHexLabel": "รหัสสี",
+  "@textColorHexLabel": {
+    "description": "Label for the six-digit hex input, e.g. 6D4C2F"
+  },
+  "textColorHexInvalid": "รหัสสีไม่ถูกต้อง",
+  "@textColorHexInvalid": {
+    "description": "Shown under the hex field when the value is not six hexadecimal digits"
+  },
+  "textColorEditingLight": "กำลังตั้งสีของธีมสว่าง",
+  "@textColorEditingLight": {
+    "description": "Says the colour being picked applies to the light theme only; the dark theme keeps its own"
+  },
+  "textColorEditingDark": "กำลังตั้งสีของธีมมืด",
+  "@textColorEditingDark": {
+    "description": "Says the colour being picked applies to the dark theme only; the light theme keeps its own"
+  },
+  "textColorLowContrast": "สีนี้ตัดกับพื้นหลังน้อย อาจอ่านยาก",
+  "@textColorLowContrast": {
+    "description": "Warning when the chosen colour falls below the WCAG AA contrast ratio — a warning only, it does not block the choice"
+  },
+  "settingsShowPartTitles": "แสดงหัวข้อท่อน",
+  "@settingsShowPartTitles": {
+    "description": "Switch for the per-block headings on the reading screen — every block in the file has a title, so short prayers get a heading on nearly every line"
+  },
+  "settingsShowPartTitlesHint": "ปิดไว้ถ้าบทสั้น ๆ ดูรก — บทยาวใช้หัวข้อช่วยหาตำแหน่งได้",
+  "@settingsShowPartTitlesHint": {
+    "description": "Hint under the block-headings switch"
+  },
+  "settingsLineSpacing": "ระยะห่างบรรทัด",
+  "lineSpacingCompact": "ชิด",
+  "lineSpacingNormal": "ปกติ",
+  "lineSpacingLoose": "ห่าง",
+  "settingsTextAlign": "การจัดข้อความ",
+  "textAlignStart": "ชิดซ้าย",
+  "textAlignJustify": "เต็มบรรทัด",
+  "settingsSectionSignal": "เสียงและการสั่น",
+  "@settingsSectionSignal": {
+    "description": "Heading for the completion-signal group — covers both the meditation timer and the mala counter, so it is not called “Meditation”"
+  },
+  "settingsCompletionSignal": "สัญญาณเมื่อครบเวลาหรือครบรอบ",
+  "@settingsCompletionSignal": {
+    "description": "Label — applies both when a sitting ends and when the mala reaches its target"
+  },
+  "completionSignalSound": "เสียงระฆัง",
+  "@completionSignalSound": {
+    "description": "Option: Tibetan singing bowl together with the vibration"
+  },
+  "completionSignalHaptic": "สั่น",
+  "@completionSignalHaptic": {
+    "description": "Option: vibration only — the default, and the behaviour before sound existed"
+  },
+  "completionSignalSilent": "เงียบ",
+  "@completionSignalSilent": {
+    "description": "Option: neither sound nor vibration, for sitting with other people"
+  },
+  "completionSignalHint": "เลือกเสียงระฆังแล้วจะสั่นด้วย — โทรศัพท์ที่คว่ำอยู่บนเบาะรู้สึกได้ก่อนได้ยิน",
+  "@completionSignalHint": {
+    "description": "Hint under the completion-signal options"
+  },
+  "completionSignalWebNote": "เบราว์เซอร์ไม่ยอมให้เล่นเสียงที่ผู้ใช้ไม่ได้สั่งเอง จึงใช้ได้เฉพาะแอปที่ติดตั้ง",
+  "@completionSignalWebNote": {
+    "description": "Note shown in place of the sound option on the web"
+  },
+  "completionVolume": "ความดังของระฆัง",
+  "@completionVolume": {
+    "description": "Label of the slider that sets how loud the completion bell rings, and the settings-search entry for it"
+  },
+  "completionSoundTest": "ลองฟัง",
+  "@completionSoundTest": {
+    "description": "Button that plays the bell once from the settings screen"
+  },
+  "aboutSoundTitle": "เสียงระฆัง (ขันทิเบต)",
+  "@aboutSoundTitle": {
+    "description": "Heading of the sound credit entry on the About screen"
+  },
+  "aboutSoundSubtitle": "บันทึกโดย Joseph SARDIN · BigSoundBank · สาธารณสมบัติ (CC0)",
+  "@aboutSoundSubtitle": {
+    "description": "Sound credit — CC0 requires no attribution, but this app credits every source anyway"
+  },
+  "aboutAmbientTitle": "เสียงธรรมชาติ",
+  "@aboutAmbientTitle": {
+    "description": "Heading of the nature-sound credit entry on the About screen"
+  },
+  "aboutAmbientSubtitle": "บันทึกโดย Joseph SARDIN และ Pierre SIBANARCO · BigSoundBank · สาธารณสมบัติ (CC0)",
+  "@aboutAmbientSubtitle": {
+    "description": "Nature-sound credit — CC0 requires no attribution, but this app credits every source anyway"
+  },
+  "completionHapticTest": "ลองสั่น",
+  "@completionHapticTest": {
+    "description": "Button that vibrates once from the settings screen — the app cannot read whether the device has vibration enabled, so this is the only way a user can check"
+  },
+  "completionSignalHapticHint": "กด “ลองสั่น” เพื่อตรวจว่าเครื่องสั่นจริง — ถ้าเงียบ ให้ไปเปิดการสั่นในการตั้งค่าของเครื่อง แอปสั่งให้สั่นได้แต่อ่านค่านั้นไม่ได้",
+  "@completionSignalHapticHint": {
+    "description": "Hint when vibrate is selected — says plainly that the app cannot detect the system haptic state (Flutter exposes no API, and iOS does not allow reading it)"
+  },
+  "completionSignalSilentHint": "ครบเวลาแล้วจะไม่มีทั้งเสียงและการสั่น ต้องดูที่หน้าจอเท่านั้น",
+  "@completionSignalSilentHint": {
+    "description": "Hint when silent is selected"
+  },
+  "settingsSectionReminders": "การแจ้งเตือน",
+  "remindersUnsupported": "การแจ้งเตือนใช้ได้เฉพาะแอปบนมือถือ",
+  "reminderMorning": "เตือนทำวัตรเช้า",
+  "reminderEvening": "เตือนทำวัตรเย็น",
+  "reminderPickerMorning": "เวลาเตือนทำวัตรเช้า",
+  "reminderPickerEvening": "เวลาเตือนทำวัตรเย็น",
+  "reminderExactAlarmTitle": "แจ้งเตือนอาจช้ากว่าเวลาที่ตั้ง",
+  "reminderExactAlarmBody": "Android จำกัดการแจ้งเตือนไว้เพื่อประหยัดแบตเตอรี่ ทำให้อาจเตือนช้ากว่าเวลาที่ตั้งได้หลายนาที เปิดสิทธิ์ “การปลุกและการเตือน” เพื่อให้แจ้งเตือนตรงเวลา",
+  "reminderExactAlarmAction": "เปิดการตั้งค่า",
+  "contactDeveloper": "ติดต่อผู้พัฒนา",
+  "contactDialogBody": "พบข้อผิดพลาดของเนื้อหาบทสวด หรือมีข้อเสนอแนะ ส่งอีเมลมาได้ที่",
+  "copyEmail": "คัดลอกอีเมล",
+  "copiedEmail": "คัดลอกอีเมลแล้ว",
+  "donateTitle": "สนับสนุนผู้พัฒนา (Donate)",
+  "donateSubtitle": "ร่วมสมทบทุนพัฒนาแอปตามกำลังศรัทธา",
+  "donateDialogTitle": "สนับสนุนผู้พัฒนา",
+  "donateDialogBody": "แอปนี้ให้ใช้ฟรีไม่มีโฆษณา หากบทสวดมนต์นี้เป็นประโยชน์ ท่านสามารถร่วมสมทบทุนพัฒนาแอปได้ตามกำลังศรัทธา",
+  "promptPayTitle": "พร้อมเพย์ (PromptPay)",
+  "copyPromptPay": "คัดลอกหมายเลขพร้อมเพย์",
+  "copiedPromptPay": "คัดลอกหมายเลขพร้อมเพย์แล้ว",
+  "donateContactEmail": "สอบถามช่องทางสนับสนุนได้ทางอีเมล {email}",
+  "@donateContactEmail": {
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "appName": "สวดมนต์",
+  "@appName": {
+    "description": "App name shown to users — translatable, unlike the applicationId `th.chanting.app` which must never change (see docs/roadmap/todo.md and docs/internationalization.md Phase 3)"
+  },
+  "aboutApp": "เกี่ยวกับแอป",
+  "appVersion": "สวดมนต์ เวอร์ชัน {version} (build {build})",
+  "@appVersion": {
+    "description": "Version line at the bottom of the settings screen — the app name is translatable, the version number is read from the real pubspec",
+    "placeholders": {
+      "version": {
+        "type": "String"
+      },
+      "build": {
+        "type": "String"
+      }
+    }
+  },
+  "aboutVersion": "เวอร์ชัน {version}",
+  "@aboutVersion": {
+    "description": "Version number under the icon on the About screen — read from the real pubspec",
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "aboutSectionAbout": "เกี่ยวกับ",
+  "aboutDescription": "แอปอ่านหนังสือสวดมนต์ ไทย-บาลี ใช้งานได้โดยไม่ต้องต่ออินเทอร์เน็ต เนื้อหาบทสวดอ้างอิงจากหนังสือสวดมนต์มาตรฐานที่ใช้แพร่หลายทั่วไป หากพบข้อผิดพลาดของเนื้อหา โปรดเทียบกับหนังสือสวดมนต์ฉบับที่ท่านใช้เป็นหลัก",
+  "aboutSectionScript": "อักษรและการถอดเสียง",
+  "@aboutSectionScript": {
+    "description": "Heading for the script section on the About screen — the chant text is Pali in Thai script, the companion field is Pali in Roman script"
+  },
+  "aboutScriptThaiTitle": "เนื้อบท — บาลีอักษรไทย",
+  "aboutScriptThaiBody": "ช่องเนื้อบทเป็น “คำอ่าน” สำหรับสวด ไม่ใช่การสะกดบาลีตามอักขรวิธี จึงแตกกลุ่มพยัญชนะให้ออกเสียงได้สะดวก (dvi เขียนเป็น ทะวิ) และยืดสระตามที่สวดกันจริง (añjali เขียนเป็น อัญชะลี) การถอดคำอ่านไทยกลับเป็นอักษรโรมันตรงตัวจึงให้บาลีที่ผิดอักขรวิธี",
+  "@aboutScriptThaiBody": {
+    "description": "Explains that the Thai-script reading is a pronunciation guide, not orthography — both examples are real errors that were found and fixed, recorded in docs/roadmap/todo.md"
+  },
+  "aboutScriptRomanTitle": "อักษรโรมัน — บาลีถอดอักษร",
+  "aboutScriptRomanBody": "ช่องอักษรโรมันถอดจากรูปคำบาลี ใช้เครื่องหมายกำกับบอกเสียงที่อักษรโรมันล้วนบอกไม่ได้",
+  "@aboutScriptRomanBody": {
+    "description": "Lead-in above the diacritics table"
+  },
+  "aboutScriptLongVowel": "สระเสียงยาว",
+  "@aboutScriptLongVowel": {
+    "description": "Meaning of the macron in the diacritics table"
+  },
+  "aboutScriptRetroflex": "อักษรลิ้นม้วน (จุดล่าง)",
+  "@aboutScriptRetroflex": {
+    "description": "Meaning of the dot below in the diacritics table. It corresponds to retroflex consonants in Thai script."
+  },
+  "aboutScriptVelarNasal": "เสียงนาสิก ตรงกับ ง",
+  "@aboutScriptVelarNasal": {
+    "description": "Meaning of ṅ in the diacritics table"
+  },
+  "aboutScriptPalatalNasal": "เสียงนาสิก ตรงกับ ญ",
+  "@aboutScriptPalatalNasal": {
+    "description": "Meaning of ñ in the diacritics table"
+  },
+  "aboutScriptNiggahita": "นิคหิต",
+  "@aboutScriptNiggahita": {
+    "description": "Meaning of ṃ in the diacritics table"
+  },
+  "aboutScriptNiggahitaNote": "นิคหิตมีสองธรรมเนียมที่ใช้กันทั้งคู่ — จุดล่าง ṃ (แบบ IAST) และจุดบน ṁ (แบบ PTS) แอปนี้ใช้จุดล่าง ṃ ทุกแห่ง ต้นฉบับที่ใช้ถอดเป็นอักษรไทยล้วน ซึ่งเขียนนิคหิตไว้ข้างบนเสมอ จึงไม่มีฉบับพิมพ์ใดชี้ขาดได้ว่าต้องเป็นแบบไหน นี่จึงเป็นธรรมเนียมการถอด ไม่ใช่การแก้ตัวบท",
+  "@aboutScriptNiggahitaNote": {
+    "description": "Note under the diacritics table — do not loosely call one form 'the IAST/PTS way'; the two schools disagree. See docs/content/prayer-schema.md section 3"
+  },
+  "aboutFontsTitle": "ฟอนต์ Sarabun และ Pridi",
+  "@aboutFontsTitle": {
+    "description": "The font names (Sarabun/Pridi) and creator (Cadson Demak) are proper names, do not translate — only the word fonts may be translated"
+  },
+  "aboutFontsSubtitle": "โดย Cadson Demak ภายใต้ SIL Open Font License",
+  "@aboutFontsSubtitle": {
+    "description": "The licence name SIL Open Font License is a legal name, do not translate"
+  },
+  "aboutTranslationTitle": "คำแปลภาษาอังกฤษ",
+  "@aboutTranslationTitle": {
+    "description": "Heading for the English-translation note on the About screen — shown only when the UI is English (the en edition that actually uses the English meanings)"
+  },
+  "aboutTranslationNote": "เป็นฉบับไม่เป็นทางการ ใช้เพื่อความเข้าใจเท่านั้น โปรดเทียบกับฉบับแปลที่ท่านเชื่อถือ",
+  "@aboutTranslationNote": {
+    "description": "Note that the English meanings are unofficial and not taken from a published edition — must stay honest; do not credit a source (e.g. A Chanting Guide) that was not actually used"
+  },
+  "aboutLicenses": "สัญญาอนุญาตโอเพนซอร์ส",
+  "welcomeTitle": "ยินดีต้อนรับสู่ สวดมนต์",
+  "@welcomeTitle": {
+    "description": "Welcome sheet title for new users — the app name is part of the sentence; write a full natural sentence for each language, no placeholder needed"
+  },
+  "welcomeSubtitle": "ฟีเจอร์เด่นที่อยากให้ลอง",
+  "welcomeButton": "เริ่มใช้งาน",
+  "tourNext": "ถัดไป",
+  "@tourNext": {
+    "description": "Home tour button: go to the next stop"
+  },
+  "tourSkip": "ข้าม",
+  "@tourSkip": {
+    "description": "Home tour button: leave the tour early"
+  },
+  "tourWelcomeBody": "ขอพาชมหน้าแรกสั้น ๆ ก่อนเริ่มใช้งาน",
+  "@tourWelcomeBody": {
+    "description": "Home tour, opening card under the welcome title; the language picker sits below it"
+  },
+  "tourGoalBody": "ช่วงเช้าเป็นทำวัตรเช้า ช่วงเย็นเป็นทำวัตรเย็น กดเริ่มสวดได้เลย วงแหวนบอกจำนวนนาทีที่สวดและนั่งสมาธิวันนี้ กดที่วงแหวนเพื่อตั้งเป้าหมาย",
+  "@tourGoalBody": {
+    "description": "Home tour, stop on the today's-goal card: the service changes with the time of day, the ring counts minutes and opens the goal page"
+  },
+  "tourShortcutsBody": "ทางลัดไปหมวดที่ใช้บ่อย นั่งสมาธิ และแผ่เมตตา กด “ดูทั้งหมด” เพื่อดูทุกหมวดและปักหมุดเพิ่ม",
+  "@tourShortcutsBody": {
+    "description": "Home tour, stop on the shortcut tiles; “ดูทั้งหมด” must match homeViewAll"
+  },
+  "tourRecommendedBody": "แนะนำบทสวดวันละบท เปลี่ยนบทใหม่ทุกวัน",
+  "@tourRecommendedBody": {
+    "description": "Home tour, stop on the recommended-prayer card"
+  },
+  "tourStartBody": "ปุ่มกลางเปิดบททำวัตรของช่วงเวลานี้ทันที ส่วนแถบล่างพาไปบทสวดทั้งหมด คลังของฉัน และตั้งค่า",
+  "@tourStartBody": {
+    "description": "Home tour, last stop on the bottom bar's start button"
+  },
+  "welcomeAmbientDetail": "เลือกเสียงสายน้ำ ฝน นกในป่า หรือคลื่นทะเล เปิดคลอระหว่างนั่งสมาธิ",
+  "@welcomeAmbientDetail": {
+    "description": "What's-new row for the meditation timer's nature sound"
+  },
+  "welcomeDailyGoalDetail": "การ์ดหน้าแรกเปลี่ยนเป็นทำวัตรเช้าหรือเย็นตามเวลา และวงแหวนนับเวลานั่งสมาธิรวมด้วย",
+  "@welcomeDailyGoalDetail": {
+    "description": "What's-new row for the home card: the service follows the clock and meditation time counts toward the daily goal"
+  },
+  "aboutReplayTour": "ดูทัวร์หน้าแรกอีกครั้ง",
+  "@aboutReplayTour": {
+    "description": "About screen row that goes to the home screen and runs the first-launch tour again"
+  },
+  "welcomeWhatsNewTitle": "มีอะไรใหม่",
+  "@welcomeWhatsNewTitle": {
+    "description": "Welcome sheet title for existing users who just updated"
+  },
+  "welcomeWhatsNewSubtitle": "อัปเดตล่าสุดของ สวดมนต์",
+  "welcomeWhatsNewButton": "ลองเลย",
+  "welcomeReadingModesTitle": "อ่านได้สองแบบ",
+  "welcomeReadingModesDetail": "ปัดซ้าย-ขวาทีละบท หรือแนวยาวต่อเนื่องทั้งหมวด (เลือกได้ในหน้าตั้งค่า)",
+  "welcomeDragCategoryTitle": "ลากเปลี่ยนหมวดต่อเนื่อง",
+  "welcomeDragCategoryDetail": "ในโหมดอ่านแนวยาว ลากขึ้นต่อที่ท้ายหน้าเพื่อไปหมวดถัดไป หรือลากลงที่หัวหน้าเพื่อย้อนหมวดก่อนหน้า มีวงกลมบอกระยะ เปลี่ยนใจก็ลากย้อนทางก่อนปล่อยนิ้วได้",
+  "welcomeAutoScrollDetail": "กดปุ่ม ▶ แล้วสวดตามได้เลย จบบทข้ามไปบทถัดไปให้เอง ไม่ต้องแตะจอ",
+  "@welcomeAutoScrollDetail": {
+    "description": "This feature title reuses settingsAutoScroll shared with the settings screen — it is the same feature name"
+  },
+  "welcomePaliTitle": "บาลีและคำแปล",
+  "welcomePaliDetail": "เปิด-ปิดได้ทุกบท เลือกแสดงแทรกใต้บรรทัดหรือแยกท้ายบท",
+  "welcomePlaylistsDetail": "จัดชุดบทสวดเอง เรียงลำดับได้ แล้วสวดต่อเนื่องทั้งชุด",
+  "@welcomePlaylistsDetail": {
+    "description": "This feature title reuses playlistsTitle shared with the prayer-sets screen"
+  },
+  "welcomeRemindersTitle": "เตือนทำวัตรเช้า-เย็น",
+  "welcomeRemindersDetail": "ตั้งเวลาแจ้งเตือนประจำวันได้ในหน้าตั้งค่า",
+  "welcomeHomeGridTitle": "หน้าแรกโฉมใหม่",
+  "@welcomeHomeGridTitle": {
+    "description": "Title announcing the grid-style home screen in the welcome sheet"
+  },
+  "welcomeHomeGridDetail": "เลือกหมวดบทสวดได้จากกล่องบนหน้าแรก พร้อมทางลัดไปชุดสวดและบทที่บันทึกไว้",
+  "welcomeSearchHistoryDetail": "คำที่เคยค้นถูกจำไว้ให้ แตะช่องค้นหาเมื่อไหร่ก็เรียกมาใช้ซ้ำได้ทันที",
+  "@welcomeSearchHistoryDetail": {
+    "description": "Description of the search-history feature in the welcome sheet — the title reuses searchRecentHeader shared with the history panel"
+  },
+  "welcomeShareDetail": "สร้างชุดสวดแล้วส่งให้เครื่องอื่นด้วย QR หรือโค้ด — ไม่ต้องใช้อินเทอร์เน็ต",
+  "@welcomeShareDetail": {
+    "description": "Description of the set-sharing feature in the welcome sheet — the title reuses playlistShareTitle"
+  },
+  "playlistsTitle": "ชุดสวดของฉัน",
+  "@playlistsTitle": {
+    "description": "Title of the prayer-sets screen — also used as the feature heading in the welcome sheet"
+  },
+  "playlistCreateNew": "สร้างชุดสวดใหม่",
+  "@playlistCreateNew": {
+    "description": "Title of the create card at the top of My prayer sets"
+  },
+  "playlistCreateHint": "จัดลำดับบทสวดที่คุณชื่นชอบ",
+  "@playlistCreateHint": {
+    "description": "Line under the create card's title on My prayer sets"
+  },
+  "playlistCreate": "สร้างชุดสวด",
+  "@playlistCreate": {
+    "description": "Used both for the + button on the prayer-sets screen and the dialog title when creating"
+  },
+  "playlistNameHint": "เช่น สวดก่อนนอน",
+  "@playlistNameHint": {
+    "description": "Example prayer-set name in the input field — translate to an example natural to the language, not a literal translation"
+  },
+  "playlistsEmptyMessage": "ยังไม่มีชุดสวด",
+  "playlistsEmptyDetail": "สร้างชุดเพื่อจัดบทสวดตามลำดับของคุณเอง\nแล้วกดสวดต่อเนื่องได้ทั้งชุด",
+  "@playlistsEmptyDetail": {
+    "description": "\n is a line break; keep it where appropriate for the language"
+  },
+  "playlistPrayerCount": "{count, plural, other{{count} บท}}",
+  "@playlistPrayerCount": {
+    "description": "Number of prayers — used both on the prayer-sets screen and on the home-screen category boxes — Thai has no plural form so only other is used; other languages may add the forms they need (one/few/many), gen-l10n handles it per ICU",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "playlistShareTitle": "แชร์ชุดสวด",
+  "@playlistShareTitle": {
+    "description": "Name of the set-sharing feature — the title of the share page (opened from a set's share button) and the heading of its row in the welcome sheet"
+  },
+  "playlistShareScanHint": "ให้อีกเครื่องเปิด \"รับชุดสวด\" ในหน้าชุดสวดแล้วสแกนโค้ดนี้ หรือคัดลอกโค้ดส่งทางแชทก็ได้",
+  "@playlistShareScanHint": {
+    "description": "Usage hint under the QR — the quoted menu name must match that language's playlistImportTitle"
+  },
+  "playlistShareTooLong": "ชุดนี้ยาวเกินกว่าจะสแกนเป็น QR ได้ — ใช้คัดลอกโค้ดแทน",
+  "@playlistShareTooLong": {
+    "description": "Shown instead of the QR when the code exceeds kShareQrMaxChars (the QR gets too dense to scan off a screen)"
+  },
+  "playlistShareQrSubtitle": "ให้ผู้อื่นสแกนเพื่อรับชุดสวดของคุณ",
+  "@playlistShareQrSubtitle": {
+    "description": "One line under the share page title saying what the page is for"
+  },
+  "playlistShareQrSemantics": "QR Code ของชุดสวด {name}",
+  "@playlistShareQrSemantics": {
+    "description": "Screen-reader label for the QR on the share page",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "playlistShareQrCaption": "สแกนเพื่อรับชุดสวด\nในแอปสวดมนต์",
+  "@playlistShareQrCaption": {
+    "description": "Caption under the QR on the share card \u2014 the line break is deliberate, the card is narrow"
+  },
+  "playlistShareQrMotto": "“สวดด้วยใจ สงบในทุกวัน”",
+  "@playlistShareQrMotto": {
+    "description": "Short devotional motto at the foot of the share card, in quotation marks"
+  },
+  "playlistShareHowTo": "วิธีการใช้งาน",
+  "@playlistShareHowTo": {
+    "description": "Heading of the help card under the share card; its body reuses playlistShareScanHint"
+  },
+  "playlistShareQrSave": "บันทึก QR Code",
+  "@playlistShareQrSave": {
+    "description": "Button at the foot of the share page that saves the QR card as an image to the photo gallery"
+  },
+  "playlistShareQrSaved": "บันทึก QR Code ลงคลังภาพแล้ว",
+  "@playlistShareQrSaved": {
+    "description": "SnackBar after the QR card image was saved to the photo gallery"
+  },
+  "playlistShareQrDownloaded": "บันทึก QR Code เป็นไฟล์ภาพแล้ว",
+  "@playlistShareQrDownloaded": {
+    "description": "SnackBar on the web after the QR card image was downloaded as a PNG file"
+  },
+  "playlistShareQrSaveDenied": "ไม่ได้รับอนุญาตให้บันทึกลงคลังภาพ — เปิดสิทธิ์ได้ในการตั้งค่าของเครื่อง",
+  "@playlistShareQrSaveDenied": {
+    "description": "SnackBar when the user refused the app access to the photo gallery"
+  },
+  "playlistShareQrSaveFailed": "บันทึก QR Code ไม่สำเร็จ ลองอีกครั้ง",
+  "@playlistShareQrSaveFailed": {
+    "description": "SnackBar when saving the QR card image failed for any other reason"
+  },
+  "playlistShareCopy": "คัดลอกโค้ด",
+  "playlistShareCopied": "คัดลอกโค้ดแล้ว",
+  "playlistImportTitle": "รับชุดสวด",
+  "@playlistImportTitle": {
+    "description": "Used as both the tooltip of the button on the playlists screen and the title of the receive page — playlistShareScanHint refers to this name"
+  },
+  "playlistReceiveSubtitle": "เรียนรู้ สวดตาม และนำไปใช้ในชีวิตประจำวัน",
+  "@playlistReceiveSubtitle": {
+    "description": "One line under the receive page title, beside the lotus rule"
+  },
+  "playlistReceiveHeading": "รับชุดสวดใหม่",
+  "@playlistReceiveHeading": {
+    "description": "Heading over the two ways to receive a set"
+  },
+  "playlistReceiveScanTitle": "สแกน QR Code",
+  "@playlistReceiveScanTitle": {
+    "description": "Title of the scan option on the receive page"
+  },
+  "playlistReceiveScanDetail": "สแกนจากหน้าจอหรือรูปภาพ",
+  "@playlistReceiveScanDetail": {
+    "description": "One line under the scan option \u2014 the scanner uses the camera, it does not open saved images"
+  },
+  "playlistReceiveScanMobileOnly": "ใช้ได้บนมือถือหรือเว็บ",
+  "@playlistReceiveScanMobileOnly": {
+    "description": "Replaces the scan option's detail line in the desktop apps, where the camera scanner is not available and the card is disabled"
+  },
+  "playlistReceivePasteTitle": "วางโค้ด",
+  "@playlistReceivePasteTitle": {
+    "description": "Title of the paste option on the receive page"
+  },
+  "playlistReceivePasteDetail": "ใช้โค้ดที่คัดลอกมา",
+  "@playlistReceivePasteDetail": {
+    "description": "One line under the paste option"
+  },
+  "playlistReceiveQuote": "“การให้ธรรมะ เป็นทานชั้นเลิศ”",
+  "@playlistReceiveQuote": {
+    "description": "Closing line on the receive page (Dhammapada 354), in quotation marks"
+  },
+  "playlistPasteTitle": "วางโค้ดรับชุดสวด",
+  "@playlistPasteTitle": {
+    "description": "Title of the paste-a-code page"
+  },
+  "playlistPasteSubtitle": "นำโค้ดที่ได้รับจากผู้แชร์มาวางด้านล่าง",
+  "@playlistPasteSubtitle": {
+    "description": "One line under the paste page title"
+  },
+  "playlistPasteLabel": "โค้ดชุดสวด",
+  "@playlistPasteLabel": {
+    "description": "Label over the code field on the paste page"
+  },
+  "playlistPasteFromClipboard": "วางจากคลิปบอร์ด",
+  "@playlistPasteFromClipboard": {
+    "description": "Button that fills the code field from the clipboard"
+  },
+  "playlistPasteNote": "คัดลอกโค้ดจากหน้าการแชร์ชุดสวด แล้วนำมาวางที่นี่",
+  "@playlistPasteNote": {
+    "description": "Help line under the paste button"
+  },
+  "playlistPasteClipboardEmpty": "คลิปบอร์ดไม่มีข้อความ",
+  "@playlistPasteClipboardEmpty": {
+    "description": "SnackBar when paste-from-clipboard finds nothing to paste"
+  },
+  "playlistImportHint": "วางโค้ดที่คัดลอกมา",
+  "@playlistImportHint": {
+    "description": "Hint text in the paste-code field"
+  },
+  "playlistImportInvalid": "โค้ดไม่ถูกต้อง — ตรวจว่าคัดลอกมาครบทั้งข้อความ",
+  "@playlistImportInvalid": {
+    "description": "Shown when the pasted code cannot be decoded; deliberately unspecific (a broken code can only be fixed by copying it again)"
+  },
+  "playlistImportSkipped": "{count, plural, other{ข้าม {count} บทที่เครื่องนี้ยังไม่มี — ลองอัปเดตแอป}}",
+  "@playlistImportSkipped": {
+    "description": "Warning in the import preview when the shared set contains ids this device doesn't know (usually the sender runs a newer app version) — Thai has no plural form so only other is used",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "playlistImportEmpty": "เครื่องนี้ไม่รู้จักบทในชุดนี้เลย — แอปของอีกเครื่องอาจใหม่กว่า ลองอัปเดตแอปก่อน",
+  "@playlistImportEmpty": {
+    "description": "Shown instead of the preview when filtering leaves no prayers this device has — the add button is disabled"
+  },
+  "playlistImportAdd": "ยืนยันรับชุดสวด",
+  "@playlistImportAdd": {
+    "description": "Confirm button at the foot of a received set's preview page; saves the set on this device"
+  },
+  "playlistPreviewSubtitle": "ตรวจดูบทสวดก่อนรับชุดสวด",
+  "@playlistPreviewSubtitle": {
+    "description": "Subtitle under the title of a received set's preview page, before it is saved"
+  },
+  "playlistScanSubtitle": "สแกนเพื่อรับชุดสวด",
+  "@playlistScanSubtitle": {
+    "description": "One line under the scan page title, beside the lotus rule"
+  },
+  "playlistScanFrameHint": "วาง QR Code ให้อยู่ในกรอบ\nระบบจะสแกนโดยอัตโนมัติ",
+  "@playlistScanFrameHint": {
+    "description": "Hint over the live camera, under the gold frame \u2014 two lines on purpose"
+  },
+  "playlistScanFlash": "แฟลช",
+  "@playlistScanFlash": {
+    "description": "Label under the flash toggle on the camera"
+  },
+  "playlistScanGallery": "เลือกรูปจากคลัง",
+  "@playlistScanGallery": {
+    "description": "Label under the camera's button that picks a photo from the library and reads its QR"
+  },
+  "playlistScanHowTo": "วิธีการสแกน",
+  "@playlistScanHowTo": {
+    "description": "Heading of the steps card on the scan page"
+  },
+  "playlistScanStep1": "เปิดกล้องและวาง QR Code ให้อยู่ในกรอบ",
+  "@playlistScanStep1": {
+    "description": "Scan step 1"
+  },
+  "playlistScanStep2": "ระบบจะสแกนและแสดงข้อมูลชุดสวด",
+  "@playlistScanStep2": {
+    "description": "Scan step 2"
+  },
+  "playlistScanStep3": "กด “ยืนยันรับชุดสวด” เพื่อเพิ่มในคลังของคุณ",
+  "@playlistScanStep3": {
+    "description": "Scan step 3 \u2014 the quoted button must match playlistImportAdd"
+  },
+  "playlistScanOr": "หรือ",
+  "@playlistScanOr": {
+    "description": "Word between the steps card and the pick-a-file card"
+  },
+  "playlistScanFileTitle": "เลือกจากไฟล์",
+  "@playlistScanFileTitle": {
+    "description": "Title of the card that picks an image file and reads its QR"
+  },
+  "playlistScanFileDetail": "รองรับไฟล์รูปภาพ (jpg, png)",
+  "@playlistScanFileDetail": {
+    "description": "One line under playlistScanFileTitle"
+  },
+  "playlistScanWhereNote": "QR Code อาจอยู่ในสื่อสิ่งพิมพ์ หรือที่แชร์จากเพื่อน",
+  "@playlistScanWhereNote": {
+    "description": "Closing note at the foot of the scan page"
+  },
+  "playlistScanImageNotFound": "ไม่พบ QR Code ของชุดสวดในรูปนี้",
+  "@playlistScanImageNotFound": {
+    "description": "SnackBar when a picked image has no prayer-set QR"
+  },
+  "playlistScanImageFailed": "อ่านรูปนี้ไม่ได้ ลองรูปอื่น",
+  "@playlistScanImageFailed": {
+    "description": "SnackBar when a picked image could not be opened or decoded"
+  },
+  "playlistScanCameraError": "เปิดกล้องไม่ได้ — ตรวจสิทธิ์กล้องของแอปในตั้งค่าเครื่อง",
+  "@playlistScanCameraError": {
+    "description": "Shown full-screen on the scan page when the camera is unavailable (usually a denied permission)"
+  },
+  "menuOptions": "ตัวเลือก",
+  "menuDeletePlaylist": "ลบชุด",
+  "menuMore": "ตัวเลือกเพิ่มเติม",
+  "menuCopyPrayer": "คัดลอกบทสวด",
+  "prayerCopied": "คัดลอกบทสวดแล้ว",
+  "menuReportError": "แจ้งบทสวดผิด",
+  "@menuReportError": {
+    "description": "⋮ menu on the prayer reading screen — opens a sheet to report a content error for that prayer"
+  },
+  "reportSheetTitle": "แจ้งข้อผิดพลาด",
+  "reportSheetIntro": "ช่วยระบุจุดที่ผิดของ “{title}” เพื่อให้ผู้ดูแลตรวจแก้",
+  "@reportSheetIntro": {
+    "description": "Caption at the top of the report sheet — {title} is the prayer being read",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "reportSelectedLabel": "ข้อความที่เลือก",
+  "@reportSelectedLabel": {
+    "description": "Label of the box holding the text the user long-pressed on the reading screen before reporting — only shown when the report was opened from the selection toolbar"
+  },
+  "reportSelectHint": "เคล็ดลับ: กดค้างบนเนื้อบทเพื่อเลือกข้อความที่ผิด แล้วเลือก “แจ้งบทสวดผิด” จากแถบที่ขึ้นมา — ข้อความที่เลือกจะติดไปในรายงานให้เลย",
+  "@reportSelectHint": {
+    "description": "Hint in the report sheet when opened from the ⋮ menu (nothing selected) — points at the shortcut that pinpoints the error"
+  },
+  "reportFieldSection": "ส่วนที่ผิด",
+  "reportFieldText": "บทสวด",
+  "reportFieldMeaning": "คำแปล",
+  "reportFieldPali": "คำอ่านบาลี",
+  "reportFieldTitle": "ชื่อบท",
+  "reportFieldOther": "อื่น ๆ",
+  "reportDetailLabel": "รายละเอียด",
+  "reportDetailHint": "อธิบายว่าผิดตรงไหน และควรแก้เป็นอย่างไร",
+  "reportDetailRequired": "กรุณากรอกรายละเอียดก่อนส่ง",
+  "reportSubmit": "ส่งรายงาน",
+  "reportEmailSubject": "แจ้งบทสวดผิด: {prayerId}",
+  "@reportEmailSubject": {
+    "description": "Report email subject — {prayerId} is the prayer id (not user-facing text)",
+    "placeholders": {
+      "prayerId": {
+        "type": "String"
+      }
+    }
+  },
+  "reportCopiedFallback": "คัดลอกรายงานแล้ว กรุณาวางแล้วส่งมาที่ {email}",
+  "@reportCopiedFallback": {
+    "description": "Shown when no mail app could be opened, so the report was copied to the clipboard instead — {email} is the maintainer's email",
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "fontDecrease": "ลดขนาดตัวอักษร",
+  "fontIncrease": "เพิ่มขนาดตัวอักษร",
+  "autoScrollStop": "หยุดเลื่อนอัตโนมัติ",
+  "@autoScrollStop": {
+    "description": "Tooltip for the ▶ button while scrolling — when stopped it uses settingsAutoScroll"
+  },
+  "favoriteAdd": "บันทึกบทสวดนี้",
+  "favoriteRemove": "เอาออกจากที่บันทึกไว้",
+  "prayerLoadError": "โหลดบทสวดไม่สำเร็จ",
+  "prayerNotFound": "ไม่พบบทสวดนี้",
+  "prayerPosition": "บทที่ {position}/{total}",
+  "@prayerPosition": {
+    "description": "Position of a prayer within a category/set, e.g. prayer 3/19",
+    "placeholders": {
+      "position": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "immersiveHint": "แตะหน้าจอเพื่อออกจากโหมดเต็มจอ",
+  "labelPali": "บาลี",
+  "@labelPali": {
+    "description": "Chip that toggles Pali on/off — kept short because it sits inside a chip"
+  },
+  "labelMeaning": "คำแปล",
+  "@labelMeaning": {
+    "description": "Used both for the on/off chip and the heading of the meaning card at the end of a prayer"
+  },
+  "paliSectionTitle": "บาลี (อักษรโรมัน)",
+  "@paliSectionTitle": {
+    "description": "Heading of the Pali card at the end of a prayer — this label assumes Pali is an add-on to the Thai edition; it will need reworking in Phase 2 (other-language editions use Pali as the main content), see docs/internationalization.md the inversion"
+  },
+  "chipInline": "แทรกใต้บรรทัด",
+  "chipEndOfPrayer": "แยกท้ายบท",
+  "inlineUnavailable": "บทนี้คำแปลเป็นบทสรุปของทั้งบท แสดงแยกท้ายบทเท่านั้น",
+  "edgeLastInPlaylist": "สวดครบทุกบทในชุดแล้ว",
+  "edgeLastInCategory": "นี่เป็นบทสุดท้ายของหมวดแล้ว",
+  "edgeFirstInPlaylist": "นี่เป็นบทแรกของชุดสวด",
+  "edgeFirstInCategory": "นี่เป็นบทแรกของหมวด",
+  "playlistEnd": "จบชุดสวด \"{name}\"",
+  "@playlistEnd": {
+    "description": "End-of-set label in continuous mode — name is the user own set name, not translated",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "categoryEnd": "จบหมวด {category}",
+  "@categoryEnd": {
+    "description": "End-of-category label in continuous mode — category comes from prayers-th.json so it stays Thai in every language until per-language prayer files exist (docs/internationalization.md Phase 2)",
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
+  "prevCategory": "หมวดก่อนหน้า",
+  "prevCategoryHint": "หรือลากลงต่อที่หัวหน้าเพื่อย้อนหมวดก่อนหน้า",
+  "nextCategory": "หมวดถัดไป",
+  "nextCategoryHint": "หรือลากขึ้นต่อที่ท้ายหน้าเพื่อไปหมวดถัดไป (เปลี่ยนใจ ลากกลับลงก่อนปล่อย)",
+  "pullReleaseNext": "ปล่อยเพื่อไปหมวด \"{category}\"",
+  "@pullReleaseNext": {
+    "description": "Text under the ring while dragging to change category — the drag has reached the threshold, you can release",
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
+  "pullReleasePrev": "ปล่อยเพื่อย้อนหมวด \"{category}\"",
+  "@pullReleasePrev": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
+  "pullMoreNextPrayer": "ลากขึ้นต่อเพื่อไปบท \"{name}\"",
+  "@pullMoreNextPrayer": {
+    "description": "Like pullMoreNext, but swipe mode advances one **prayer** at a time, not one category",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "pullReleaseNextPrayer": "ปล่อยเพื่อไปบท \"{name}\"",
+  "@pullReleaseNextPrayer": {
+    "description": "Threshold reached in swipe mode — releasing goes to the next prayer",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "pullMorePrevPrayer": "ลากลงต่อเพื่อย้อนบท \"{name}\"",
+  "@pullMorePrevPrayer": {
+    "description": "Dragging down at the top in swipe mode, threshold not reached yet",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "pullReleasePrevPrayer": "ปล่อยเพื่อย้อนบท \"{name}\"",
+  "@pullReleasePrevPrayer": {
+    "description": "Threshold reached — releasing goes back to the previous prayer",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "pullMoreNext": "ลากขึ้นต่อเพื่อไปหมวด \"{category}\"",
+  "@pullMoreNext": {
+    "description": "The drag has not reached the threshold yet — keep dragging",
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
+  "pullMorePrev": "ลากลงต่อเพื่อย้อนหมวด \"{category}\"",
+  "@pullMorePrev": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
+  "pullCancelDown": "ลากกลับลงเพื่อยกเลิก",
+  "pullCancelUp": "ลากกลับขึ้นเพื่อยกเลิก",
+  "loading": "กำลังเตรียมบทสวด…",
+  "notFound": "ไม่พบหน้าที่ต้องการ",
+  "categoryCreatePlaylist": "สร้างชุดสวดจากหมวดนี้",
+  "@categoryCreatePlaylist": {
+    "description": "Button on the category screen — copies the category's prayers into an editable prayer set of the user's own (the category itself is unchanged)"
+  },
+  "categoryPlaylistCreated": "สร้างชุดสวด \"{name}\" แล้ว",
+  "@categoryPlaylistCreated": {
+    "description": "Snackbar shown after creating a prayer set from a category",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "openAction": "เปิด",
+  "@openAction": {
+    "description": "Snackbar action that jumps to the thing just created"
+  },
+  "sectionAddPrayer": "เพิ่มบทเข้าหมวดนี้",
+  "@sectionAddPrayer": {
+    "description": "Button on the category screen — append your own prayers to the category while the category itself keeps receiving content updates"
+  },
+  "sectionExtraBadge": "เพิ่มเอง",
+  "@sectionExtraBadge": {
+    "description": "Badge on prayers the user appended to a category, distinguishing them from the shipped ones"
+  },
+  "sectionExtraRemove": "เอาออกจากหมวดนี้",
+  "@sectionExtraRemove": {
+    "description": "Removes a prayer the user appended (only their own additions can be removed)"
+  },
+  "sectionExtraAdded": "เพิ่มเข้าหมวดแล้ว",
+  "@sectionExtraAdded": {
+    "description": "Snackbar shown after appending a prayer to a category"
+  },
+  "sectionExtraRemoved": "เอาออกจากหมวดแล้ว",
+  "@sectionExtraRemoved": {
+    "description": "Snackbar shown after removing an appended prayer — paired with an undo button"
+  },
+  "undoAction": "เลิกทำ",
+  "@undoAction": {
+    "description": "Undo button in a snackbar — for actions that silently drop something when mis-tapped"
+  },
+  "categoryEmptyMessage": "หมวดนี้ยังไม่มีบทสวด",
+  "@categoryEmptyMessage": {
+    "description": "A category page with no prayers — happens when every prayer was moved out but the category stayed in the file"
+  },
+  "categoryEmptyDetail": "กดปุ่ม ⋮ มุมขวาบน แล้วเลือก \"เพิ่มบทเข้าหมวดนี้\"",
+  "@categoryEmptyDetail": {
+    "description": "Detail line under the empty-category message — points at the menu that can append prayers"
+  },
+  "sectionIconChange": "เปลี่ยนไอคอนหมวด",
+  "@sectionIconChange": {
+    "description": "Tap the leading icon on the All-categories screen to change it (this device only)"
+  },
+  "sectionIconTitle": "ไอคอนของ \"{name}\"",
+  "@sectionIconTitle": {
+    "description": "Title of the category icon picker dialog",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "sectionIconReset": "ใช้ไอคอนเดิมของหมวด",
+  "@sectionIconReset": {
+    "description": "Button in the icon picker — drops the user's own choice and goes back to the shipped one (so a later release's icon applies again)"
+  },
+  "sectionCount": "{count, plural, other{{count} หมวด}}",
+  "@sectionCount": {
+    "description": "A number of categories — used under the \"All categories\" home tile (a different unit from playlistPrayerCount, which counts prayers)",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "homeAllCategories": "ทุกหมวด",
+  "@homeAllCategories": {
+    "description": "Home-screen box opening the list of every category — categories that are not pinned live in here; also used as that screen's title"
+  },
+  "pinToHome": "ปักหมุดหน้าแรก",
+  "@pinToHome": {
+    "description": "Pin action (reader menu / category screen button / playlist row button)"
+  },
+  "unpinFromHome": "ถอดหมุดออกจากหน้าแรก",
+  "@unpinFromHome": {
+    "description": "Unpin action — the opposite wording of pinToHome, shown in the same place when already pinned"
+  },
+  "pinnedAdded": "ปักหมุดบนหน้าแรกแล้ว",
+  "@pinnedAdded": {
+    "description": "Snackbar shown after pinning succeeds"
+  },
+  "pinnedRemoved": "ถอดหมุดแล้ว",
+  "@pinnedRemoved": {
+    "description": "Snackbar shown after unpinning"
+  },
+  "homeAllPrayers": "บทสวดทั้งหมด",
+  "@homeAllPrayers": {
+    "description": "Home-screen box that opens the full prayer list across every category — also used as that list screen's title"
+  },
+  "homeGreetingMorning": "อรุณสวัสดิ์",
+  "@homeGreetingMorning": {
+    "description": "Home header greeting from 05:00\u201310:59 local time"
+  },
+  "homeGreetingMorningSubtitle": "เริ่มต้นวันด้วยใจที่สงบ",
+  "@homeGreetingMorningSubtitle": {
+    "description": "Line under the morning greeting on the home header"
+  },
+  "homeGreetingMidday": "สวัสดียามกลางวัน",
+  "@homeGreetingMidday": {
+    "description": "Home header greeting from 11:00\u201315:59 local time"
+  },
+  "homeGreetingMiddaySubtitle": "พักใจสักครู่ระหว่างวัน",
+  "@homeGreetingMiddaySubtitle": {
+    "description": "Line under the midday greeting on the home header"
+  },
+  "homeGreetingEvening": "สวัสดียามเย็น",
+  "@homeGreetingEvening": {
+    "description": "Home header greeting from 16:00\u201318:59 local time"
+  },
+  "homeGreetingEveningSubtitle": "ปิดท้ายวันด้วยความสงบ",
+  "@homeGreetingEveningSubtitle": {
+    "description": "Line under the evening greeting on the home header"
+  },
+  "homeGreetingNight": "ราตรีสวัสดิ์",
+  "@homeGreetingNight": {
+    "description": "Home header greeting from 19:00\u201304:59 local time"
+  },
+  "homeGreetingNightSubtitle": "ผ่อนคลายใจก่อนพักผ่อน",
+  "@homeGreetingNightSubtitle": {
+    "description": "Line under the night greeting on the home header"
+  },
+  "homeNotifications": "การแจ้งเตือนสวดมนต์",
+  "homeTodayGoal": "เป้าหมายวันนี้",
+  "homePracticeTitle": "สวดมนต์ยามเช้า",
+  "homeStartChanting": "เริ่มสวด",
+  "homeQuickAccess": "ทางลัด",
+  "homeViewAll": "ดูทั้งหมด",
+  "homeMetta": "แผ่เมตตา",
+  "homeRecommendedTitle": "บทสวดแนะนำวันนี้",
+  "homeContinueTitle": "สวดต่อจากล่าสุด",
+  "homeRecommendedDescription": "เพื่อความสงบและเป็นสิริมงคล",
+  "homeOpenPrayer": "เปิดบทสวด",
+  "navHome": "หน้าแรก",
+  "navPrayers": "บทสวด",
+  "navStart": "เริ่มสวด",
+  "navLibrary": "คลังของฉัน",
+  "navSettings": "ตั้งค่า",
+  "homeGoalUnit": "นาที",
+  "@homeGoalUnit": {
+    "description": "Unit under the number inside the home card's daily goal ring — minutes"
+  },
+  "homeGoalRing": "สวดมนต์วันนี้ {done} จาก {goal} นาที",
+  "@homeGoalRing": {
+    "description": "Screen-reader label for the home card's daily goal ring",
+    "placeholders": {
+      "done": {
+        "type": "int"
+      },
+      "goal": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsPracticeGoal": "เป้าหมายสวดมนต์ต่อวัน",
+  "@settingsPracticeGoal": {
+    "description": "Settings row that sets the daily chanting goal shown by the home card's ring"
+  },
+  "settingsPracticeGoalHint": "นับเวลาขณะเปิดหน้าบทสวดและขณะนั่งสมาธิ วงแหวนหน้าแรกจะเต็มเมื่อถึงเป้าหมาย",
+  "@settingsPracticeGoalHint": {
+    "description": "Explains what the daily goal counts: time with a prayer open in the foreground, plus meditation sittings"
+  },
+  "searchHint": "ค้นหาบทสวด...",
+  "searchClear": "ล้างคำค้น",
+  "@searchClear": {
+    "description": "Tooltip of the X at the end of the Prayers search field — wipes the query in one tap (only shown while there is a query)"
+  },
+  "searchRecentHeader": "ค้นหาล่าสุด",
+  "@searchRecentHeader": {
+    "description": "Small header on the search-history panel under the search bar — languages with letter case are rendered uppercase in code"
+  },
+  "prayerListEmpty": "ยังไม่มีบทสวด",
+  "searchNoResults": "ไม่พบบทสวดที่ค้นหา",
+  "resumeReading": "อ่านต่อ",
+  "favoritesTitle": "บทสวดที่บันทึกไว้",
+  "favoritesLoadError": "โหลดรายการไม่สำเร็จ",
+  "favoritesEmptyMessage": "ยังไม่มีบทสวดที่บันทึกไว้",
+  "favoritesEmptyDetail": "กดรูปหัวใจในหน้าอ่านบทสวดเพื่อบันทึก",
+  "playlistNotFound": "ไม่พบชุดสวดนี้",
+  "playlistEmptyMessage": "ชุดนี้ยังไม่มีบทสวด",
+  "playlistEmptyDetail": "กด “แก้ไข” เพื่อเลือกบทสวดเข้าชุด",
+  "@playlistEmptyDetail": {
+    "description": "Refers to the playlistEditShort button — translate to match the wording on that button in the language"
+  },
+  "playlistStartChanting": "เริ่มสวด",
+  "playlistRemovePrayer": "เอาออกจากชุด",
+  "playlistsSearchHint": "ค้นหาชุดสวด...",
+  "@playlistsSearchHint": {
+    "description": "Hint in the search field on My prayer sets"
+  },
+  "playlistsSearchEmpty": "ไม่พบชุดสวดที่ค้นหา",
+  "@playlistsSearchEmpty": {
+    "description": "Shown on My prayer sets when no set matches the search"
+  },
+  "playlistsSort": "จัดเรียง",
+  "@playlistsSort": {
+    "description": "Button beside the search on My prayer sets that opens the sort orders"
+  },
+  "playlistsSortCreated": "ตามลำดับที่สร้าง",
+  "@playlistsSortCreated": {
+    "description": "Sort order: the order the sets were made in"
+  },
+  "playlistsSortName": "ชื่อ ก–ฮ",
+  "@playlistsSortName": {
+    "description": "Sort order: by name, alphabetically"
+  },
+  "playlistsSortCount": "จำนวนบทมากที่สุด",
+  "@playlistsSortCount": {
+    "description": "Sort order: the sets with the most prayers first"
+  },
+  "playlistsReceiveInstead": "หรือ รับชุดสวดจากเครื่องอื่น",
+  "@playlistsReceiveInstead": {
+    "description": "Link under the create card on My prayer sets while there is no set yet; opens the receive page"
+  },
+  "playlistsSubtitle": "รวบรวมบทสวดที่คุณเลือกไว้ สวดต่อเนื่องได้ทั้งชุด",
+  "@playlistsSubtitle": {
+    "description": "One line under the My prayer sets title"
+  },
+  "playlistDeleted": "ลบชุด “{name}” แล้ว",
+  "@playlistDeleted": {
+    "description": "SnackBar after deleting a set; comes with playlistUndo",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "playlistUndo": "เลิกทำ",
+  "@playlistUndo": {
+    "description": "SnackBar action that brings a just-deleted set back"
+  },
+  "playlistEditTitle": "แก้ไขชุดสวด",
+  "@playlistEditTitle": {
+    "description": "Title of the page that edits an existing set; also its entry in the set page's menu"
+  },
+  "playlistEditShort": "แก้ไข",
+  "@playlistEditShort": {
+    "description": "Short bottom-bar label that opens playlistEditTitle"
+  },
+  "playlistEditSubtitle": "จัดบทสวดที่คุณต้องการ สร้างเป็นชุดสวดของคุณเอง",
+  "@playlistEditSubtitle": {
+    "description": "One line under the create/edit page title"
+  },
+  "playlistNameLabel": "ชื่อชุดสวด",
+  "@playlistNameLabel": {
+    "description": "Label over the set name field; a red asterisk marks it required"
+  },
+  "playlistNameRequired": "ตั้งชื่อชุดสวดก่อนบันทึก",
+  "@playlistNameRequired": {
+    "description": "Error under the name field when saving without a name"
+  },
+  "playlistDescriptionLabel": "คำอธิบาย",
+  "@playlistDescriptionLabel": {
+    "description": "Label over the optional description field"
+  },
+  "playlistDescriptionHint": "เช่น เริ่มต้นวันด้วยใจที่สงบ",
+  "@playlistDescriptionHint": {
+    "description": "Placeholder in the description field"
+  },
+  "playlistTabChoose": "เลือกบทสวด",
+  "@playlistTabChoose": {
+    "description": "Tab listing every prayer to add to the set"
+  },
+  "playlistTabSelected": "บทสวดที่เลือก ({count})",
+  "@playlistTabSelected": {
+    "description": "Tab listing the prayers already in the set, with how many",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "playlistFilterAll": "ทั้งหมด",
+  "@playlistFilterAll": {
+    "description": "First category chip: no category filter"
+  },
+  "playlistSearchHint": "ค้นหาบทสวด...",
+  "@playlistSearchHint": {
+    "description": "Placeholder of the search field on the choose tab"
+  },
+  "playlistPrayerAdded": "เพิ่มบทสวดแล้ว",
+  "@playlistPrayerAdded": {
+    "description": "Brief confirmation after adding a prayer on the choose tab"
+  },
+  "playlistPrayerRemoved": "เอาบทสวดออกแล้ว",
+  "@playlistPrayerRemoved": {
+    "description": "Brief confirmation after taking a prayer out of the set in the set editor"
+  },
+  "playlistAddToSet": "เพิ่มเข้าชุด",
+  "@playlistAddToSet": {
+    "description": "Tooltip of the + button on a prayer not yet in the set"
+  },
+  "playlistReorder": "จัดลำดับ",
+  "@playlistReorder": {
+    "description": "Button beside the set page's prayer list that opens the edit page on the chosen prayers, to change their order"
+  },
+  "playlistReorderHint": "กดค้างแล้วลากเพื่อจัดลำดับ",
+  "@playlistReorderHint": {
+    "description": "Hint above the selected prayers"
+  },
+  "playlistSelectedEmpty": "ยังไม่ได้เลือกบทสวด",
+  "@playlistSelectedEmpty": {
+    "description": "Selected tab with nothing in it"
+  },
+  "playlistSelectedEmptyDetail": "เลือกบทได้จากแท็บ “เลือกบทสวด”",
+  "@playlistSelectedEmptyDetail": {
+    "description": "Under playlistSelectedEmpty — the quoted tab must match playlistTabChoose"
+  },
+  "playlistSave": "บันทึกชุดสวด",
+  "@playlistSave": {
+    "description": "Gold button at the foot of the create/edit page"
+  },
+  "playlistSavedTitle": "สร้างชุดสวดสำเร็จ",
+  "@playlistSavedTitle": {
+    "description": "Title of the dialog after creating a set"
+  },
+  "playlistSavedMessage": "บันทึกชุด “{name}” แล้ว",
+  "@playlistSavedMessage": {
+    "description": "Line in the dialog after creating a set",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "playlistViewSet": "ดูชุดสวด",
+  "@playlistViewSet": {
+    "description": "Opens a set: in the dialog after creating one, and on the paste page to preview the pasted code"
+  },
+  "playlistBackHome": "กลับหน้าหลัก",
+  "@playlistBackHome": {
+    "description": "Dialog button that returns to the home screen"
+  },
+  "playlistDiscardTitle": "ทิ้งการแก้ไข?",
+  "@playlistDiscardTitle": {
+    "description": "Asked when leaving the create/edit page with unsaved changes"
+  },
+  "playlistDiscardBody": "สิ่งที่ยังไม่ได้บันทึกจะหายไป",
+  "@playlistDiscardBody": {
+    "description": "Body of playlistDiscardTitle"
+  },
+  "playlistDiscard": "ทิ้ง",
+  "@playlistDiscard": {
+    "description": "Leaves without saving"
+  },
+  "playlistKeepEditing": "แก้ไขต่อ",
+  "@playlistKeepEditing": {
+    "description": "Stays on the page"
+  },
+  "playlistDetailTitle": "รายละเอียดชุดสวด",
+  "@playlistDetailTitle": {
+    "description": "Pinned bar title of one prayer set's page"
+  },
+  "playlistDetailSubtitle": "สวดด้วยใจ สงบในทุกวัน",
+  "@playlistDetailSubtitle": {
+    "description": "One-line motto under the page title, beside a small lotus rule"
+  },
+  "playlistPlayAll": "เริ่มสวดทั้งชุด",
+  "@playlistPlayAll": {
+    "description": "Title of the card that starts chanting every prayer in the set in order"
+  },
+  "playlistPlayAllDetail": "{count, plural, other{สวดต่อเนื่อง {count} บทจนจบชุด}}",
+  "@playlistPlayAllDetail": {
+    "description": "Line under playlistPlayAll",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "playlistPrayersHeading": "รายการบทสวด ({count})",
+  "@playlistPrayersHeading": {
+    "description": "Heading over the prayers in the set, with how many there are",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "playlistPin": "ปักหมุด",
+  "@playlistPin": {
+    "description": "Short bottom-bar label: pin this set to the home screen (pinToHome is the long form)"
+  },
+  "playlistUnpin": "ถอดหมุด",
+  "@playlistUnpin": {
+    "description": "Short bottom-bar label once pinned: unpin from the home screen"
+  },
+  "playlistPrayerMinutes": "{count, plural, other{{count} นาที}}",
+  "@playlistPrayerMinutes": {
+    "description": "A prayer's chanting length beside a clock icon",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "notificationChannelName": "แจ้งเตือนเวลาสวดมนต์",
+  "@notificationChannelName": {
+    "description": "Notification channel name shown in Android settings — not inside our app"
+  },
+  "notificationChannelDescription": "เตือนเวลาทำวัตรเช้า-เย็นประจำวัน",
+  "reminderNotificationMorning": "ได้เวลาทำวัตรเช้า",
+  "@reminderNotificationMorning": {
+    "description": "Notification title — the OS stores the text from when it was scheduled, so it must be rescheduled when the language changes (RemindersController handles this)"
+  },
+  "reminderNotificationEvening": "ได้เวลาทำวัตรเย็น",
+  "reminderNotificationBody": "ถึงเวลาสวดมนต์แล้ว ขอให้จิตใจสงบเบิกบาน",
+  "meditationTitle": "นั่งสมาธิ",
+  "@meditationTitle": {
+    "description": "Meditation timer feature name — used as both the home-screen box label and the timer screen's title"
+  },
+  "meditationMinutes": "{count, plural, other{{count} นาที}}",
+  "@meditationMinutes": {
+    "description": "Duration chip label for the meditation timer (5/10/15/20/30 minutes) — Thai has no plural form so only other is used there",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "durationHours": "{hours} ชม.",
+  "@durationHours": {
+    "description": "A duration of whole hours, on the meditation timer's custom chip and sitting screen",
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      }
+    }
+  },
+  "durationHoursMinutes": "{hours} ชม. {minutes} นาที",
+  "@durationHoursMinutes": {
+    "description": "A duration of an hour or more with minutes left over, on the meditation timer's custom chip and sitting screen",
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      },
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "meditationInProgress": "กำลังนั่งสมาธิ",
+  "meditationRemaining": "เวลาคงเหลือ",
+  "meditationEndPractice": "จบการฝึก",
+  "meditationSessionGuidance": "ผ่อนคลายร่างกาย และกลับมาอยู่กับลมหายใจ",
+  "meditationPause": "หยุดชั่วคราว",
+  "meditationResume": "เริ่มต่อ",
+  "meditationReset": "เริ่มใหม่",
+  "meditationDone": "ครบเวลาแล้ว",
+  "meditationScreenOnNote": "หน้าจอจะไม่ดับระหว่างจับเวลา",
+  "meditationStartLong": "เริ่มนั่งสมาธิ",
+  "@meditationStartLong": {
+    "description": "Main button on the meditation timer that begins a sitting"
+  },
+  "meditationOptions": "ตัวเลือกการนั่งสมาธิ",
+  "@meditationOptions": {
+    "description": "Heading of the card holding the meditation timer's per-session options"
+  },
+  "meditationStartSignal": "เสียงเริ่มต้น",
+  "@meditationStartSignal": {
+    "description": "Option row: how the timer announces that a sitting has begun"
+  },
+  "meditationEndSignal": "เตือนเมื่อครบเวลา",
+  "@meditationEndSignal": {
+    "description": "Option row: how the timer announces that a sitting has finished; the same setting as Settings' completion signal"
+  },
+  "meditationAmbient": "เสียงธรรมชาติ",
+  "@meditationAmbient": {
+    "description": "Option row and session card: the nature sound that loops under a sitting"
+  },
+  "meditationBackground": "เสียงพื้นหลัง",
+  "@meditationBackground": {
+    "description": "Option row on the meditation setup card that opens the nature-sound picker"
+  },
+  "meditationAmbientVolume": "ระดับเสียงธรรมชาติ",
+  "@meditationAmbientVolume": {
+    "description": "Screen-reader label of the nature-sound volume slider on the session screen"
+  },
+  "ambientNone": "ไม่มีเสียง",
+  "@ambientNone": {
+    "description": "Nature-sound choice: nothing plays. The default"
+  },
+  "ambientForestStream": "สายน้ำในป่า",
+  "@ambientForestStream": {
+    "description": "Nature-sound choice: a stream running through a forest"
+  },
+  "ambientRain": "สายฝน",
+  "@ambientRain": {
+    "description": "Nature-sound choice: steady rain, no thunder"
+  },
+  "ambientForestBirds": "นกในป่า",
+  "@ambientForestBirds": {
+    "description": "Nature-sound choice: birdsong in a forest"
+  },
+  "ambientSeaWaves": "คลื่นทะเล",
+  "@ambientSeaWaves": {
+    "description": "Nature-sound choice: small waves on a beach"
+  },
+  "meditationCustom": "กำหนดเอง",
+  "@meditationCustom": {
+    "description": "Chip that opens the custom-duration input for the meditation timer when the set value doesn't match a preset chip — when selected it shows the custom minute count instead of this word"
+  },
+  "meditationCustomTitle": "ตั้งเวลาเอง",
+  "@meditationCustomTitle": {
+    "description": "Title of the dialog for entering a custom number of meditation minutes"
+  },
+  "meditationCustomHint": "จำนวนนาที (1–{max})",
+  "@meditationCustomHint": {
+    "description": "Label for the minutes input, stating the allowed range (1 to the maximum)",
+    "placeholders": {
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "durationHoursLabel": "ชั่วโมง",
+  "@durationHoursLabel": {
+    "description": "Heading over the hours wheel in the custom meditation duration dialog"
+  },
+  "durationMinutesLabel": "นาที",
+  "@durationMinutesLabel": {
+    "description": "Heading over the minutes wheel in the custom meditation duration dialog"
+  },
+  "welcomeMeditationTitle": "นั่งสมาธิ",
+  "welcomeMeditationDetail": "ตั้งเวลานั่งสมาธิ กันจอดับ สั่นเตือนเมื่อครบเวลา",
+  "welcomeMalaDetail": "แผ่นลอยนับรอบสวดในหน้าอ่าน ตั้งเป้าได้ สั่นเมื่อครบ",
+  "malaTitle": "ตัวนับรอบสวด",
+  "@malaTitle": {
+    "description": "Name of the mala (prayer-bead) chant counter feature — a reading-screen menu toggles the floating counter"
+  },
+  "malaProgress": "{count} / {target}",
+  "@malaProgress": {
+    "description": "Current count over target on the floating counter (e.g. 27 / 108)",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
+  "malaRounds": "{count, plural, other{{count} รอบ}}",
+  "@malaRounds": {
+    "description": "Round-count targets in the set-target menu (9/27/108) — Thai has no plural form so only other is used there",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "malaSetTarget": "ตั้งเป้ารอบ",
+  "@malaSetTarget": {
+    "description": "Tooltip for the set-target menu button on the floating counter"
+  },
+  "malaCustomTarget": "กำหนดเป้าเอง",
+  "@malaCustomTarget": {
+    "description": "Menu item / dialog title for entering a custom round target"
+  },
+  "malaTargetHint": "จำนวนรอบ (1–{max})",
+  "@malaTargetHint": {
+    "description": "Label for the target input, stating the allowed range",
+    "placeholders": {
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "malaReset": "เริ่มนับใหม่",
+  "@malaReset": {
+    "description": "Menu item that resets the counter to zero"
+  },
+  "malaHide": "ซ่อนตัวนับ",
+  "@malaHide": {
+    "description": "Tooltip for the button that hides the floating counter (the value is kept)"
+  }
+}

@@ -1,0 +1,58 @@
+name: ci
+
+# Public branches should get an automatic signal before review or deploy.
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  flutter_test:
+    runs-on: ubuntu-latest
+    # The Flutter image is pinned so a new stable release cannot change what
+    # the formatter or the linter accepts between two runs. 3.44.0 is the
+    # newest tag the image publishes (the local SDK's 3.44.6 has none); check
+    # the registry before bumping it.
+    container: ghcr.io/cirruslabs/flutter:3.44.0
+    env:
+      PUB_CACHE: ${{ github.workspace }}/.pub-cache
+    steps:
+      - uses: actions/checkout@v4
+      # The checkout belongs to another user than the one the image runs as.
+      - run: git config --global --add safe.directory '*'
+      # Kept between runs, keyed on the lockfile: dependencies are only
+      # downloaded again when they actually change.
+      - uses: actions/cache@v4
+        with:
+          path: |
+            .pub-cache
+            .dart_tool
+          key: pub-${{ hashFiles('pubspec.lock') }}
+      - run: flutter pub get
+      # The same checks a developer runs locally; see tool/check.sh.
+      - run: sh tool/check.sh --coverage
+      - run: sh tool/coverage_summary.sh coverage/lcov.info >> "$GITHUB_STEP_SUMMARY"
+
+  # The Flutter image has no Ruby, so the link check gets a job of its own.
+  docs_links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: ruby tool/check_docs_links.rb
+
+  secret_detection:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - run: >
+          docker run --rm -v "$PWD:/repo" ghcr.io/gitleaks/gitleaks:v8.30.1
+          git --no-banner --redact /repo
