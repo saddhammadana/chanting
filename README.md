@@ -55,8 +55,9 @@ sh tool/check.sh
 
 `tool/check.sh` is docs links, formatting, analyzer and tests in one command —
 the same script GitHub Actions runs on pull requests and the default branch.
-GitHub Pages deployment stays manual; an APK is built on a version tag or on
-demand.
+GitHub Pages deployment is manual, except that a change under `web/` deploys
+itself so the published privacy policy cannot go stale; an APK is built on a
+version tag or on demand.
 
 [Contributing](CONTRIBUTING.md) has the rules a change is held to. The longer
 developer documentation (architecture, content workflow, store release) is not

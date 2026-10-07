@@ -1,10 +1,16 @@
 name: pages
 
-# Manual: the web build should not deploy automatically on every main push.
-# Run it from Actions → pages → Run workflow. The privacy policy the stores
-# link to (web/privacy.html) is published by this job and by nothing else.
+# Manual, with one exception. Releasing the web app should be a deliberate
+# press of Actions → pages → Run workflow, because a deploy publishes whatever
+# main holds at that moment. The privacy policy the stores link to
+# (web/privacy.html) is published by this job and by nothing else, though, so
+# an edit under web/ deploys itself rather than waiting for someone to remember
+# the button.
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['web/**']
 
 permissions:
   contents: read
