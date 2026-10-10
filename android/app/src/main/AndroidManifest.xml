@@ -11,6 +11,9 @@
         android:maxSdkVersion="29"/>
     <!-- The completion signal's vibration (meditation end, mala round). -->
     <uses-permission android:name="android.permission.VIBRATE"/>
+    <!-- Fetching a newer prayer book from dhammapanya.org; the app's only
+         network request. See docs/architecture/content-updates.md. -->
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:label="@string/app_name"
         android:name="${applicationName}"

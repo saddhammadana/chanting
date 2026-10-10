@@ -1,5 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../data/local/content_store.dart';
 import '../../data/local/prefs_service.dart';
 import '../../data/models/prayer.dart';
 import '../../data/models/prayer_section.dart';
@@ -14,8 +15,11 @@ final prayerRepositoryProvider = Provider.autoDispose<PrayerRepository>((ref) {
   final uiLocale = ref.watch(
     settingsControllerProvider.select((s) => s.locale),
   );
+  // A newly applied release makes a new repository, as a new locale does.
+  ref.watch(contentEpochProvider);
   return PrayerRepository(
     languageCode: contentLanguageFor(uiLocale.resolve().languageCode),
+    store: ref.watch(contentStoreProvider),
   );
 });
 

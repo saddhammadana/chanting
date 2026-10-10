@@ -57,6 +57,8 @@ class PrefsService {
   static const _kRetiredReadingDates = 'reading_dates';
   static const _kPracticeSeconds = 'practice_seconds';
   static const _kPracticeGoalMinutes = 'practice_goal_minutes';
+  static const _kContentAutoUpdate = 'content_auto_update';
+  static const _kContentLastCheck = 'content_last_check';
 
   final SharedPreferences _prefs;
 
@@ -390,6 +392,21 @@ class PrefsService {
   // ---- Mala counter ----
 
   /// Persisted count so chanting can resume after the app is closed.
+  // ---- Prayer updates (docs/architecture/content-updates.md) ----
+
+  /// Whether the app looks for a newer prayer book by itself. On by default:
+  /// a correction nobody receives is the problem this exists to solve.
+  bool getContentAutoUpdate() => _prefs.getBool(_kContentAutoUpdate) ?? true;
+
+  Future<void> setContentAutoUpdate(bool value) =>
+      _prefs.setBool(_kContentAutoUpdate, value);
+
+  /// When the app last asked, in milliseconds since the epoch; 0 for never.
+  int getContentLastCheck() => _prefs.getInt(_kContentLastCheck) ?? 0;
+
+  Future<void> setContentLastCheck(int millis) =>
+      _prefs.setInt(_kContentLastCheck, millis);
+
   int getMalaCount() => _prefs.getInt(_kMalaCount) ?? 0;
 
   Future<void> setMalaCount(int count) => _prefs.setInt(_kMalaCount, count);

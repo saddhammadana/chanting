@@ -26,6 +26,10 @@ To be released as 1.0.0, the first public release (`pubspec.yaml` is at
   language, and theme.
 - Lotus launch screen on Android and iOS, and the same lotus as the loader on the web and in-app.
 - Mala chant counter on the reading screen.
+- Prayer updates: a corrected prayer book published from the dhamma admin
+  reaches an installed app without a new version. Checked when the app opens,
+  with a switch and a "check now" button under Settings. This is the app's
+  only network request; the bundled prayer book still works offline.
 - macOS desktop build.
 
 ### Changed

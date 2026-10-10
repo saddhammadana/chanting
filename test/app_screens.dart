@@ -79,6 +79,7 @@ Map<String, AppScreen> appScreens() {
     'reading settings': (path: '/settings/reading', extra: null),
     'goal and reminders': (path: '/settings/goal', extra: null),
     'sound': (path: '/settings/sound', extra: null),
+    'prayer updates': (path: '/settings/content', extra: null),
     'language': (path: '/settings/language', extra: null),
     'theme': (path: '/settings/theme', extra: null),
     'about': (path: '/about', extra: null),

@@ -5,6 +5,7 @@ import '../../l10n/app_localizations.dart';
 import '../../shared/widgets/content_width.dart';
 import '../../shared/widgets/empty_state.dart';
 import '../../theme/dashboard_tokens.dart';
+import '../content_update/content_update_controller.dart';
 import 'widgets/settings_scaffold.dart';
 import 'widgets/settings_tile.dart';
 
@@ -147,6 +148,20 @@ List<SettingsSearchEntry> settingsSearchEntries(AppLocalizations l10n) {
       section: l10n.settingsSectionSignal,
       route: '/settings/sound',
     ),
+    if (contentUpdateSupported) ...[
+      (
+        icon: Icons.cloud_download_outlined,
+        title: l10n.settingsContentUpdate,
+        section: l10n.settingsSectionGeneral,
+        route: '/settings/content',
+      ),
+      (
+        icon: Icons.sync,
+        title: l10n.contentAutoUpdate,
+        section: l10n.settingsContentUpdate,
+        route: '/settings/content',
+      ),
+    ],
     (
       icon: Icons.language,
       title: l10n.settingsLanguage,

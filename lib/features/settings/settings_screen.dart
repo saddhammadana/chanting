@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
 import '../../l10n/app_localizations.dart';
+import '../content_update/content_update_controller.dart';
 import 'reminders_controller.dart';
 import 'widgets/settings_scaffold.dart';
 import 'widgets/settings_tile.dart';
@@ -103,6 +104,14 @@ class SettingsScreen extends ConsumerWidget {
               subtitle: l10n.settingsCompletionSignal,
               onTap: () => context.push('/settings/sound'),
             ),
+            if (contentUpdateSupported)
+              SettingsTile(
+                key: const ValueKey('settings_content'),
+                icon: Icons.cloud_download_outlined,
+                title: l10n.settingsContentUpdate,
+                subtitle: l10n.settingsContentUpdateSubtitle,
+                onTap: () => context.push('/settings/content'),
+              ),
           ],
         ),
         SettingsSectionHeader(l10n.aboutSectionAbout),

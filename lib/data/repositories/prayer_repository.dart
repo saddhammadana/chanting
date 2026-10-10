@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/services.dart' show rootBundle;
 
+import '../local/content_store.dart';
 import '../models/prayer.dart';
 import '../models/prayer_section.dart';
 
@@ -21,9 +22,14 @@ String contentLanguageFor(String uiLanguageCode) =>
 /// (`/admin/chants/export`) produces `prayers-<lang>.json` and
 /// `sections-<lang>.json`, which are dropped into `assets/data/` as they are.
 /// `test/prayers_data_test.dart` and friends are the gate on what arrives.
+///
+/// A release fetched after install ([store]) is read in place of the bundled
+/// file of the same name; the bundle is the fallback for anything missing or
+/// unreadable. See docs/architecture/content-updates.md.
 class PrayerRepository {
-  PrayerRepository({this.languageCode = kDefaultContentLanguage});
+  PrayerRepository({this.languageCode = kDefaultContentLanguage, this.store});
   final String languageCode;
+  final ContentStore? store;
 
   List<Prayer>? _cache;
   List<PrayerSection>? _sectionCache;
@@ -56,19 +62,19 @@ class PrayerRepository {
     return ordered;
   }
 
-  Future<List<Prayer>> _readPrayers(String lang) async {
-    return decodePrayers(
-      await _contentRaw(assetPathFor(lang)),
-      languageCode: lang,
-    );
-  }
+  Future<List<Prayer>> _readPrayers(String lang) => _content(
+    assetPathFor(lang),
+    (raw) => decodePrayers(raw, languageCode: lang),
+  );
 
   ///
   Future<List<PrayerSection>> getSections() async {
     if (_sectionCache != null) return _sectionCache!;
-    return _sectionCache = decodeSections(
-      await _contentRaw(sectionsPathFor(languageCode)),
+    final sections = await _content(
+      sectionsPathFor(languageCode),
+      decodeSections,
     );
+    return _sectionCache = sections;
   }
 
   ///
@@ -77,7 +83,17 @@ class PrayerRepository {
     return utf8.decode(bytes.buffer.asUint8List());
   }
 
-  Future<String> _contentRaw(String path) => _bundleRaw(path);
+  /// The fetched file when there is one that decodes, else the bundled one.
+  Future<T> _content<T>(String path, T Function(String raw) decode) async {
+    try {
+      final name = path.split('/').last.replaceFirst('.json', '');
+      final fetched = await store?.read(name);
+      if (fetched != null) return decode(fetched);
+    } catch (_) {
+      // A damaged download must not cost the reader the book.
+    }
+    return decode(await _bundleRaw(path));
+  }
 
   Future<PrayerSection?> getSectionById(String id) async {
     for (final s in await getSections()) {

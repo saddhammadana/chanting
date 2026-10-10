@@ -173,7 +173,7 @@
     "description": "Effective date of the policy — keep in sync with web/privacy.html"
   },
   "legalPrivacyTitle": "นโยบายความเป็นส่วนตัว",
-  "legalPrivacyBody": "แอปนี้ทำงานแบบออฟไลน์ทั้งหมด ไม่มีการสมัครสมาชิก ไม่มีเซิร์ฟเวอร์ ไม่มีโฆษณา และไม่มีการเก็บสถิติการใช้งาน จึงไม่มีการเก็บรวบรวม ใช้ หรือส่งต่อข้อมูลส่วนบุคคลใด ๆ ออกจากเครื่องของท่าน",
+  "legalPrivacyBody": "แอปนี้ใช้งานได้โดยไม่ต้องต่ออินเทอร์เน็ต ไม่มีการสมัครสมาชิก ไม่มีโฆษณา และไม่มีการเก็บสถิติการใช้งาน จึงไม่มีการเก็บรวบรวม ใช้ หรือส่งต่อข้อมูลส่วนบุคคลใด ๆ ออกจากเครื่องของท่าน การเชื่อมต่ออินเทอร์เน็ตเพียงอย่างเดียวของแอปคือการดาวน์โหลดบทสวดฉบับแก้ไขจาก dhammapanya.org ซึ่งไม่ส่งข้อมูลของท่านออกไป และปิดได้ที่ ตั้งค่า → อัปเดตบทสวด",
   "@legalPrivacyBody": {
     "description": "Summary of web/privacy.html — update both together"
   },
@@ -1591,5 +1591,79 @@
   "malaHide": "ซ่อนตัวนับ",
   "@malaHide": {
     "description": "Tooltip for the button that hides the floating counter (the value is kept)"
+  },
+  "settingsContentUpdate": "อัปเดตบทสวด",
+  "@settingsContentUpdate": {
+    "description": "Settings hub row and page title for fetching a newer prayer book without updating the app"
+  },
+  "settingsContentUpdateSubtitle": "รับบทสวดที่แก้ไขแล้วโดยไม่ต้องอัปเดตแอป",
+  "@settingsContentUpdateSubtitle": {
+    "description": "Subtitle of the prayer-updates row on the settings hub"
+  },
+  "contentAutoUpdate": "ตรวจหาบทสวดใหม่อัตโนมัติ",
+  "@contentAutoUpdate": {
+    "description": "Switch on the prayer-updates page: whether the app looks for a newer prayer book by itself"
+  },
+  "contentAutoUpdateSubtitle": "เมื่อเปิดแอปและมีอินเทอร์เน็ต ไม่เกินวันละครั้ง",
+  "@contentAutoUpdateSubtitle": {
+    "description": "Subtitle of the automatic-check switch"
+  },
+  "contentVersionTitle": "บทสวดที่ใช้อยู่",
+  "@contentVersionTitle": {
+    "description": "Row naming which prayer book the app is reading from"
+  },
+  "contentVersionBundled": "ฉบับที่มากับแอป",
+  "@contentVersionBundled": {
+    "description": "Value of the prayers-in-use row when no newer release has been fetched"
+  },
+  "contentVersionFetched": "ฉบับที่ {version} · เผยแพร่ {date}",
+  "@contentVersionFetched": {
+    "description": "Value of the prayers-in-use row for a fetched release; date is already formatted for the locale",
+    "placeholders": {
+      "version": {
+        "type": "int"
+      },
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "contentPendingNote": "ดาวน์โหลดฉบับที่ {version} แล้ว จะเริ่มใช้เมื่อเปิดแอปครั้งถัดไป",
+  "@contentPendingNote": {
+    "description": "Note under the card when a release fetched in the background is waiting for the next launch",
+    "placeholders": {
+      "version": {
+        "type": "int"
+      }
+    }
+  },
+  "contentCheckNow": "ตรวจหาบทสวดใหม่ตอนนี้",
+  "@contentCheckNow": {
+    "description": "Button that asks the server for a newer prayer book immediately"
+  },
+  "contentUpToDate": "บทสวดเป็นฉบับล่าสุดแล้ว",
+  "@contentUpToDate": {
+    "description": "Message after a check that found nothing newer"
+  },
+  "contentUpdated": "อัปเดตบทสวดเป็นฉบับที่ {version} แล้ว",
+  "@contentUpdated": {
+    "description": "Message after a newer prayer book was fetched and applied",
+    "placeholders": {
+      "version": {
+        "type": "int"
+      }
+    }
+  },
+  "contentCheckFailed": "ตรวจไม่สำเร็จ ลองใหม่เมื่อมีอินเทอร์เน็ต",
+  "@contentCheckFailed": {
+    "description": "Message after a check that failed — offline, server error, or a download that did not verify"
+  },
+  "contentUseBundled": "กลับไปใช้ฉบับที่มากับแอป",
+  "@contentUseBundled": {
+    "description": "Button that discards the fetched prayer book and turns the automatic check off"
+  },
+  "contentPrivacyNote": "แอปเชื่อมต่อ dhammapanya.org เพื่อดาวน์โหลดไฟล์บทสวดเท่านั้น ไม่มีการส่งข้อมูลของคุณออกไป และบทสวดที่มากับแอปยังใช้ได้เสมอแม้ไม่มีอินเทอร์เน็ต",
+  "@contentPrivacyNote": {
+    "description": "Privacy note at the foot of the prayer-updates page; this is the app's only network request"
   }
 }
