@@ -1466,11 +1466,11 @@
   "@contentAutoUpdate": {
     "description": "Switch on the prayer-updates page: whether the app looks for a newer prayer book by itself"
   },
-  "contentAutoUpdateSubtitle": "When the app opens with internet, at most once a day",
+  "contentAutoUpdateSubtitle": "When the app opens, once a day",
   "@contentAutoUpdateSubtitle": {
     "description": "Subtitle of the automatic-check switch"
   },
-  "contentVersionTitle": "Prayers in use",
+  "contentVersionTitle": "Version in use",
   "@contentVersionTitle": {
     "description": "Row naming which prayer book the app is reading from"
   },
@@ -1478,7 +1478,7 @@
   "@contentVersionBundled": {
     "description": "Value of the prayers-in-use row when no newer release has been fetched"
   },
-  "contentVersionFetched": "Release {version} · published {date}",
+  "contentVersionFetched": "Release {version}\nPublished {date}",
   "@contentVersionFetched": {
     "description": "Value of the prayers-in-use row for a fetched release; date is already formatted for the locale",
     "placeholders": {
@@ -1524,15 +1524,19 @@
   "@contentUseBundled": {
     "description": "Button that discards the fetched prayer book and turns the automatic check off"
   },
-  "contentPrivacyNote": "The app connects to dhammapanya.org only to download prayer files. Nothing about you is sent, and the prayers that came with the app always work offline.",
+  "contentPrivacyNote": "Connects to dhammapanya.org only to download prayers. No personal data is sent.",
   "@contentPrivacyNote": {
     "description": "Privacy note at the foot of the prayer-updates page; this is the app's only network request"
+  },
+  "contentOfflineNote": "Downloaded prayers work without internet.",
+  "@contentOfflineNote": {
+    "description": "Second line of the note at the foot of the prayer-updates page: fetched prayers are kept on the device"
   },
   "contentChangesTitle": "What changed in this release",
   "@contentChangesTitle": {
     "description": "Row on the prayer-updates page and title of the page it opens: the prayers a fetched release changed"
   },
-  "contentChangesCount": "{count, plural, =0{No prayers} =1{1 prayer} other{{count} prayers}}",
+  "contentChangesCount": "{count, plural, =0{No prayers changed} =1{1 prayer} other{{count} prayers}}",
   "@contentChangesCount": {
     "description": "Subtitle of the what-changed row: how many prayers the release changed",
     "placeholders": {

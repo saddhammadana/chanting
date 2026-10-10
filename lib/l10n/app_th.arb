@@ -1604,11 +1604,11 @@
   "@contentAutoUpdate": {
     "description": "Switch on the prayer-updates page: whether the app looks for a newer prayer book by itself"
   },
-  "contentAutoUpdateSubtitle": "เมื่อเปิดแอปและมีอินเทอร์เน็ต ไม่เกินวันละครั้ง",
+  "contentAutoUpdateSubtitle": "ตรวจเมื่อเปิดแอป วันละ 1 ครั้ง",
   "@contentAutoUpdateSubtitle": {
     "description": "Subtitle of the automatic-check switch"
   },
-  "contentVersionTitle": "บทสวดที่ใช้อยู่",
+  "contentVersionTitle": "เวอร์ชันที่ใช้อยู่",
   "@contentVersionTitle": {
     "description": "Row naming which prayer book the app is reading from"
   },
@@ -1616,7 +1616,7 @@
   "@contentVersionBundled": {
     "description": "Value of the prayers-in-use row when no newer release has been fetched"
   },
-  "contentVersionFetched": "ฉบับที่ {version} · เผยแพร่ {date}",
+  "contentVersionFetched": "ฉบับที่ {version}\nเผยแพร่ {date}",
   "@contentVersionFetched": {
     "description": "Value of the prayers-in-use row for a fetched release; date is already formatted for the locale",
     "placeholders": {
@@ -1662,15 +1662,19 @@
   "@contentUseBundled": {
     "description": "Button that discards the fetched prayer book and turns the automatic check off"
   },
-  "contentPrivacyNote": "แอปเชื่อมต่อ dhammapanya.org เพื่อดาวน์โหลดไฟล์บทสวดเท่านั้น ไม่มีการส่งข้อมูลของคุณออกไป และบทสวดที่มากับแอปยังใช้ได้เสมอแม้ไม่มีอินเทอร์เน็ต",
+  "contentPrivacyNote": "เชื่อมต่อ dhammapanya.org เพื่อดาวน์โหลดบทสวดเท่านั้น ไม่มีการส่งข้อมูลส่วนตัว",
   "@contentPrivacyNote": {
     "description": "Privacy note at the foot of the prayer-updates page; this is the app's only network request"
   },
-  "contentChangesTitle": "บทสวดที่เปลี่ยนในฉบับนี้",
+  "contentOfflineNote": "บทสวดที่ดาวน์โหลดแล้ว ใช้งานได้แม้ไม่มีอินเทอร์เน็ต",
+  "@contentOfflineNote": {
+    "description": "Second line of the note at the foot of the prayer-updates page: fetched prayers are kept on the device"
+  },
+  "contentChangesTitle": "การเปลี่ยนแปลงในฉบับนี้",
   "@contentChangesTitle": {
     "description": "Row on the prayer-updates page and title of the page it opens: the prayers a fetched release changed"
   },
-  "contentChangesCount": "{count, plural, other{{count} บท}}",
+  "contentChangesCount": "{count, plural, =0{ไม่มีบทสวดที่เปลี่ยนแปลง} other{{count} บท}}",
   "@contentChangesCount": {
     "description": "Subtitle of the what-changed row: how many prayers the release changed",
     "placeholders": {

@@ -23,6 +23,7 @@ class ContentUpdateScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context);
+    final theme = Theme.of(context);
     final state = ref.watch(contentUpdateControllerProvider);
     final controller = ref.read(contentUpdateControllerProvider.notifier);
     final checking = state.status == ContentUpdateStatus.checking;
@@ -65,23 +66,12 @@ class ContentUpdateScreen extends ConsumerWidget {
       title: l10n.settingsContentUpdate,
       leading: const AppBackButton(),
       children: [
-        SettingsSectionHeader(l10n.settingsContentUpdate),
+        const SizedBox(height: 10),
         SettingsCard(
           children: [
             SettingsTile(
-              icon: Icons.sync,
-              title: l10n.contentAutoUpdate,
-              subtitle: l10n.contentAutoUpdateSubtitle,
-              trailing: Switch(
-                key: const ValueKey('content_auto_update'),
-                value: state.autoUpdate,
-                onChanged: controller.setAutoUpdate,
-              ),
-              onTap: () => controller.setAutoUpdate(!state.autoUpdate),
-            ),
-            SettingsTile(
               key: const ValueKey('content_version'),
-              icon: Icons.menu_book_outlined,
+              icon: Icons.menu_book,
               title: l10n.contentVersionTitle,
               subtitle: active == null
                   ? l10n.contentVersionBundled
@@ -96,47 +86,74 @@ class ContentUpdateScreen extends ConsumerWidget {
             if (active != null)
               SettingsTile(
                 key: const ValueKey('content_changes'),
-                icon: Icons.difference_outlined,
+                icon: Icons.description,
                 title: l10n.contentChangesTitle,
                 subtitle: l10n.contentChangesCount(changed),
                 onTap: () => context.push('/settings/content/changes'),
               ),
           ],
         ),
+        const SizedBox(height: 4),
+        SettingsCard(
+          children: [
+            SettingsTile(
+              icon: Icons.sync,
+              title: l10n.contentAutoUpdate,
+              subtitle: l10n.contentAutoUpdateSubtitle,
+              trailing: Switch(
+                key: const ValueKey('content_auto_update'),
+                value: state.autoUpdate,
+                onChanged: controller.setAutoUpdate,
+              ),
+              onTap: () => controller.setAutoUpdate(!state.autoUpdate),
+            ),
+          ],
+        ),
         if (pending != null)
           Padding(
-            padding: const EdgeInsets.fromLTRB(24, 12, 24, 0),
+            padding: const EdgeInsets.fromLTRB(24, 8, 24, 0),
             child: _Note(l10n.contentPendingNote(pending.version)),
           ),
         Padding(
-          padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
+          padding: const EdgeInsets.fromLTRB(16, 14, 16, 0),
           child: FilledButton.icon(
             key: const ValueKey('content_check_now'),
+            style: FilledButton.styleFrom(
+              minimumSize: const Size.fromHeight(52),
+              textStyle: theme.textTheme.titleMedium?.copyWith(
+                fontWeight: FontWeight.w700,
+              ),
+            ),
             onPressed: checking ? null : controller.checkNow,
             icon: checking
                 ? const SizedBox.square(
                     dimension: 18,
                     child: CircularProgressIndicator(strokeWidth: 2),
                   )
-                : const Icon(Icons.cloud_download_outlined),
+                : const Icon(Icons.cloud_download_outlined, size: 26),
             label: Text(l10n.contentCheckNow),
           ),
         ),
         if (active != null || pending != null)
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
-            child: Align(
-              alignment: AlignmentDirectional.centerEnd,
+            padding: const EdgeInsets.fromLTRB(16, 6, 16, 0),
+            child: Center(
               child: TextButton(
                 key: const ValueKey('content_use_bundled'),
+                style: TextButton.styleFrom(
+                  foregroundColor: theme.colorScheme.onSurface,
+                ),
                 onPressed: checking ? null : controller.useBundled,
                 child: Text(l10n.contentUseBundled),
               ),
             ),
           ),
         Padding(
-          padding: const EdgeInsets.fromLTRB(24, 12, 24, 0),
-          child: _Note(l10n.contentPrivacyNote),
+          padding: const EdgeInsets.fromLTRB(16, 12, 16, 0),
+          child: _PrivacyCard(
+            privacy: l10n.contentPrivacyNote,
+            offline: l10n.contentOfflineNote,
+          ),
         ),
       ],
     );
@@ -145,13 +162,15 @@ class ContentUpdateScreen extends ConsumerWidget {
   int _versionOf(WidgetRef ref) =>
       ref.read(contentUpdateControllerProvider).active?.version ?? 0;
 
-  /// The publication day in the reader's locale; the raw value if it is not
+  /// The publication day and month in the reader's locale; the raw value if it is not
   /// a date, so a malformed stamp is shown rather than thrown on.
   String _date(BuildContext context, String iso) {
     final parsed = DateTime.tryParse(iso);
     return parsed == null
         ? iso
-        : MaterialLocalizations.of(context).formatMediumDate(parsed.toLocal());
+        : MaterialLocalizations.of(
+            context,
+          ).formatShortMonthDay(parsed.toLocal());
   }
 }
 
@@ -172,6 +191,62 @@ class _Note extends StatelessWidget {
       text,
       style: theme.textTheme.bodySmall?.copyWith(
         color: theme.colorScheme.onSurfaceVariant,
+      ),
+    );
+  }
+}
+
+/// What the app sends over the network and what works without it, set apart
+/// from the settings cards: flat and quieter, because it is read, not used.
+class _PrivacyCard extends StatelessWidget {
+  const _PrivacyCard({required this.privacy, required this.offline});
+
+  final String privacy;
+  final String offline;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final scheme = theme.colorScheme;
+    final style = theme.textTheme.bodyMedium?.copyWith(color: scheme.onSurface);
+    return Container(
+      padding: const EdgeInsets.fromLTRB(16, 18, 16, 18),
+      decoration: BoxDecoration(
+        color: scheme.surface.withValues(alpha: 0.5),
+        borderRadius: BorderRadius.circular(18),
+        border: Border.all(color: scheme.outlineVariant.withValues(alpha: 0.6)),
+      ),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            width: 44,
+            height: 44,
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: scheme.onSurfaceVariant.withValues(alpha: 0.12),
+            ),
+            child: ExcludeSemantics(
+              child: Icon(
+                Icons.security,
+                size: 23,
+                color: scheme.onSurfaceVariant,
+              ),
+            ),
+          ),
+          const SizedBox(width: 14),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(privacy, style: style),
+                const Divider(height: 22),
+                Text(offline, style: style),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
