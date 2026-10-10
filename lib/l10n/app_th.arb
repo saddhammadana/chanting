@@ -1628,15 +1628,6 @@
       }
     }
   },
-  "contentPendingNote": "ดาวน์โหลดฉบับที่ {version} แล้ว จะเริ่มใช้เมื่อเปิดแอปครั้งถัดไป",
-  "@contentPendingNote": {
-    "description": "Note under the card when a release fetched in the background is waiting for the next launch",
-    "placeholders": {
-      "version": {
-        "type": "int"
-      }
-    }
-  },
   "contentCheckNow": "ตรวจหาบทสวดใหม่ตอนนี้",
   "@contentCheckNow": {
     "description": "Button that asks the server for a newer prayer book immediately"
@@ -1669,6 +1660,47 @@
   "contentOfflineNote": "บทสวดที่ดาวน์โหลดแล้ว ใช้งานได้แม้ไม่มีอินเทอร์เน็ต",
   "@contentOfflineNote": {
     "description": "Second line of the note at the foot of the prayer-updates page: fetched prayers are kept on the device"
+  },
+  "contentStatusReady": "บทสวดพร้อมใช้งาน",
+  "@contentStatusReady": {
+    "description": "Headline at the top of the prayer-updates page before any check has been made in this visit"
+  },
+  "contentStatusLatest": "บทสวดเป็นเวอร์ชันล่าสุด",
+  "@contentStatusLatest": {
+    "description": "Headline after a check that found nothing newer, or that fetched and applied the newest release"
+  },
+  "contentStatusOffline": "พร้อมใช้งานแบบออฟไลน์",
+  "@contentStatusOffline": {
+    "description": "Line under the ready and up-to-date headlines: the prayers are on the device"
+  },
+  "contentStatusChecking": "กำลังตรวจหาบทสวดใหม่",
+  "@contentStatusChecking": {
+    "description": "Headline while the app is asking the server for a newer prayer book"
+  },
+  "contentStatusCheckingSubtitle": "กำลังเชื่อมต่อ dhammapanya.org",
+  "@contentStatusCheckingSubtitle": {
+    "description": "Line under the checking headline, naming the server being asked"
+  },
+  "contentStatusPending": "ดาวน์โหลดฉบับที่ {version} แล้ว",
+  "@contentStatusPending": {
+    "description": "Headline when a release fetched in the background is waiting for the next launch",
+    "placeholders": {
+      "version": {
+        "type": "int"
+      }
+    }
+  },
+  "contentStatusPendingSubtitle": "จะเริ่มใช้เมื่อเปิดแอปครั้งถัดไป",
+  "@contentStatusPendingSubtitle": {
+    "description": "Line under the downloaded headline: when the waiting release will be used"
+  },
+  "contentStatusFailed": "ตรวจไม่สำเร็จ",
+  "@contentStatusFailed": {
+    "description": "Headline after a check that failed"
+  },
+  "contentStatusFailedSubtitle": "ลองใหม่เมื่อมีอินเทอร์เน็ต",
+  "@contentStatusFailedSubtitle": {
+    "description": "Line under the failed headline: what to do about it"
   },
   "contentChangesTitle": "การเปลี่ยนแปลงในฉบับนี้",
   "@contentChangesTitle": {

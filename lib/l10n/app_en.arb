@@ -1490,15 +1490,6 @@
       }
     }
   },
-  "contentPendingNote": "Release {version} is downloaded and will be used the next time the app opens",
-  "@contentPendingNote": {
-    "description": "Note under the card when a release fetched in the background is waiting for the next launch",
-    "placeholders": {
-      "version": {
-        "type": "int"
-      }
-    }
-  },
   "contentCheckNow": "Check for new prayers now",
   "@contentCheckNow": {
     "description": "Button that asks the server for a newer prayer book immediately"
@@ -1531,6 +1522,47 @@
   "contentOfflineNote": "Downloaded prayers work without internet.",
   "@contentOfflineNote": {
     "description": "Second line of the note at the foot of the prayer-updates page: fetched prayers are kept on the device"
+  },
+  "contentStatusReady": "Prayers are ready",
+  "@contentStatusReady": {
+    "description": "Headline at the top of the prayer-updates page before any check has been made in this visit"
+  },
+  "contentStatusLatest": "Prayers are up to date",
+  "@contentStatusLatest": {
+    "description": "Headline after a check that found nothing newer, or that fetched and applied the newest release"
+  },
+  "contentStatusOffline": "Ready to use offline",
+  "@contentStatusOffline": {
+    "description": "Line under the ready and up-to-date headlines: the prayers are on the device"
+  },
+  "contentStatusChecking": "Checking for new prayers",
+  "@contentStatusChecking": {
+    "description": "Headline while the app is asking the server for a newer prayer book"
+  },
+  "contentStatusCheckingSubtitle": "Connecting to dhammapanya.org",
+  "@contentStatusCheckingSubtitle": {
+    "description": "Line under the checking headline, naming the server being asked"
+  },
+  "contentStatusPending": "Release {version} downloaded",
+  "@contentStatusPending": {
+    "description": "Headline when a release fetched in the background is waiting for the next launch",
+    "placeholders": {
+      "version": {
+        "type": "int"
+      }
+    }
+  },
+  "contentStatusPendingSubtitle": "It will be used the next time the app opens",
+  "@contentStatusPendingSubtitle": {
+    "description": "Line under the downloaded headline: when the waiting release will be used"
+  },
+  "contentStatusFailed": "Could not check",
+  "@contentStatusFailed": {
+    "description": "Headline after a check that failed"
+  },
+  "contentStatusFailedSubtitle": "Try again when you are online",
+  "@contentStatusFailedSubtitle": {
+    "description": "Line under the failed headline: what to do about it"
   },
   "contentChangesTitle": "What changed in this release",
   "@contentChangesTitle": {

@@ -62,11 +62,43 @@ class ContentUpdateScreen extends ConsumerWidget {
             ?.length ??
         0;
 
+    // The page's one sentence about where things stand. A check in progress
+    // or just failed is said first; then a release waiting for a launch.
+    // "Up to date" is only claimed once a check in this visit has said so.
+    final (mark, title, subtitle) = switch (state.status) {
+      ContentUpdateStatus.checking => (
+        Icons.sync,
+        l10n.contentStatusChecking,
+        l10n.contentStatusCheckingSubtitle,
+      ),
+      ContentUpdateStatus.failed => (
+        Icons.priority_high,
+        l10n.contentStatusFailed,
+        l10n.contentStatusFailedSubtitle,
+      ),
+      _ when pending != null => (
+        Icons.arrow_downward,
+        l10n.contentStatusPending(pending.version),
+        l10n.contentStatusPendingSubtitle,
+      ),
+      ContentUpdateStatus.upToDate || ContentUpdateStatus.updated => (
+        Icons.check,
+        l10n.contentStatusLatest,
+        l10n.contentStatusOffline,
+      ),
+      _ => (Icons.check, l10n.contentStatusReady, l10n.contentStatusOffline),
+    };
+
     return SettingsScaffold(
       title: l10n.settingsContentUpdate,
       leading: const AppBackButton(),
       children: [
-        const SizedBox(height: 10),
+        _StatusHero(
+          key: const ValueKey('content_status'),
+          mark: mark,
+          title: title,
+          subtitle: subtitle,
+        ),
         SettingsCard(
           children: [
             SettingsTile(
@@ -109,11 +141,6 @@ class ContentUpdateScreen extends ConsumerWidget {
             ),
           ],
         ),
-        if (pending != null)
-          Padding(
-            padding: const EdgeInsets.fromLTRB(24, 8, 24, 0),
-            child: _Note(l10n.contentPendingNote(pending.version)),
-          ),
         Padding(
           padding: const EdgeInsets.fromLTRB(16, 14, 16, 0),
           child: FilledButton.icon(
@@ -162,38 +189,147 @@ class ContentUpdateScreen extends ConsumerWidget {
   int _versionOf(WidgetRef ref) =>
       ref.read(contentUpdateControllerProvider).active?.version ?? 0;
 
-  /// The publication day and month in the reader's locale; the raw value if it is not
-  /// a date, so a malformed stamp is shown rather than thrown on.
+  /// The publication day in the reader's locale, with the year only when
+  /// it is not this one; the raw value if it is not a date, so a malformed
+  /// stamp is shown rather than thrown on.
   String _date(BuildContext context, String iso) {
-    final parsed = DateTime.tryParse(iso);
-    return parsed == null
-        ? iso
-        : MaterialLocalizations.of(
-            context,
-          ).formatShortMonthDay(parsed.toLocal());
+    final parsed = DateTime.tryParse(iso)?.toLocal();
+    if (parsed == null) return iso;
+    final format = MaterialLocalizations.of(context);
+    final day = format.formatShortMonthDay(parsed);
+    return parsed.year == DateTime.now().year
+        ? day
+        : '$day ${format.formatYear(parsed)}';
   }
 }
 
-/// A line the reader is meant to read, in the subtitle colour.
-///
-/// Not `SettingHint`: that tone sits under WCAG AA on the cream ground, and
-/// the note saying what the app sends over the network is not the place to
-/// add to that debt.
-class _Note extends StatelessWidget {
-  const _Note(this.text);
+/// The head of the page: the prayer book in a soft gold disc, a small mark
+/// on it for how things stand, and that said in a line and a half.
+class _StatusHero extends StatelessWidget {
+  const _StatusHero({
+    super.key,
+    required this.mark,
+    required this.title,
+    required this.subtitle,
+  });
 
-  final String text;
+  final IconData mark;
+  final String title;
+  final String subtitle;
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    return Text(
-      text,
-      style: theme.textTheme.bodySmall?.copyWith(
-        color: theme.colorScheme.onSurfaceVariant,
+    final scheme = theme.colorScheme;
+    final soft = scheme.secondaryContainer.withValues(
+      alpha: theme.brightness == Brightness.light ? 0.7 : 1,
+    );
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(24, 12, 24, 18),
+      child: Column(
+        children: [
+          ExcludeSemantics(
+            child: CustomPaint(
+              painter: _RaysPainter(soft),
+              child: SizedBox(
+                width: 180,
+                height: 116,
+                child: Center(
+                  child: Stack(
+                    clipBehavior: Clip.none,
+                    children: [
+                      Container(
+                        width: 116,
+                        height: 116,
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: soft,
+                        ),
+                        child: Icon(
+                          Icons.menu_book,
+                          size: 60,
+                          color: scheme.secondary,
+                        ),
+                      ),
+                      PositionedDirectional(
+                        end: 2,
+                        bottom: 12,
+                        child: Container(
+                          width: 36,
+                          height: 36,
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: scheme.secondary,
+                            border: Border.all(color: soft, width: 3),
+                          ),
+                          child: Icon(mark, size: 20, color: Colors.white),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ),
+          const SizedBox(height: 14),
+          // Announced when it changes: the check's answer lands here.
+          Semantics(
+            liveRegion: true,
+            child: Column(
+              children: [
+                Text(
+                  title,
+                  textAlign: TextAlign.center,
+                  style: theme.textTheme.titleLarge?.copyWith(
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+                const SizedBox(height: 2),
+                Text(
+                  subtitle,
+                  textAlign: TextAlign.center,
+                  style: theme.textTheme.bodyMedium?.copyWith(
+                    color: scheme.onSurfaceVariant,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
+}
+
+/// Three short rays either side of the disc, as the artwork draws them.
+class _RaysPainter extends CustomPainter {
+  const _RaysPainter(this.color);
+
+  final Color color;
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final paint = Paint()
+      ..color = color
+      ..strokeWidth = 3
+      ..strokeCap = StrokeCap.round;
+    final centre = size.center(Offset.zero);
+    for (final side in const [-1.0, 1.0]) {
+      for (final slope in const [-0.5, 0.0, 0.5]) {
+        final direction = Offset(side, slope) / Offset(side, slope).distance;
+        canvas.drawLine(
+          centre + direction * 70,
+          centre + direction * 84,
+          paint,
+        );
+      }
+    }
+  }
+
+  @override
+  bool shouldRepaint(_RaysPainter old) => old.color != color;
 }
 
 /// What the app sends over the network and what works without it, set apart
