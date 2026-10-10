@@ -78,6 +78,10 @@ class PrayerRepository {
   }
 
   ///
+  /// The bundled file at [path], as text. Public for the update check, which
+  /// compares a fetched release with the book it replaces.
+  static Future<String> bundledRaw(String path) => _bundleRaw(path);
+
   static Future<String> _bundleRaw(String path) async {
     final bytes = await rootBundle.load(path);
     return utf8.decode(bytes.buffer.asUint8List());

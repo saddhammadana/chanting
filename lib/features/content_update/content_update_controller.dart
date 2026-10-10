@@ -7,8 +7,10 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:http/http.dart' as http;
 
 import '../../data/content_check.dart';
+import '../../data/content_diff.dart';
 import '../../data/local/content_store.dart';
 import '../../data/local/prefs_service.dart';
+import '../../data/repositories/prayer_repository.dart';
 
 /// Where the published prayer book is announced. The answer names a release
 /// number, a schema and the hash of each file; see
@@ -24,6 +26,9 @@ const kContentSchema = 1;
 /// The web build has nowhere to keep a fetched book and is redeployed with
 /// its bundle, so it neither asks nor shows the setting.
 const contentUpdateSupported = !kIsWeb;
+
+/// The name the changes a release made are stored under, beside its files.
+const kContentChangesFile = 'changes';
 
 /// How often the app asks by itself.
 const _autoCheckEvery = Duration(hours: 24);
@@ -130,6 +135,13 @@ class ContentUpdateController extends Notifier<ContentUpdateState> {
     state = _snapshot(ContentUpdateStatus.idle);
   }
 
+  /// The file readers see now: the active release, else the bundle. Not a
+  /// release stored and still waiting for a launch — nobody has read that
+  /// one, so what matters is what changed from the book they know.
+  Future<String> _reading(String name) async =>
+      await _store.read(name) ??
+      await PrayerRepository.bundledRaw('assets/data/$name.json');
+
   /// Stores the published release when it is newer than what is held.
   /// Throws on anything that should count as "could not check".
   Future<void> _fetch() async {
@@ -164,12 +176,33 @@ class ContentUpdateController extends Notifier<ContentUpdateState> {
     final problems = contentProblems(files);
     if (problems.isNotEmpty) throw StateError(problems.join('; '));
 
+    // What this release changes, against the book being read until now —
+    // worked out here because afterwards there is nothing to compare with.
+    files[kContentChangesFile] = encodeChanges({
+      for (final lang in kContentLanguages)
+        lang: contentChanges(
+          before: await _reading('prayers-$lang'),
+          after: files['prayers-$lang']!,
+        ),
+    });
+
     await _store.save((
       version: version,
       publishedAt: manifest['publishedAt'] as String,
     ), files);
   }
 }
+
+/// What the release being read changed in [language]'s edition, or nothing
+/// for the bundled book. Reloads when another release is applied.
+final contentChangesProvider = FutureProvider.autoDispose
+    .family<List<PrayerChange>, String>((ref, language) async {
+      ref.watch(contentEpochProvider);
+      final raw = await ref
+          .watch(contentStoreProvider)
+          .read(kContentChangesFile);
+      return decodeChanges(raw, language);
+    });
 
 final contentUpdateControllerProvider =
     NotifierProvider<ContentUpdateController, ContentUpdateState>(

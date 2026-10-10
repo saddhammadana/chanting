@@ -3,6 +3,7 @@ import 'dart:io';
 
 import 'package:chanting/app.dart';
 import 'package:chanting/data/content_check.dart';
+import 'package:chanting/data/content_diff.dart';
 import 'package:chanting/data/local/content_store.dart';
 import 'package:chanting/data/local/content_store_io.dart';
 import 'package:chanting/data/local/prefs_service.dart';
@@ -156,6 +157,107 @@ void main() {
       final state = container.read(contentUpdateControllerProvider);
       expect(state.status, ContentUpdateStatus.upToDate);
       expect(state.active, isNull);
+    });
+  });
+
+  group('what a release changed', () {
+    /// The shipped Thai book with [edit] applied to its first prayer.
+    String edited(void Function(Map<String, dynamic> prayer) edit) {
+      final prayers = jsonDecode(_shippedFiles()['prayers-th']!) as List;
+      edit(prayers.first as Map<String, dynamic>);
+      return jsonEncode(prayers);
+    }
+
+    Map<String, dynamic> firstLine(Map<String, dynamic> prayer) =>
+        (((prayer['sections'] as List).first as Map)['lines'] as List).first
+            as Map<String, dynamic>;
+
+    final shipped = _shippedFiles()['prayers-th']!;
+
+    test('nothing, when the files are the same book', () {
+      // Re-encoded, so byte differences alone do not count as a change.
+      final same = jsonEncode(jsonDecode(shipped));
+      expect(contentChanges(before: shipped, after: same), isEmpty);
+    });
+
+    test('a corrected line is shown as it was and as it is', () {
+      late String was;
+      final after = edited((prayer) {
+        final line = firstLine(prayer);
+        was = line['text'] as String;
+        line['text'] = '$was$_marker';
+      });
+
+      final changes = contentChanges(before: shipped, after: after);
+      expect(changes, hasLength(1));
+      expect(changes.single.id, _firstPrayerId());
+      expect(changes.single.kind, PrayerChangeKind.changed);
+      expect(changes.single.lines, [(before: was, after: '$was$_marker')]);
+    });
+
+    test(
+      'a line added in the middle is one new line, not every line after',
+      () {
+        final after = edited((prayer) {
+          final lines =
+              ((prayer['sections'] as List).first as Map)['lines'] as List;
+          lines.insert(1, {'id': 'inserted-for-test', 'text': 'บรรทัดใหม่'});
+        });
+
+        final lines = contentChanges(
+          before: shipped,
+          after: after,
+        ).single.lines;
+        expect(lines, [(before: null, after: 'บรรทัดใหม่')]);
+      },
+    );
+
+    test('a prayer edited outside its chant text is listed with no lines', () {
+      final after = edited((prayer) => firstLine(prayer)['roman'] = 'changed');
+      final change = contentChanges(before: shipped, after: after).single;
+      expect(change.kind, PrayerChangeKind.changed);
+      expect(change.lines, isEmpty);
+    });
+
+    test('added and removed prayers are named', () {
+      final prayers = jsonDecode(shipped) as List;
+      final gone = prayers.removeAt(0) as Map<String, dynamic>;
+      prayers.add({
+        'id': 'new-for-test',
+        'title': 'บทใหม่',
+        'sections': <Object>[],
+      });
+
+      final changes = contentChanges(
+        before: shipped,
+        after: jsonEncode(prayers),
+      );
+      expect(
+        [for (final change in changes) (change.id, change.kind)],
+        [
+          ('new-for-test', PrayerChangeKind.added),
+          (gone['id'], PrayerChangeKind.removed),
+        ],
+      );
+    });
+
+    test('travels with the release and is read back per language', () async {
+      final container = await _container(_server(_editedFiles()));
+      await container.read(contentUpdateControllerProvider.notifier).checkNow();
+
+      final thai = await container.read(contentChangesProvider('th').future);
+      expect(thai.single.id, _firstPrayerId());
+      // `_editedFiles` marks the title, which is reported as a line.
+      expect(thai.single.lines.single.after, endsWith(_marker));
+      expect(
+        await container.read(contentChangesProvider('en').future),
+        isEmpty,
+      );
+    });
+
+    test('is empty for the bundled book and for an unreadable record', () {
+      expect(decodeChanges(null, 'th'), isEmpty);
+      expect(decodeChanges('not json', 'th'), isEmpty);
     });
   });
 
@@ -443,6 +545,20 @@ void main() {
         findsOneWidget,
       );
       expect(find.byType(SnackBar), findsOneWidget);
+
+      // The release says what it changed, and the page listing it opens.
+      await tester.tap(find.byKey(const ValueKey('content_changes')));
+      for (var i = 0; i < 10; i++) {
+        await tester.pump(const Duration(milliseconds: 100));
+      }
+      expect(
+        find.byKey(ValueKey('content_change_${_firstPrayerId()}')),
+        findsOneWidget,
+      );
+      appRouter.pop();
+      for (var i = 0; i < 10; i++) {
+        await tester.pump(const Duration(milliseconds: 100));
+      }
 
       // Back to the bundled book, which also turns the switch off.
       await tester.tap(find.byKey(const ValueKey('content_use_bundled')));

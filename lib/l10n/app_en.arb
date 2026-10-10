@@ -1527,5 +1527,46 @@
   "contentPrivacyNote": "The app connects to dhammapanya.org only to download prayer files. Nothing about you is sent, and the prayers that came with the app always work offline.",
   "@contentPrivacyNote": {
     "description": "Privacy note at the foot of the prayer-updates page; this is the app's only network request"
+  },
+  "contentChangesTitle": "What changed in this release",
+  "@contentChangesTitle": {
+    "description": "Row on the prayer-updates page and title of the page it opens: the prayers a fetched release changed"
+  },
+  "contentChangesCount": "{count, plural, =0{No prayers} =1{1 prayer} other{{count} prayers}}",
+  "@contentChangesCount": {
+    "description": "Subtitle of the what-changed row: how many prayers the release changed",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "contentChangesEmpty": "No prayers changed in this release",
+  "@contentChangesEmpty": {
+    "description": "Shown on the what-changed page when the release changed nothing in this language"
+  },
+  "contentChangeAdded": "New prayer",
+  "@contentChangeAdded": {
+    "description": "Kind of change under a prayer's title: it was not in the book before"
+  },
+  "contentChangeEdited": "Edited",
+  "@contentChangeEdited": {
+    "description": "Kind of change under a prayer's title: its record differs from before"
+  },
+  "contentChangeRemoved": "Removed from the book",
+  "@contentChangeRemoved": {
+    "description": "Kind of change under a prayer's title: it is no longer in the book"
+  },
+  "contentChangeOther": "The romanisation, translation or notes were edited. The chant text is unchanged.",
+  "@contentChangeOther": {
+    "description": "Shown for an edited prayer whose chant lines are all the same as before"
+  },
+  "contentChangeBefore": "Was",
+  "@contentChangeBefore": {
+    "description": "Short label beside a line as it read before the release"
+  },
+  "contentChangeAfter": "Now",
+  "@contentChangeAfter": {
+    "description": "Short label beside a line as it reads in the release"
   }
 }

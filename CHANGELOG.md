@@ -30,6 +30,8 @@ To be released as 1.0.0, the first public release (`pubspec.yaml` is at
   reaches an installed app without a new version. Checked when the app opens,
   with a switch and a "check now" button under Settings. This is the app's
   only network request; the bundled prayer book still works offline.
+- Prayer updates say what they changed: each prayer a release touched, with
+  the corrected lines shown as they were and as they are.
 - macOS desktop build.
 
 ### Changed

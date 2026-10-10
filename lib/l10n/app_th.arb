@@ -1665,5 +1665,46 @@
   "contentPrivacyNote": "แอปเชื่อมต่อ dhammapanya.org เพื่อดาวน์โหลดไฟล์บทสวดเท่านั้น ไม่มีการส่งข้อมูลของคุณออกไป และบทสวดที่มากับแอปยังใช้ได้เสมอแม้ไม่มีอินเทอร์เน็ต",
   "@contentPrivacyNote": {
     "description": "Privacy note at the foot of the prayer-updates page; this is the app's only network request"
+  },
+  "contentChangesTitle": "บทสวดที่เปลี่ยนในฉบับนี้",
+  "@contentChangesTitle": {
+    "description": "Row on the prayer-updates page and title of the page it opens: the prayers a fetched release changed"
+  },
+  "contentChangesCount": "{count, plural, other{{count} บท}}",
+  "@contentChangesCount": {
+    "description": "Subtitle of the what-changed row: how many prayers the release changed",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "contentChangesEmpty": "ไม่มีบทสวดที่เปลี่ยนในฉบับนี้",
+  "@contentChangesEmpty": {
+    "description": "Shown on the what-changed page when the release changed nothing in this language"
+  },
+  "contentChangeAdded": "บทใหม่",
+  "@contentChangeAdded": {
+    "description": "Kind of change under a prayer's title: it was not in the book before"
+  },
+  "contentChangeEdited": "แก้ไข",
+  "@contentChangeEdited": {
+    "description": "Kind of change under a prayer's title: its record differs from before"
+  },
+  "contentChangeRemoved": "นำออกจากเล่ม",
+  "@contentChangeRemoved": {
+    "description": "Kind of change under a prayer's title: it is no longer in the book"
+  },
+  "contentChangeOther": "แก้ไขคำอ่าน คำแปล หรือข้อมูลประกอบ ตัวบทสวดไม่เปลี่ยน",
+  "@contentChangeOther": {
+    "description": "Shown for an edited prayer whose chant lines are all the same as before"
+  },
+  "contentChangeBefore": "เดิม",
+  "@contentChangeBefore": {
+    "description": "Short label beside a line as it read before the release"
+  },
+  "contentChangeAfter": "ใหม่",
+  "@contentChangeAfter": {
+    "description": "Short label beside a line as it reads in the release"
   }
 }

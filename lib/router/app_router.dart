@@ -17,6 +17,7 @@ import '../features/prayer_list/category_screen.dart';
 import '../features/prayer_list/day_part.dart';
 import '../features/prayer_list/prayer_list_screen.dart';
 import '../features/settings/about_screen.dart';
+import '../features/settings/content_changes_screen.dart';
 import '../features/settings/content_update_screen.dart';
 import '../features/settings/goal_screen.dart';
 import '../features/settings/language_screen.dart';
@@ -217,6 +218,10 @@ final appRouter = GoRouter(
     GoRoute(
       path: '/settings/content',
       builder: (context, state) => const ContentUpdateScreen(),
+    ),
+    GoRoute(
+      path: '/settings/content/changes',
+      builder: (context, state) => const ContentChangesScreen(),
     ),
     GoRoute(
       path: '/settings/search',

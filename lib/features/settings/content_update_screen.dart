@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../l10n/app_localizations.dart';
 import '../../shared/widgets/app_toast.dart';
 import '../content_update/content_update_controller.dart';
+import '../prayer_list/prayer_list_controller.dart';
 import 'widgets/settings_scaffold.dart';
 import 'widgets/settings_tile.dart';
 
@@ -48,6 +50,16 @@ class ContentUpdateScreen extends ConsumerWidget {
 
     final active = state.active;
     final pending = state.pending;
+    final changed =
+        ref
+            .watch(
+              contentChangesProvider(
+                ref.watch(prayerRepositoryProvider).languageCode,
+              ),
+            )
+            .value
+            ?.length ??
+        0;
 
     return SettingsScaffold(
       title: l10n.settingsContentUpdate,
@@ -79,6 +91,16 @@ class ContentUpdateScreen extends ConsumerWidget {
                     ),
               trailing: const SizedBox.shrink(),
             ),
+            // What that release changed from the book read before it. Only
+            // for a fetched release: the bundled book has nothing before it.
+            if (active != null)
+              SettingsTile(
+                key: const ValueKey('content_changes'),
+                icon: Icons.difference_outlined,
+                title: l10n.contentChangesTitle,
+                subtitle: l10n.contentChangesCount(changed),
+                onTap: () => context.push('/settings/content/changes'),
+              ),
           ],
         ),
         if (pending != null)
