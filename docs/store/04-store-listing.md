@@ -106,9 +106,10 @@ English-only rule covers developer prose, not the words that ship to users.
 
 ■ เครื่องมือช่วยปฏิบัติ
 • จับเวลานั่งสมาธิ 1–180 นาที หน้าจอไม่ดับ ครบเวลาแล้วเตือนด้วยเสียงระฆังหรือการสั่น
+• เลือกเสียงธรรมชาติคลอระหว่างนั่งสมาธิ — สายน้ำในป่า สายฝน นกในป่า หรือคลื่นทะเล
 • ตัวนับรอบสวดแบบแผ่นลอยในหน้าอ่าน ตั้งเป้า 9 / 27 / 108 รอบ หรือกำหนดเอง
-• นับวันที่สวดต่อเนื่อง เห็นความสม่ำเสมอของตัวเองย้อนหลัง
-• ตั้งเวลาเตือนทำวัตรเช้าและทำวัตรเย็นได้เอง
+• วงแหวนเป้าหมายรายวันหน้าแรก นับเวลาที่สวดมนต์และนั่งสมาธิรวมกัน
+• ตั้งเวลาเตือนได้ 4 ช่วง เช้า กลางวัน เย็น ก่อนนอน เลือกวันในสัปดาห์ของแต่ละช่วงได้
 
 ■ ออฟไลน์และเป็นส่วนตัว
 • ใช้งานได้เต็มรูปแบบโดยไม่ต้องต่ออินเทอร์เน็ต ไม่มีบัญชีผู้ใช้ ไม่มีโฆษณา ไม่มีการติดตามผู้ใช้
@@ -193,7 +194,7 @@ Note on language: the chanting text is Thai and Pali. The app interface is avail
 • A floating mala counter on the reading screen, with targets of 9, 27, 108, or your own
 • A daily goal ring that counts the minutes you chant and meditate
 • Optional nature sounds under a sitting: forest stream, rain, forest birds, sea waves
-• Daily morning and evening chanting reminders at times you choose
+• Reminders for four times of day — morning, midday, evening and bedtime — each at a time and on the days of the week you choose
 
 ■ Offline and private
 • Fully usable with no internet connection, no user account, no ads, no tracking
@@ -222,19 +223,27 @@ First release of Chanting — an offline Buddhist prayer book.
 
 ## Notes for whoever submits this
 
-### Open item: the Thai full description still advertises the streak
+### The copy above is ahead of the live listing
 
-Its "เครื่องมือช่วยปฏิบัติ" list carries
-`• นับวันที่สวดต่อเนื่อง เห็นความสม่ำเสมอของตัวเองย้อนหลัง`, which is the
-chanting streak — **removed from the app in October 2026** on the owner's say,
-along with its `/stats` page. The English copy does not claim it; it describes
-the daily goal ring instead. A live listing describing a feature the app does
-not have is the kind of thing a one-star review is written about, so this line
-needs the owner's wording before the next listing update. The English
-equivalent is *"A daily goal ring that counts the minutes you chant and
-meditate"*, and the Thai release notes already say `เป้าหมายรายวัน`.
+The Thai "เครื่องมือช่วยปฏิบัติ" list was corrected on 7 November 2026 and
+**the Console has not been updated yet** — the live Thai page is still the
+previous wording. Three things changed, and the live page is wrong about the
+first until someone pastes this in:
 
-The Thai list is also missing the nature sounds, which the English list has.
+- `• นับวันที่สวดต่อเนื่อง เห็นความสม่ำเสมอของตัวเองย้อนหลัง` is gone. That was
+  the chanting streak, removed from the app in October 2026 along with its
+  `/stats` page, so the live listing advertises a feature the app does not
+  have. It is replaced by the daily goal ring, which is what the English list
+  described all along.
+- The nature sounds were in the English list and not the Thai one.
+- **Both** lists said reminders were morning and evening. There are four slots
+  — morning, midday, evening and bedtime — each with its own days of the week,
+  since September 2026.
+
+Paste the Thai full description into **Grow users → Store presence → Store
+listings**. No new build is needed: this is listing copy, not the binary. The
+English copy is written but its locale is not configured, so nothing to paste
+for it yet.
 
 ### Thai
 
