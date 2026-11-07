@@ -36,6 +36,10 @@ To be released as 1.0.0, the first public release (`pubspec.yaml` is at
 
 ### Changed
 
+- The bundled prayer book is stamped as release 2, the release published from
+  the dhamma admin on 7 November 2026, instead of release 0. The two hold the
+  same four files byte for byte, so without the stamp every fresh install
+  would have downloaded 1.2 MB of identical text on its first launch.
 - The reader's "copy prayer" row names what it will copy — "คัดลอกบทสวด +
   คำแปล" when the translation chip is on — instead of reading the same whatever
   the display chips are set to.
