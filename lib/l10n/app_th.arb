@@ -393,21 +393,6 @@
   "contactDialogBody": "พบข้อผิดพลาดของเนื้อหาบทสวด หรือมีข้อเสนอแนะ ส่งอีเมลมาได้ที่",
   "copyEmail": "คัดลอกอีเมล",
   "copiedEmail": "คัดลอกอีเมลแล้ว",
-  "donateTitle": "สนับสนุนผู้พัฒนา (Donate)",
-  "donateSubtitle": "ร่วมสมทบทุนพัฒนาแอปตามกำลังศรัทธา",
-  "donateDialogTitle": "สนับสนุนผู้พัฒนา",
-  "donateDialogBody": "แอปนี้ให้ใช้ฟรีไม่มีโฆษณา หากบทสวดมนต์นี้เป็นประโยชน์ ท่านสามารถร่วมสมทบทุนพัฒนาแอปได้ตามกำลังศรัทธา",
-  "promptPayTitle": "พร้อมเพย์ (PromptPay)",
-  "copyPromptPay": "คัดลอกหมายเลขพร้อมเพย์",
-  "copiedPromptPay": "คัดลอกหมายเลขพร้อมเพย์แล้ว",
-  "donateContactEmail": "สอบถามช่องทางสนับสนุนได้ทางอีเมล {email}",
-  "@donateContactEmail": {
-    "placeholders": {
-      "email": {
-        "type": "String"
-      }
-    }
-  },
   "appName": "สวดมนต์",
   "@appName": {
     "description": "App name shown to users — translatable, unlike the applicationId `th.chanting.app` which must never change (see docs/roadmap/todo.md and docs/internationalization.md Phase 3)"
@@ -818,6 +803,19 @@
   "menuDeletePlaylist": "ลบชุด",
   "menuMore": "ตัวเลือกเพิ่มเติม",
   "menuCopyPrayer": "คัดลอกบทสวด",
+  "@menuCopyPrayer": {
+    "description": "⋮ menu on the reading screen — copies the chant alone, used when neither companion chip is on"
+  },
+  "menuCopyPrayerWith": "คัดลอกบทสวด + {extras}",
+  "@menuCopyPrayerWith": {
+    "description": "Same menu row when companion chips are on: {extras} is the labelPali/labelMeaning names joined with ' + ', so the label says what will ride along. Not an ICU plural — it is a list of fields, not a count.",
+    "placeholders": {
+      "extras": {
+        "type": "String",
+        "example": "บาลี + คำแปล"
+      }
+    }
+  },
   "prayerCopied": "คัดลอกบทสวดแล้ว",
   "menuReportError": "แจ้งบทสวดผิด",
   "@menuReportError": {

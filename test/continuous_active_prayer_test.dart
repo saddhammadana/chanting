@@ -152,7 +152,7 @@ void main() {
 
     await tester.tap(find.byIcon(Icons.more_vert));
     await tester.pumpAndSettle();
-    await tester.tap(find.text('คัดลอกบทสวด'));
+    await tester.tap(find.byKey(const ValueKey('copy_prayer_item')));
     await tester.pumpAndSettle();
 
     expect(copied, isNotNull, reason: 'ไม่ได้คัดลอกอะไรเลย');

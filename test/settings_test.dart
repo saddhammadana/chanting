@@ -441,10 +441,9 @@ void main() {
     await tester.pump(const Duration(seconds: 1));
     expect(find.text('ปิด'), findsNothing);
 
-    // No donate section: there is still no PromptPay or payment channel set
-    // up. Its Thai copy is kept in the .arb files ready for the day there is
-    // one — the commented-out block that used to hold its place went with the
-    // settings page's rewrite into a hub.
+    // No donate section. The feature was dropped in November 2026 (owner
+    // decision) and its .arb keys went with it, so nothing here is waiting on
+    // a payment channel any more.
     expect(find.text('สนับสนุนผู้พัฒนา (Donate)'), findsNothing);
   });
 

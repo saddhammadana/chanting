@@ -36,6 +36,9 @@ To be released as 1.0.0, the first public release (`pubspec.yaml` is at
 
 ### Changed
 
+- The reader's "copy prayer" row names what it will copy — "คัดลอกบทสวด +
+  คำแปล" when the translation chip is on — instead of reading the same whatever
+  the display chips are set to.
 - The numerals inside the practice and meditation rings keep their size when
   the device is set to very large text, instead of outgrowing the ring.
 
@@ -53,6 +56,8 @@ To be released as 1.0.0, the first public release (`pubspec.yaml` is at
 - App messages are shown as tinted lotus toasts.
 - Times and durations are picked on scroll wheels.
 - The macOS app requires macOS 12 or later.
+- The "support the developer" rows were dropped: there is no payment channel,
+  so the app no longer carries the copy for one.
 - Android asks to draw into the camera cutout with `ALWAYS` rather than
   `SHORT_EDGES`, which Android 15 deprecated and the Play Console reported
   against build 1. Android 15 and later read both the same way; Android 11 to

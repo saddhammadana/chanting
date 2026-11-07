@@ -457,11 +457,18 @@ void main() {
         ),
       );
 
-      Future<void> copyPrayer() async {
+      // The row names what will ride along, so nobody has to press it to find
+      // out how many layers land in the clipboard.
+      Future<void> copyPrayer(String expectedLabel) async {
         await tester.tap(find.byIcon(Icons.more_vert));
         await tester.pump();
         await tester.pump(const Duration(seconds: 1));
-        await tester.tap(find.text('คัดลอกบทสวด').last);
+        final row = find.byKey(const ValueKey('copy_prayer_item'));
+        expect(
+          (tester.widget<ListTile>(row).title! as Text).data,
+          expectedLabel,
+        );
+        await tester.tap(row);
         await tester.pump();
         await tester.pump(const Duration(seconds: 1));
       }
@@ -471,7 +478,7 @@ void main() {
       await tester.pump(const Duration(seconds: 1));
 
       // Chips are off, so copy only title and content with no extras.
-      await copyPrayer();
+      await copyPrayer('คัดลอกบทสวด');
       expect(copied, isNotNull);
       expect(copied, contains('บทกราบพระรัตนตรัย'));
       expect(copied, contains('อะระหัง สัมมาสัมพุทโธ'));
@@ -484,7 +491,7 @@ void main() {
       await tester.tap(find.widgetWithText(FilterChip, 'คำแปล'));
       await tester.pump(const Duration(seconds: 1));
 
-      await copyPrayer();
+      await copyPrayer('คัดลอกบทสวด + บาลี + คำแปล');
       expect(copied, contains('[บาลี]'));
       expect(copied, contains('Arahaṃ sammāsambuddho'));
       expect(copied, contains('[คำแปล]'));
@@ -493,6 +500,13 @@ void main() {
         copied!.indexOf('[คำแปล]'),
         greaterThan(copied!.indexOf('[บาลี]')),
       );
+
+      // Turning one chip back off drops that field from the label too.
+      await tester.tap(find.widgetWithText(FilterChip, 'บาลี'));
+      await tester.pump(const Duration(seconds: 1));
+      await copyPrayer('คัดลอกบทสวด + คำแปล');
+      expect(copied, isNot(contains('[บาลี]')));
+      expect(copied, contains('[คำแปล]'));
     },
   );
 

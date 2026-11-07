@@ -39,7 +39,8 @@ class ReadingMenu extends ConsumerWidget {
   final bool malaOpen;
   final VoidCallback onToggleMala;
 
-  /// Whether Pali/meaning chips are active; copying follows these flags.
+  /// Whether Pali/meaning chips are active; the copy row's content *and* its
+  /// label follow these flags.
   final bool showPali;
   final bool showMeaning;
 
@@ -52,6 +53,29 @@ class ReadingMenu extends ConsumerWidget {
   /// Blocks with headings are easier to read than inline interleaving in pasted
   /// chat text. Inline display requires line pairing (`PrayerContent.canInlinePali`)
   /// and screen styling that pasted text does not have.
+  /// Whether the Pali block will actually ride along with a copy.
+  ///
+  /// On a non-Thai edition the Pali *is* the chant text, so it is skipped even
+  /// with the chip on ([Prayer.hasDistinctPali]).
+  bool get _copiesPali => showPali && (prayer?.hasDistinctPali ?? false);
+
+  bool get _copiesMeaning => showMeaning && prayer?.meaning != null;
+
+  /// Names in the menu row what the copy will carry.
+  ///
+  /// The row copies whatever the pinned strip's chips have turned on, so a
+  /// fixed label leaves the user guessing how many layers land in the
+  /// clipboard. Built from the same two conditions the copy itself uses, so
+  /// the label cannot promise a block that gets skipped.
+  String _copyLabel(AppLocalizations l10n) {
+    final extras = [
+      if (_copiesPali) l10n.labelPali,
+      if (_copiesMeaning) l10n.labelMeaning,
+    ];
+    if (extras.isEmpty) return l10n.menuCopyPrayer;
+    return l10n.menuCopyPrayerWith(extras.join(' + '));
+  }
+
   Future<void> _copyPrayer(BuildContext context, Prayer prayer) async {
     final l10n = AppLocalizations.of(context);
     final copied = l10n.prayerCopied;
@@ -152,9 +176,10 @@ class ReadingMenu extends ConsumerWidget {
           value: 'copy',
           enabled: prayer != null,
           child: ListTile(
+            key: const ValueKey('copy_prayer_item'),
             contentPadding: EdgeInsets.zero,
             leading: const Icon(Icons.copy_outlined),
-            title: Text(l10n.menuCopyPrayer),
+            title: Text(_copyLabel(l10n)),
           ),
         ),
         PopupMenuItem(

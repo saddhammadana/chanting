@@ -393,21 +393,6 @@
   "contactDialogBody": "Found a mistake in a prayer, or have a suggestion? Email us at",
   "copyEmail": "Copy email address",
   "copiedEmail": "Email address copied",
-  "donateTitle": "Support the developer (Donate)",
-  "donateSubtitle": "Contribute whatever you feel moved to give",
-  "donateDialogTitle": "Support the developer",
-  "donateDialogBody": "This app is free with no ads. If these prayers have been of use to you, you are welcome to contribute whatever you feel moved to give.",
-  "promptPayTitle": "PromptPay",
-  "copyPromptPay": "Copy PromptPay number",
-  "copiedPromptPay": "PromptPay number copied",
-  "donateContactEmail": "Ask about ways to contribute by emailing {email}",
-  "@donateContactEmail": {
-    "placeholders": {
-      "email": {
-        "type": "String"
-      }
-    }
-  },
   "appName": "Chanting",
   "@appName": {
     "description": "App name shown to users — translatable, unlike the applicationId `th.chanting.app` which must never change (see docs/roadmap/todo.md and docs/internationalization.md Phase 3)"
@@ -818,6 +803,19 @@
   "menuDeletePlaylist": "Delete set",
   "menuMore": "More options",
   "menuCopyPrayer": "Copy prayer",
+  "@menuCopyPrayer": {
+    "description": "⋮ menu on the reading screen — copies the chant alone, used when neither companion chip is on"
+  },
+  "menuCopyPrayerWith": "Copy prayer + {extras}",
+  "@menuCopyPrayerWith": {
+    "description": "Same menu row when companion chips are on: {extras} is the labelPali/labelMeaning names joined with ' + ', so the label says what will ride along. Not an ICU plural — it is a list of fields, not a count.",
+    "placeholders": {
+      "extras": {
+        "type": "String",
+        "example": "Pali + Translation"
+      }
+    }
+  },
   "prayerCopied": "Prayer copied",
   "menuReportError": "Report an error",
   "@menuReportError": {
