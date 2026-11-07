@@ -21,10 +21,15 @@ class MainActivity : FlutterActivity() {
         super.onCreate(savedInstanceState)
         // With the bars hidden a window is kept out of the camera cutout by
         // default, which leaves a black band where the status bar was.
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+        //
+        // ALWAYS, not SHORT_EDGES: Android 15 deprecated every cutout mode but
+        // this one and reads the others as ALWAYS anyway, so SHORT_EDGES only
+        // earns a Play Console warning. ALWAYS is public from Android 11;
+        // below that the window keeps the platform's own cutout behaviour.
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             window.attributes = window.attributes.apply {
                 layoutInDisplayCutoutMode =
-                    WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES
+                    WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_ALWAYS
             }
         }
     }

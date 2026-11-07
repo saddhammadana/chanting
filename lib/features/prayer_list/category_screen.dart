@@ -288,6 +288,9 @@ Future<void> _addPrayerToSection(
       initialChildSize: 0.7,
       builder: (ctx, controller) => ListView(
         controller: controller,
+        // Edge to edge: the sheet reaches the bottom of the screen, so the
+        // last prayer has to be scrollable clear of the gesture bar.
+        padding: EdgeInsets.only(bottom: MediaQuery.paddingOf(ctx).bottom),
         children: [
           Padding(
             padding: const EdgeInsets.fromLTRB(20, 16, 20, 8),

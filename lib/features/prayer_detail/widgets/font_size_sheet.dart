@@ -36,7 +36,13 @@ void showFontSizeSheet(BuildContext context) {
         );
         final controller = sheetRef.read(settingsControllerProvider.notifier);
         return Padding(
-          padding: const EdgeInsets.fromLTRB(20, 0, 20, 24),
+          // Edge to edge: keep the last row clear of the gesture bar.
+          padding: EdgeInsets.fromLTRB(
+            20,
+            0,
+            20,
+            24 + MediaQuery.paddingOf(context).bottom,
+          ),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [

@@ -53,6 +53,11 @@ To be released as 1.0.0, the first public release (`pubspec.yaml` is at
 - App messages are shown as tinted lotus toasts.
 - Times and durations are picked on scroll wheels.
 - The macOS app requires macOS 12 or later.
+- Android asks to draw into the camera cutout with `ALWAYS` rather than
+  `SHORT_EDGES`, which Android 15 deprecated and the Play Console reported
+  against build 1. Android 15 and later read both the same way; Android 11 to
+  14 now reach into a cutout on the long edges too, and below Android 11 the
+  platform's own behaviour stands.
 
 ## Before the first public release
 

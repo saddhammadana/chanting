@@ -224,7 +224,15 @@ class _ReportSheetState extends State<_ReportSheet> {
     final l10n = AppLocalizations.of(context);
     final selected = widget.selectedText?.trim();
     return Padding(
-      padding: const EdgeInsets.fromLTRB(20, 0, 20, 24),
+      // Edge to edge: the sheet reaches the bottom of the screen, so its last
+      // row has to clear the gesture bar itself. `padding` and not
+      // `viewPadding`, so an open keyboard does not add the bar's room twice.
+      padding: EdgeInsets.fromLTRB(
+        20,
+        0,
+        20,
+        24 + MediaQuery.paddingOf(context).bottom,
+      ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.stretch,
