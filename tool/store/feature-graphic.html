@@ -1,0 +1,110 @@
+<!doctype html>
+<!--
+  Play Store feature graphic, 1024x500.
+
+  Rendered to PNG by tool/store/make_feature_graphic.sh with headless Chrome.
+  Chrome rather than ImageMagick because ImageMagick's plain text drawing does not
+  shape Thai tone and vowel marks correctly, and this is the one image with Thai
+  type on it.
+
+  Colours are AppColors from lib/theme/app_colors.dart; fonts are the ones the app
+  bundles in assets/google_fonts/. Nothing is fetched from the network.
+-->
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<style>
+  @font-face {
+    font-family: 'Pridi';
+    src: url('../../assets/google_fonts/Pridi-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+  }
+  @font-face {
+    font-family: 'Sarabun';
+    src: url('../../assets/google_fonts/Sarabun-Medium.ttf') format('truetype');
+    font-weight: 500;
+  }
+  @font-face {
+    font-family: 'Sarabun';
+    src: url('../../assets/google_fonts/Sarabun-Regular.ttf') format('truetype');
+    font-weight: 400;
+  }
+
+  :root {
+    --cream: #FAF3E3;
+    --cream-light: #FFFBF0;
+    --brown: #6D4C2F;
+    --brown-soft: #9C7B5A;
+    --gold: #C9A227;
+    --gold-soft: #F1E4BE;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1024px;
+    height: 500px;
+    overflow: hidden;
+    background:
+      radial-gradient(620px 420px at 18% 50%, rgba(201, 162, 39, 0.18), transparent 70%),
+      linear-gradient(120deg, var(--cream-light) 0%, var(--cream) 52%, var(--gold-soft) 100%);
+    display: flex;
+    align-items: center;
+    gap: 44px;
+    padding: 0 56px;
+    font-family: 'Sarabun', sans-serif;
+    color: var(--brown);
+  }
+
+  .icon {
+    width: 288px;
+    height: 288px;
+    flex: none;
+    border-radius: 62px;
+    box-shadow: 0 18px 44px rgba(109, 76, 47, 0.22);
+  }
+
+  .title {
+    font-family: 'Pridi', serif;
+    font-weight: 600;
+    font-size: 92px;
+    line-height: 1.12;
+    letter-spacing: 0.5px;
+  }
+
+  .rule {
+    width: 84px;
+    height: 5px;
+    border-radius: 3px;
+    background: var(--gold);
+    margin: 18px 0 20px;
+  }
+
+  .tagline {
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 1.42;
+    white-space: nowrap;
+  }
+
+  .points {
+    margin-top: 16px;
+    font-weight: 400;
+    font-size: 24px;
+    white-space: nowrap;
+    color: var(--brown-soft);
+  }
+
+  .points span { color: var(--gold); padding: 0 10px; }
+</style>
+</head>
+<body>
+  <img class="icon" src="../../assets/icon/app_icon.png" alt="">
+  <div>
+    <div class="title">สวดมนต์</div>
+    <div class="rule"></div>
+    <div class="tagline">หนังสือสวดมนต์ไทย-บาลี<br>พร้อมคำอ่านบาลีและคำแปล</div>
+    <div class="points">ใช้งานออฟไลน์<span>•</span>ไม่มีโฆษณา<span>•</span>ไม่เก็บข้อมูลส่วนตัว</div>
+  </div>
+</body>
+</html>

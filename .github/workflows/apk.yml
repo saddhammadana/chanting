@@ -7,7 +7,7 @@ name: apk
 # Manual on demand, automatic on a version tag: a tagged release should leave a
 # downloadable build behind without anyone remembering to press the button.
 # The store artifact is built locally with the signing key (see
-# docs/store/release.md).
+# docs/store/02-build-the-aab.md).
 on:
   workflow_dispatch:
   push:

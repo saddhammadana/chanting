@@ -60,9 +60,10 @@ itself so the published privacy policy cannot go stale; an APK is built on a
 version tag or on demand.
 
 [Contributing](CONTRIBUTING.md) has the rules a change is held to. The longer
-developer documentation (architecture, content workflow, store release) is not
-published in this repository yet, so a `docs/...` path or `CLAUDE.md` named in a
-source comment may not resolve here.
+developer documentation for the store release is in [docs/store](docs/store/README.md).
+Other developer documentation (architecture and content workflow) remains local,
+so a `docs/...` path outside `docs/store/` or `CLAUDE.md` named in a source comment
+may not resolve here.
 
 ## Project Structure
 
