@@ -51,11 +51,30 @@ version code with its upload date and release status, and it is the only
 trustworthy answer to "did my upload land?" — the draft page shows an empty drop
 zone whether the upload failed or was simply never made.
 
-> This upload cannot be automated from here. The browser-automation bridge caps
-> a file at 10 MB and this bundle is about 83 MB, and the repo has no Play
-> Developer API service account configured. Until one is set up, a person has to
-> drop the file in. Setting up the API is a one-time job: a Google Cloud service
-> account, linked under **Setup → API access**, with release permissions.
+> **Uploading it without touching the mouse.** The browser-automation bridge
+> caps a file at 10 MB and this bundle is about 83 MB, so the file cannot be
+> handed to the page that way. It can still be done, because the bridge never
+> has to carry the bytes: press **Upload** in the page, then drive the macOS
+> open panel with AppleScript — Chrome reads the file itself. Done on
+> 7 November 2026; three things have to be right.
+>
+> - **The Console tab must be the active tab in its window.** Chrome does not
+>   open a file picker for a background tab, and the click looks like it did
+>   nothing. `tell application "Google Chrome" to set active tab index of
+>   window 1 to <n>` first.
+> - **Do not type the path.** `keystroke` goes through the current input
+>   source, and on a machine set to Thai every Latin letter arrives as `ฟ`
+>   (the path came out `/ฟฟฟฟฟ/ฟฟฟ-ฟฟฟฟ/…`). Open the go-to-folder sheet with
+>   `cmd+shift+g` and **set the text field's value directly**:
+>   `set value of text field 1 of sheet 1 of sheet 1 of window 1 to thePath`,
+>   then Return to accept the path and Return again to open the file.
+> - **There is nothing to look at.** `screencapture` needs Screen Recording
+>   permission, which this machine does not grant, so the panel is inspected
+>   through System Events (`exists sheet 1 of window 1`) rather than by eye.
+>
+> The Play Developer API is still the clean answer for CI — a Google Cloud
+> service account linked under **Setup → API access** with release
+> permissions — and is a one-time job nobody has done yet.
 
 ### Release details
 
@@ -115,13 +134,43 @@ errors or warnings Play found. **Warnings do not block a release** — the
 edge-to-edge notices against build 1 were warnings, and the app published around
 them. Errors do block.
 
-The final button is **Save and publish** (or **Start rollout to Production**
-when a staged percentage is chosen). Pressing it sends the release to Google
-for review. Once it is approved, it goes live automatically unless managed
-publishing is turned on. For this app managed publishing is **off**.
+**Managed publishing is ON for this app**, and that changes the last step —
+this page said the opposite until 7 November 2026, when the Console was read
+instead of remembered. With it on there is no **Save and publish** here. The
+final button is plain **Save**, and the footer says what it does: *"If you
+save, changes will be saved in Publishing overview, ready for you to send for
+review."* Nothing leaves the Console yet.
 
-**Stop here and ask the owner before pressing it.** Everything up to and
-including *Save as draft* is reversible; this is not.
+So the release goes out in two more steps, both on **Publishing overview**:
+
+1. The saved release appears under **Changes not yet submitted for review**,
+   beside any other pending change — a store-listing edit saved the same day
+   lands in the same list. **Submit N changes for review** sends them
+   together, after a confirm dialog, and the heading becomes *Changes in
+   review*. Play first runs "quick checks for commonly found issues" (quoted
+   at up to 14 minutes) and sends them to review once those pass.
+2. When review approves them they do **not** go live. Managed publishing holds
+   them under **Changes ready to publish** until somebody presses publish.
+
+**Ask the owner before both presses.** Everything up to and including *Save*
+is reversible; sending for review is not, and publishing even less so.
+
+### The AI asset declaration
+
+Saving a **store listing** change (not the release) stops at a **Review** step
+with an *AI asset declaration* that has no default: *Don't label assets* or
+*Label assets as created or edited using AI*. This is a regulatory statement
+about where the images came from, so it is the owner's answer, not the
+uploader's. For this app it is **label them** — the artwork was made with
+Codex image generation.
+
+Choosing it opens **Label AI-generated assets**, which lists the assets one by
+one with a checkbox each: app icon, feature graphic, and the eight phone
+screenshots of the locale being edited (the tablet and Chromebook sets are not
+offered). The underlined line at the top reading *"Select all assets that were
+generated or edited with AI"* is a **heading, not a select-all** — hovering it
+shows a tooltip and nothing is ticked. Tick each one, then **Label assets and
+submit**, which only records the labels; the listing still needs **Save**.
 
 ## After submitting
 

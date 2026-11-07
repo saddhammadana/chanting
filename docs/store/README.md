@@ -32,10 +32,13 @@ figures, which belong to the owner rather than to the repository.
 
 ## Where things stand
 
-Production access is granted, the store listing is live, and every App content
-declaration is complete. What is left is the trader-status declaration, which
-only the account owner can answer, and the production release itself. The
-owner's local `progress-2026-11-06.md` has the detail.
+Build 2 and the corrected Thai store listing were **sent to Google for review
+on 7 November 2026** and are sitting under *Changes in review*. Managed
+publishing is on, so approval does not put them on the store: they will wait
+under *Changes ready to publish* for someone to press publish. The one thing
+still outstanding beyond that is the **trader-status declaration**, which only
+the account owner can answer and which Google has given until February 2027.
+The owner's local `progress-2026-11-07.md` has the detail.
 
 ## Language rule for this folder
 
