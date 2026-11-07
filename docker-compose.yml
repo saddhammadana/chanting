@@ -73,7 +73,7 @@ x-flutter-build: &flutter-build
     - dart-tool-cache:/app/.dart_tool
     - android-gradle-cache:/app/android/.gradle
     # Real signing: uncomment and place release.jks at the project root.
-    # - ./release.jks:/keystore/release.jks:ro
+    - ./release.jks:/keystore/release.jks:ro
 
 services:
   apk:

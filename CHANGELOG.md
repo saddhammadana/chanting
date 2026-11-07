@@ -8,7 +8,7 @@ the data files' own history rather than listed here.
 ## [Unreleased]
 
 To be released as 1.0.0, the first public release (`pubspec.yaml` is at
-`1.0.0+1`).
+`1.0.0+2`; build 1 went to the closed test track only).
 
 ### Added
 
