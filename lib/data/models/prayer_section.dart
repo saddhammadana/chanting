@@ -18,9 +18,10 @@
 /// [id] is not user-visible text. [title] varies by content language, so routes
 /// use [id] rather than names; otherwise the same link could not cross languages.
 ///
-/// [id], [icon], and [prayerIds] live only in `sections-th.json`. Other-language
-/// titles live in `sections-<lang>.json`, which is only `{id: title}`. Category
-/// order, prayer order, and icons therefore cannot structurally vary by language.
+/// Each edition is a whole file: `getSections()` reads `sections-<lang>.json`
+/// and nothing is merged with the source. So every field here, [icon]
+/// included, comes from the file of the edition on screen — a value missing
+/// there is missing for that language alone.
 class PrayerSection {
   const PrayerSection({
     required this.id,
@@ -38,10 +39,12 @@ class PrayerSection {
   /// Prayer ids in chant order. The same prayer may appear in multiple positions.
   final List<String> prayerIds;
 
-  /// Icon name from `kSectionIcons`, stored only in `sections-th.json`.
+  /// Icon name from `kSectionIcons`, carried by every edition's section file.
   ///
-  /// Icons are language-independent. Null or unknown names use the fallback icon;
-  /// see `sectionIcon()`.
+  /// It says nothing about language, but it is **not** read from the source
+  /// edition: drop it from `sections-en.json` and the English edition draws
+  /// the fallback while Thai keeps its icon. Null or unknown names use the
+  /// fallback; see `sectionIcon()`.
   final String? icon;
 
   factory PrayerSection.fromJson(Map<String, dynamic> json) => PrayerSection(
